@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Moore 6s and 7s</title>
+    <meta property="og:title" content="Moore 6s and 7s" />
+    <meta property="og:description" content="A Moore Slitherlink puzzle. Draw the loop, find the flag." />
+    <meta property="og:type" content="website" />
+    <link href="data:image/x-icon;base64,AAABAAEAEBAQAAEABAAoAQAAFgAAACgAAAAQAAAAIAAAAAEABAAAAAAAgAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA////AK2trQBlqWwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAgAAABERIRESMzMAEREhERIzMwARESEREjMzABERIRESMzMCIiIiIiIiIiARESEREjMzABERIRESMzMAEREhERIzMwARESEREjMzAiIiIiIiIiIgEREjMzIzMwARESMzMjMzABERIzMyMzMAEREjMzIzMwAAACAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" rel="icon" type="image/x-icon">
+    <style>
+      body { font-family: sans-serif; margin: 0; padding: 1.5rem; background: #fff; color: #000; }
+      h1 { font-size: 1.4rem; margin: 0 0 0.5rem; }
+      #board { width: 100%; aspect-ratio: 1 / 1; }
+      .controls { display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.75rem; flex-wrap: wrap; }
+      button { font-size: 0.95rem; padding: 0.35rem 0.7rem; cursor: pointer; }
+      #msg { font-weight: 600; min-height: 1.4em; }
+      @media print { @page { size: A4; margin: 12mm; } body { padding: 0; } .controls { display: none; } }
+    </style>
+  </head>
+  <body>
+    <h1>Moore 6s and 7s</h1>
+    <p>
+      This is a <a href="https://logic-masters.de/Raetselportal/Raetsel/zeigen.php?chlang=en&id=000JAQ" target="_blank" rel="noopener noreferrer">Moore Slitherlink</a>. Draw a single non-self-intersecting closed loop along the grid edges so that each clue equals the total number of the cell's four edges and four corner vertices visited by the loop.
+    </p>
+    <div class="controls">
+      <button id="checkBtn">Check</button>
+      <button id="undoBtn" title="Undo">Undo</button>
+      <button id="redoBtn" title="Redo">Redo</button>
+      <button id="clearBtn" title="Erase answer">Clear</button>
+      <span id="msg"></span>
+    </div>
+    <div id="board"></div>
+
+    <script src="https://puzz.link/js/pzpr.js"></script>
+    <script src="https://puzz.link/js/pzpr-variety/vslither.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sjcl/1.0.8/sjcl.min.js"></script>
+    <script>
+pzpr.variety.info.moore = { valid: true };
+
+pzpr.classmgr.makeCustom(["moore"], {
+  Cell: {
+    f: pzpr.custom.vslither.Cell.prototype.getdir4BorderLine1,
+    g: pzpr.custom.vslither.Cell.prototype.getdir4BorderVertex1
+  },
+  Encode: {
+    decodePzpr: function() { var bd = this.board; for (var i = 0; i < bd.cell.length; i++) if (/\d/.test(this.outbstr[i])) bd.cell[i].qnum = +this.outbstr[i]; this.outbstr = this.outbstr.substr(bd.cell.length); }
+  },
+  AnsCheck: {
+    checklist: ["checkLineExist+", "checkBranchLine", "checkCrossLine", "checkOneLoop", "checkDeadendLine+", "checkdir4Moore"],
+    checkdir4Moore: function() { this.checkAllCell(cell => cell.qnum >= 0 && cell.f() + cell.g() !== cell.qnum, "nmLineNe"); }
+  }
+});
+
+pzpr.failcodes.en["nmLineNe.moore"] = "The number of edges and corners the loop touches doesn't match the clue.";
+
+["MouseEvent", "KeyEvent", "Board", "LineGraph", "Dot"].forEach(name => pzpr.custom.moore[name] = pzpr.custom.vslither[name]);
+pzpr.custom.moore.Graphic = pzpr.classmgr.createClass(pzpr.custom.vslither.Graphic);
+pzpr.custom.moore.Graphic.prototype.margin = 0.1;
+
+var GRID = ".....................................................................777..777...777..777...777..777...777..777...777..777...777..777...7.6..6.6.7.7.6..6.6.7.7.6..6.6.7.7.6..6.6.7.7.6..6.6.7.7.6..6.6.7..7676776767.7676776767.7676776767.7676776767.7676776767.76767.7767..7.7.6.66.7.7.7.6.66.7.7.7.6.66.7.7.7.6.66.7.7.7.6.66.7.7.666..6.7...6..7666....6..7666....6..7666....6..7666....6..7666......66767......76666.6....76666.6....76666.6....76666.6....76666.6...66666.76...7.66667667.7.66667667.7.66667667.7.66667667.7.66667667.7.676666.7..7676.66667.7676.66667.7676.66667.7676.66667.7676.66667.7666.66767..7.6..6.6.7.7.6..6.6.7.7.6..6.6.7.7.6..6.6.7.7.6..6.6.7.7.666..6.7...777..777...777..777...777..777...777..777...777..777...777..777.......................................................................777..777...777..777...777..777...777..777...777..777...777..777...7.6..666.7.7.6..6.6.7.7.6.6..6.7.7.6.6..6.7.7.6..6.6.7.7.6..6.6.7..76766.6667.7676776767.76666.6767.76666.6767.7676776767.76767.7767..7.666676.7.7.7.6.66.7.76676666.7.76676666.7.7.7.6.66.7.7.666..6.7...67.66666...6..7666....6.66667....6.66667....6..7666......66767......76766......76666.6....6667..6....6667..6....76666.6...66666.76...7.6..666.7.7.66667667.7.66.6.7.7.7.66.6.7.7.7.66667667.7.676666.7..7677.76767.7676.66667.7676776767.7676776767.7676.66667.7666.66767..7.6.6..6.7.7.6..6.6.7.7.6.6..6.7.7.6.6..6.7.7.6..6.6.7.7.666..6.7...777..777...777..777...777..777...777..777...777..777...777..777.......................................................................777..777...777..777...777..777...777..777...777..777...777..777...7.6..666.7.7.6.6..6.7.7.6..666.7.7.6..6.6.7.7.6.6..6.7.7.6..6.6.7..76766.6667.76666.6767.76766.6667.7676776767.76666.6767.76767.7767..7.666676.7.76676666.7.7.666676.7.7.7.6.66.7.76676666.7.7.666..6.7...67.66666...6.66667....67.66666...6..7666....6.66667......66767......76766......6667..6....76766......76666.6....6667..6...66666.76...7.6..666.7.7.66.6.7.7.7.6..666.7.7.66667667.7.66.6.7.7.7.676666.7..7677.76767.7676776767.7677.76767.7676.66667.7676776767.7666.66767..7.6.6..6.7.7.6.6..6.7.7.6.6..6.7.7.6..6.6.7.7.6.6..6.7.7.666..6.7...777..777...777..777...777..777...777..777...777..777...777..777.......................................................................777..777...777..777...777..777...777..777...777..777...777..777...7.6..666.7.7.6..6.6.7.7.6..6.6.7.7.6..666.7.7.6..6.6.7.7.6..6.6.7..76766.6667.76767.7767.76767.7767.76766.6667.7676776767.76767.7767..7.666676.7.7.666..6.7.7.666..6.7.7.666676.7.7.7.6.66.7.7.666..6.7...67.66666.....66767......66767....67.66666...6..7666......66767......76766.....66666.76...66666.76....76766......76666.6...66666.76...7.6..666.7.7.676666.7.7.676666.7.7.6..666.7.7.66667667.7.676666.7..7677.76767.7666.66767.7666.66767.7677.76767.7676.66667.7666.66767..7.6.6..6.7.7.666..6.7.7.666..6.7.7.6.6..6.7.7.6..6.6.7.7.666..6.7...777..777...777..777...777..777...777..777...777..777...777..777.......................................................................777..777...777..777...777..777...777..777...777..777...777..777...7.6..666.7.7.6..6.6.7.7.6..666.7.7.6..666.7.7.6..6.6.7.7.6..6.6.7..76766.6667.76767.7767.76766.6667.76766.6667.76767.7767.76767.7767..7.666676.7.7.666..6.7.7.666676.7.7.666676.7.7.666..6.7.7.666..6.7...67.66666.....66767....67.66666...67.66666.....66767......66767......76766.....66666.76....76766......76766.....66666.76...66666.76...7.6..666.7.7.676666.7.7.6..666.7.7.6..666.7.7.676666.7.7.676666.7..7677.76767.7666.66767.7677.76767.7677.76767.7666.66767.7666.66767..7.6.6..6.7.7.666..6.7.7.6.6..6.7.7.6.6..6.7.7.666..6.7.7.666..6.7...777..777...777..777...777..777...777..777...777..777...777..777.......................................................................777..777...777..777...777..777...777..777...777..777...777..777...7.6..666.7.7.6.6..6.7.7.6.6..6.7.7.6.6..6.7.7.6.6..6.7.7.6.6..6.7..76766.6667.76666.6767.76666.6767.76666.6767.76666.6767.76666.6767..7.666676.7.76676666.7.76676666.7.76676666.7.76676666.7.76676666.7...67.66666...6.66667....6.66667....6.66667....6.66667....6.66667......76766......6667..6....6667..6....6667..6....6667..6....6667..6...7.6..666.7.7.66.6.7.7.7.66.6.7.7.7.66.6.7.7.7.66.6.7.7.7.66.6.7.7..7677.76767.7676776767.7676776767.7676776767.7676776767.7676776767..7.6.6..6.7.7.6.6..6.7.7.6.6..6.7.7.6.6..6.7.7.6.6..6.7.7.6.6..6.7...777..777...777..777...777..777...777..777...777..777...777..777.....................................................................";
+var CT = "dhziJ9hqcAWXIiQdCLErflS0h2qTZLvbu4C0zzWBueDYKB3Hv9I2NUJiPNnVJMLRBBCZK8aDal65jGFhqES5YZlT1/1Zc3rIBYKJwRmz3SvC5WeoMwrasFomQ46RgLmOEmvz";
+var puzzle;
+
+function checkPuzzle() {
+  var result = puzzle.check(true);
+  if (!result.complete) { msg.textContent = result.text; return; }
+  var board = puzzle.board, bits = [];
+  for (var by = 0; by <= board.maxby; by++) for (var bx = 0; bx <= board.maxbx; bx++)
+    if ((bx + by) % 2 === 1) bits.push(~~board.getb(bx, by).isLine());
+  msg.textContent = sjcl.decrypt(bits.join(""), JSON.stringify({ ct: CT, iv: "sixsevenSIXSEVEN", iter: 6767, salt: "sixseven+67=" }));
+}
+
+pzpr.on("load", () => {
+  puzzle = new pzpr.Puzzle(board, { type: "player" });
+  puzzle.on("ready", () => pzpr.connectKeyEvents(puzzle));
+  puzzle.on("fail-open", () => msg.textContent = "Failed to open puzzle.");
+  puzzle.open("moore/67/67/" + GRID);
+  checkBtn.addEventListener("click", checkPuzzle);
+  undoBtn.addEventListener("click", () => puzzle.undo());
+  redoBtn.addEventListener("click", () => puzzle.redo());
+  clearBtn.addEventListener("click", () => { puzzle.ansclear(); msg.textContent = "Answer erased."; });
+  addEventListener("beforeprint", () => puzzle.setCanvasSize(700, 700));
+  addEventListener("afterprint", () => puzzle.setCanvasSize(board.clientWidth, board.clientWidth));
+});
+    </script>
+  </body>
+</html>

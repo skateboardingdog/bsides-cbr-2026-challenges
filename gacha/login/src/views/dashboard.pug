@@ -1,0 +1,30 @@
+extends layout
+
+block content
+  .container-wide
+    .card
+      .dashboard-header
+        .user-badge
+          .avatar= user.sub.charAt(0).toUpperCase()
+          div
+            h2 Welcome, #{user.sub}!
+
+        a.btn.btn-danger(href="/logout", style="width: auto; padding: 10px 20px; font-size: 0.9rem;") Log Out
+
+      .grid-cards
+        .stat-card
+          h3 Username
+          .value= user.sub
+        .stat-card
+          h3 Expires
+          .value= user.exp ? new Date(user.exp * 1000).toLocaleTimeString() : 'Active'
+        .stat-card
+          h3 User Type
+          .value= user.type && user.type
+      if user.type === "admin"
+        .grid-cards
+          .stat-card
+            h3 Flag
+            .value= flag
+      else
+        .alert.alert-danger Only type=admin can see the flag!

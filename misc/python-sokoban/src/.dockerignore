@@ -1,0 +1,15 @@
+**
+!Dockerfile
+!.env.production
+!package.json
+!package-lock.json
+!index.html
+!vite.config.js
+!public/
+!public/**
+!server/
+!server/**
+!src/
+!src/**
+!mylevels/
+!mylevels/**

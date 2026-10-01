@@ -1,0 +1,13 @@
+version: "1.0"
+slug: alien-wisdom
+title: alien wisdom
+difficulty: beginner
+categories: ["misc"]
+files:
+  - ./publish/wisdom.txt
+description: |
+  We got this message from the ancients, but we can't make heads nor tails of it...
+
+  Author: hashkitten
+flags:
+  - skbdg{windows1252strikesagain}

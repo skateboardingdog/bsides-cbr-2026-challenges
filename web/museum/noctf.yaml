@@ -1,0 +1,15 @@
+version: "1.0"
+slug: museum
+title: museum
+difficulty: easy
+categories: ["web"]
+description: |
+  We just opened a new museum and need your help with finding the flag...
+
+  Author: dot
+hosting: tls
+connection_info: ${url}
+flags:
+  - skbdg{L0ve_1s_in_th3_B1n_291c6538}
+files:
+  - ./publish/archive.zip

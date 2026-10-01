@@ -1,0 +1,14 @@
+version: "1.0"
+slug: moore-6s-and-7s
+title: Moore 6s and 7s
+categories: ["misc"]
+difficulty: medium
+description: |
+  It's a slitherlink! This time with Moore 6s and 7s.
+
+  NOTE: Physical printouts available at the CTF admin desk, while supplies last!
+
+  Author: Neobeo
+connection_info: ${url}
+flags:
+  - skbdg{shade_inside_the_loop_you_might_see_a_35_its_snowing_on_mount_fuji}

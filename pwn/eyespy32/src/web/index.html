@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>eyESPy32</title>
+<style>
+:root {
+    --bg: #f7f5fb;
+    --surface: #ffffff;
+    --surface-soft: #faf9fd;
+    --surface-2: #f0edf7;
+    --border: #ded8e9;
+    --accent: #a78bfa;
+    --accent-hover: #8b6ee8;
+    --accent-soft: #f0ebff;
+    --text: #29233a;
+    --muted: #716a81;
+    --danger: #c2414b;
+}
+* { box-sizing: border-box; }
+body {
+    margin: 0;
+    font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    line-height: 1.5;
+}
+.container { max-width: 1080px; margin: 0 auto; padding: 40px 24px; }
+
+header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 18px 20px;
+    margin-bottom: 20px;
+    border: 1px solid var(--border);
+    border-radius: 7px;
+    background: var(--surface);
+}
+header h1 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0;
+    font-size: 0.95rem;
+    font-weight: 750;
+    color: var(--text);
+    letter-spacing: 0.02em;
+}
+header h1::before {
+    content: "";
+    width: 28px;
+    height: 28px;
+    border-radius: 5px;
+    background: var(--accent);
+    border: 6px solid var(--accent-soft);
+}
+header .user {
+    color: var(--muted);
+    font-size: 0.87rem;
+}
+header .user strong { color: var(--text); font-weight: 650; }
+.badge {
+    display: inline-block;
+    padding: 3px 8px;
+    margin-left: 8px;
+    font-size: 0.66rem;
+    font-weight: 750;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    border: 1px solid;
+    border-radius: 4px;
+}
+.badge.regular { color: #625c70; border-color: #ddd7e7; background: #f7f5fa; }
+.badge.premium { color: #7358c7; border-color: #d3c6fc; background: #f3efff; }
+header .spacer { flex: 1; }
+header button {
+    background: transparent;
+    color: var(--muted);
+    border: 1px solid var(--border);
+    padding: 8px 12px;
+    font-size: 0.78rem;
+    font-family: inherit;
+    font-weight: 650;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: color .16s ease, border-color .16s ease, background .16s ease;
+}
+header button:hover { color: #765cc8; border-color: #cfc1f5; background: #faf8ff; }
+
+.viewer {
+    position: relative;
+    display: grid;
+    place-items: center;
+    min-height: 430px;
+    overflow: hidden;
+    margin-bottom: 16px;
+    border: 1px solid var(--border);
+    border-radius: 7px;
+    background:
+        linear-gradient(45deg, #f3f0f8 25%, transparent 25%) 0 0 / 24px 24px,
+        linear-gradient(-45deg, #f3f0f8 25%, transparent 25%) 0 0 / 24px 24px,
+        #faf9fc;
+}
+.viewer img {
+    width: 100%;
+    max-height: 70vh;
+    display: block;
+    object-fit: contain;
+}
+.viewer::before {
+    content: "LIVE CAMERA";
+    position: absolute;
+    z-index: 1;
+    top: 15px;
+    left: 16px;
+    padding: 5px 9px;
+    border: 1px solid rgba(255,255,255,.7);
+    border-radius: 4px;
+    background: rgba(41, 35, 58, .78);
+    color: #fff;
+    font-size: 0.63rem;
+    font-weight: 750;
+    letter-spacing: .09em;
+    pointer-events: none;
+}
+
+.controls { display: flex; gap: 10px; margin-bottom: 18px; }
+button.primary {
+    flex: 1;
+    padding: 13px 18px;
+    background: var(--accent);
+    color: #fff;
+    border: 1px solid var(--accent);
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+    border-radius: 6px;
+    transition: background .16s ease, border-color .16s ease;
+}
+button.primary:hover { background: var(--accent-hover); border-color: var(--accent-hover); }
+button.primary.off { background: var(--surface); color: var(--text); border-color: var(--border); }
+button.primary.off:hover { background: var(--surface-soft); color: #765cc8; border-color: #cfc1f5; }
+button.secondary {
+    flex: 1;
+    padding: 13px 18px;
+    background: var(--surface);
+    color: #765cc8;
+    border: 1px solid #cfc1f5;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+    border-radius: 6px;
+    transition: background .16s ease, border-color .16s ease;
+}
+button.secondary:hover { background: var(--accent-soft); border-color: #b9a7ef; }
+button:focus-visible, input:focus-visible, a:focus-visible { outline: 3px solid rgba(167, 139, 250, .32); outline-offset: 2px; }
+
+.notice {
+    background: rgba(255, 255, 255, .86);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 14px 16px;
+    font-size: 0.86rem;
+    color: var(--muted);
+}
+.notice strong { color: var(--text); }
+
+.auth {
+    max-width: 420px;
+    margin: 8vh auto 0;
+    padding: 36px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 7px;
+}
+.auth h2 {
+    margin: 0 0 22px;
+    color: var(--text);
+    font-size: 1.45rem;
+    font-weight: 750;
+    letter-spacing: -0.03em;
+    text-transform: none;
+}
+.auth input {
+    width: 100%;
+    padding: 12px 13px;
+    margin-bottom: 11px;
+    background: var(--surface-soft);
+    color: var(--text);
+    border: 1px solid var(--border);
+    border-radius: 9px;
+    font-family: inherit;
+    font-size: 0.92rem;
+    transition: background .16s ease, border-color .16s ease;
+}
+.auth input::placeholder { color: #99a6b7; }
+.auth input:focus { outline: none; border-color: #baa8ef; background: #fff; }
+.auth button.primary { width: 100%; margin-top: 6px; }
+.auth .switch {
+    text-align: center;
+    color: var(--muted);
+    font-size: 0.82rem;
+    margin-top: 17px;
+}
+.auth .switch a {
+    color: var(--accent);
+    cursor: pointer;
+    font-weight: 700;
+    text-decoration: none;
+}
+.auth .switch a:hover { text-decoration: underline; }
+.error {
+    color: var(--danger);
+    font-size: 0.8rem;
+    text-align: center;
+    margin-top: 12px;
+    min-height: 1.2em;
+}
+
+#camera-view, #register-view, #capture-view { display: none; }
+.mode-label {
+    margin: 0 0 9px 2px;
+    color: var(--muted);
+    font-size: 0.7rem;
+    font-weight: 750;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+@media (max-width: 640px) {
+    .container { padding: 20px 16px; }
+    .auth { margin-top: 28px; padding: 28px 22px; }
+    header { align-items: flex-start; flex-wrap: wrap; padding: 15px; }
+    header .spacer { display: none; }
+    header button { margin-left: auto; }
+    header .user { width: 100%; order: 3; }
+    .viewer { min-height: 260px; border-radius: 14px; }
+    .viewer img { max-height: 58vh; }
+    .controls { flex-direction: column; }
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+    <div id="login-view">
+        <div class="auth">
+            <h2>Sign In</h2>
+            <input type="text" id="login-username" placeholder="username" autocomplete="username">
+            <input type="password" id="login-password" placeholder="password" autocomplete="current-password">
+            <button class="primary" onclick="login()">sign in</button>
+            <div class="error" id="login-error"></div>
+            <div class="switch">no account? <a onclick="showView('register')">register</a></div>
+        </div>
+    </div>
+
+    <div id="register-view">
+        <div class="auth">
+            <h2>Register</h2>
+            <input type="text" id="reg-username" placeholder="username (3-31 chars)" autocomplete="username">
+            <input type="password" id="reg-password" placeholder="password (min 4 chars)" autocomplete="new-password">
+            <button class="primary" onclick="register()">create account</button>
+            <div class="error" id="reg-error"></div>
+            <div class="switch">have an account? <a onclick="showView('login')">sign in</a></div>
+        </div>
+    </div>
+
+    <div id="camera-view">
+        <header>
+            <h1>eyESPy32</h1>
+            <div class="user">signed in as <strong id="u-name">...</strong><span class="badge" id="u-badge">...</span></div>
+            <span class="spacer"></span>
+            <button onclick="logout()">log out</button>
+        </header>
+
+        <div class="mode-label" id="mode-label">live stream</div>
+        <div class="viewer">
+            <img id="stream-view" alt="">
+            <img id="capture-view" alt="">
+        </div>
+
+        <div class="controls">
+            <button class="primary off" id="btn-stream" onclick="toggleStream()">start stream</button>
+            <button class="secondary" onclick="capture()">capture frame</button>
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+let token = sessionStorage.getItem('token');
+let user = null;
+let streaming = false;
+
+const views = {
+    login: document.getElementById('login-view'),
+    register: document.getElementById('register-view'),
+    camera: document.getElementById('camera-view'),
+};
+const streamView = document.getElementById('stream-view');
+const captureView = document.getElementById('capture-view');
+const btnStream = document.getElementById('btn-stream');
+const modeLabel = document.getElementById('mode-label');
+
+function authHeaders() { return { 'Authorization': 'Bearer ' + token }; }
+
+function showView(name) {
+    for (const k in views) views[k].style.display = (k === name) ? 'block' : 'none';
+}
+
+function fetchUser() {
+    return fetch('/user', { headers: authHeaders() }).then(r => {
+        if (!r.ok) throw new Error('auth');
+        return r.json();
+    });
+}
+
+function renderUserInfo(u) {
+    const nameEl  = document.getElementById('u-name');
+    const badge   = document.getElementById('u-badge');
+
+    if (!u) {
+        nameEl.textContent = 'unknown';
+        badge.textContent  = 'unknown';
+        badge.className    = 'badge';
+        return;
+    }
+
+    let displayName;
+    try { displayName = decodeURIComponent(u.username); } catch (e) { displayName = u.username || 'unknown'; }
+    nameEl.textContent = displayName;
+
+    const tier = u.tier || 'unknown';
+    badge.textContent = tier;
+    badge.className = 'badge ' + tier;
+
+}
+
+function showCamera() {
+    showView('camera');
+    stopStream();
+    fetchUser()
+        .then(u => { user = u; renderUserInfo(u); })
+        .catch(() => { user = null; renderUserInfo(null); });
+}
+
+function login() {
+    const u = document.getElementById('login-username').value;
+    const p = document.getElementById('login-password').value;
+    fetch('/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: 'username=' + encodeURIComponent(u) + '&password=' + encodeURIComponent(p)
+    }).then(r => r.json()).then(d => {
+        if (d.token) {
+            token = d.token;
+            sessionStorage.setItem('token', token);
+            document.getElementById('login-error').textContent = '';
+            showCamera();
+        } else {
+            document.getElementById('login-error').textContent = d.error || 'login failed';
+        }
+    }).catch(() => {
+        document.getElementById('login-error').textContent = 'connection error';
+    });
+}
+
+function register() {
+    const u = document.getElementById('reg-username').value;
+    const p = document.getElementById('reg-password').value;
+    fetch('/register', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: 'username=' + encodeURIComponent(u) + '&password=' + encodeURIComponent(p)
+    }).then(r => r.json()).then(d => {
+        if (d.status === 'ok') {
+            document.getElementById('reg-error').textContent = '';
+            document.getElementById('login-username').value = u;
+            document.getElementById('login-password').value = p;
+            document.getElementById('login-error').textContent = '';
+            showView('login');
+            login();
+        } else {
+            document.getElementById('reg-error').textContent = d.error || 'registration failed';
+        }
+    }).catch(() => {
+        document.getElementById('reg-error').textContent = 'connection error';
+    });
+}
+
+function logout() {
+    token = null;
+    user = null;
+    sessionStorage.removeItem('token');
+    streamView.src = '';
+    streaming = false;
+    showView('login');
+}
+
+function startStream() {
+    captureView.style.display = 'none';
+    streamView.style.display = 'block';
+    streamView.src = '/stream?token=' + token + '&t=' + Date.now();
+    btnStream.textContent = 'stop stream';
+    btnStream.classList.remove('off');
+    modeLabel.textContent = 'live stream';
+    streaming = true;
+}
+
+function stopStream() {
+    if (streaming) {
+        streamView.src = '';
+    }
+    streamView.style.display = 'block';
+    captureView.style.display = 'none';
+    btnStream.textContent = 'start stream';
+    btnStream.classList.add('off');
+    modeLabel.textContent = 'ready to stream';
+    streaming = false;
+}
+
+function toggleStream() {
+    if (streaming) stopStream();
+    else startStream();
+}
+
+function requestCapture() {
+    fetch('/capture', { headers: authHeaders() }).then(r => {
+        if (r.status === 401) { logout(); return; }
+        return r.blob();
+    }).then(blob => {
+        if (!blob) return;
+        if (streaming) toggleStream();
+        captureView.src = URL.createObjectURL(blob);
+        captureView.style.display = 'block';
+        streamView.style.display = 'none';
+        modeLabel.textContent = 'capture';
+    });
+}
+
+function capture() {
+    if (!streaming) {
+        requestCapture();
+        return;
+    }
+
+    stopStream();
+    window.setTimeout(requestCapture, 450);
+}
+
+document.getElementById('login-password').addEventListener('keydown', e => { if (e.key === 'Enter') login(); });
+document.getElementById('reg-password').addEventListener('keydown', e => { if (e.key === 'Enter') register(); });
+
+if (token) {
+    showCamera();
+} else {
+    showView('login');
+}
+</script>
+</body>
+</html>

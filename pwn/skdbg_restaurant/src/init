@@ -1,0 +1,38 @@
+#!/bin/sh
+
+mount -t proc none /proc
+mount -t sysfs none /sys
+mount -t devtmpfs none /dev
+mkdir -p /dev/shm /home/ctf
+chmod 777 /home/ctf
+mount -t tmpfs none /dev/shm
+mount -t tmpfs none /tmp
+
+echo 1 > /proc/sys/kernel/kptr_restrict
+echo 0 > /proc/sys/kernel/dmesg_restrict
+
+insmod /chall.ko
+chmod 666 /dev/skdbg_restaurant
+
+cp /flag.txt /flag
+chmod 600 /flag
+rm -f /flag.txt
+
+echo ""
+echo "  ======================================================="
+echo "   Welcome to the restaurant!"
+echo ""
+echo "   /dev/skdbg_restaurant is the kitchen.  The flag is at /flag (root only)."
+echo "   Upload a compiled exploit with: /upload <path>"
+echo "   (paste the output of \`base64 exploit\` - wrapped lines are"
+echo "    fine - then type END on its own line and press Enter)"
+echo "  ======================================================="
+echo ""
+
+cd /home/ctf
+
+export TERM=xterm
+stty rows 24 cols 80
+setsid cttyhack /drop /bin/sh
+echo "=== shell exited, powering off ==="
+poweroff -f

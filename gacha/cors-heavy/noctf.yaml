@@ -1,0 +1,15 @@
+version: "1.0"
+slug: cors-heavy
+title: cors-heavy
+categories: ["web"]
+difficulty: beginner
+tags:
+  gacha:requires: cors-medium
+description: |
+  it's relaxation time!
+
+  Author: wednesday
+hosting: tls
+connection_info: ${url}
+flags:
+  - skbdg{s0lv3d_all_th3_challs_n0w_tim3_t0_r3LAX}

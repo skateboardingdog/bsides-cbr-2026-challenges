@@ -1,0 +1,7 @@
+{
+  "name": "com.gridadmin.pshost",
+  "description": "GridAdmin Native Messaging Host",
+  "path": "/opt/pshost.py",
+  "type": "stdio",
+  "allowed_origins": ["chrome-extension://cichpdifokehakjkcbbfdaaieeohhpbg/"]
+}

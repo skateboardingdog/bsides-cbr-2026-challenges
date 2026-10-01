@@ -1,0 +1,16 @@
+version: "1.0"
+slug: mix-n-matcha
+title: mix-n-matcha
+categories: ["crypto"]
+difficulty: beginner
+description: |
+  i don't know how to crypto so i just mix my data up randomly until it looks jumbled :c
+
+  can you find the decryption circuit for all three levels?
+
+  join all three plaintexts and put inside `skbdg{}` for the flag
+
+  Author: wednesday
+connection_info: ${url}
+flags:
+  - skbdg{good_feistel}

@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>~ extend extinguish flag ~</title>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#1a1a2e;
+    --bg2:#232342;
+    --pink:#ff6b9d;
+    --mint:#95e1d3;
+    --cream:#f5e6d3;
+    --purple:#6c5b7b;
+    --shadow:#0d0d1a;
+  }
+  *{ box-sizing:border-box; image-rendering:pixelated; }
+  body{
+    margin:0;
+    min-height:100vh;
+    background:var(--bg);
+    background-image:
+      radial-gradient(var(--purple) 1px, transparent 1px);
+    background-size: 24px 24px;
+    background-position: -4px -4px;
+    display:flex; align-items:center; justify-content:center;
+    font-family:'VT323', monospace;
+    color:var(--cream);
+    padding:24px;
+  }
+  .console{
+    background:var(--bg2);
+    border:4px solid var(--shadow);
+    box-shadow: 0 0 0 4px var(--purple), 8px 8px 0 0 var(--shadow);
+    padding:28px 32px 32px;
+    width:100%;
+    max-width:480px;
+  }
+  h1{
+    font-family:'Press Start 2P', monospace;
+    font-size:16px;
+    color:var(--pink);
+    text-align:center;
+    line-height:1.6;
+    text-shadow: 2px 2px 0 var(--shadow);
+    margin:0 0 6px;
+  }
+  .sub{
+    text-align:center;
+    color:var(--mint);
+    font-size:20px;
+    margin:0 0 20px;
+    letter-spacing:1px;
+  }
+  .bot{
+    width:60px; height:60px;
+    margin:0 auto 18px;
+    position:relative;
+    animation: bob 1.6s steps(2) infinite;
+  }
+  .bot::before{
+    content:"";
+    position:absolute;
+    top:0; left:0;
+    width:5px; height:5px;
+    background:transparent;
+    box-shadow:
+      /* ears + outline (dark brown) */
+      10px 0px 0 0 #5c3a21, 45px 0px 0 0 #5c3a21,
+      5px 5px 0 0 #5c3a21, 10px 5px 0 0 #5c3a21, 15px 5px 0 0 #5c3a21,
+      40px 5px 0 0 #5c3a21, 45px 5px 0 0 #5c3a21, 50px 5px 0 0 #5c3a21,
+      5px 10px 0 0 #5c3a21, 15px 10px 0 0 #5c3a21, 40px 10px 0 0 #5c3a21, 50px 10px 0 0 #5c3a21,
+      20px 35px 0 0 #5c3a21, 35px 35px 0 0 #5c3a21,
+      /* body (tan) */
+      10px 10px 0 0 #e0a872, 45px 10px 0 0 #e0a872,
+      10px 15px 0 0 #e0a872, 15px 15px 0 0 #e0a872, 20px 15px 0 0 #e0a872, 25px 15px 0 0 #e0a872,
+      30px 15px 0 0 #e0a872, 35px 15px 0 0 #e0a872, 40px 15px 0 0 #e0a872, 45px 15px 0 0 #e0a872,
+      5px 20px 0 0 #e0a872, 10px 20px 0 0 #e0a872, 15px 20px 0 0 #e0a872, 20px 20px 0 0 #e0a872,
+      25px 20px 0 0 #e0a872, 30px 20px 0 0 #e0a872, 35px 20px 0 0 #e0a872, 40px 20px 0 0 #e0a872,
+      45px 20px 0 0 #e0a872, 50px 20px 0 0 #e0a872,
+      5px 25px 0 0 #e0a872, 10px 25px 0 0 #e0a872, 15px 25px 0 0 #e0a872, 20px 25px 0 0 #e0a872,
+      25px 25px 0 0 #e0a872, 30px 25px 0 0 #e0a872, 35px 25px 0 0 #e0a872, 40px 25px 0 0 #e0a872,
+      45px 25px 0 0 #e0a872, 50px 25px 0 0 #e0a872,
+      5px 30px 0 0 #e0a872, 10px 30px 0 0 #e0a872, 45px 30px 0 0 #e0a872, 50px 30px 0 0 #e0a872,
+      5px 35px 0 0 #e0a872, 10px 35px 0 0 #e0a872, 45px 35px 0 0 #e0a872, 50px 35px 0 0 #e0a872,
+      5px 40px 0 0 #e0a872, 10px 40px 0 0 #e0a872, 45px 40px 0 0 #e0a872, 50px 40px 0 0 #e0a872,
+      10px 45px 0 0 #e0a872, 15px 45px 0 0 #e0a872, 40px 45px 0 0 #e0a872, 45px 45px 0 0 #e0a872,
+      10px 50px 0 0 #e0a872, 15px 50px 0 0 #e0a872, 40px 50px 0 0 #e0a872, 45px 50px 0 0 #e0a872,
+      10px 55px 0 0 #e0a872, 15px 55px 0 0 #e0a872, 40px 55px 0 0 #e0a872, 45px 55px 0 0 #e0a872,
+      /* muzzle (cream) */
+      15px 30px 0 0 #fff6ea, 20px 30px 0 0 #fff6ea, 25px 30px 0 0 #fff6ea,
+      30px 30px 0 0 #fff6ea, 35px 30px 0 0 #fff6ea, 40px 30px 0 0 #fff6ea,
+      15px 35px 0 0 #fff6ea, 25px 35px 0 0 #fff6ea, 30px 35px 0 0 #fff6ea, 40px 35px 0 0 #fff6ea,
+      15px 40px 0 0 #fff6ea, 20px 40px 0 0 #fff6ea, 25px 40px 0 0 #fff6ea,
+      30px 40px 0 0 #fff6ea, 35px 40px 0 0 #fff6ea, 40px 40px 0 0 #fff6ea,
+      20px 45px 0 0 #fff6ea, 35px 45px 0 0 #fff6ea,
+      /* tongue (pink) */
+      25px 45px 0 0 #ff9eb5, 30px 45px 0 0 #ff9eb5;
+  }
+  @keyframes bob{
+    0%{ transform:translateY(0); }
+    50%{ transform:translateY(-6px); }
+    100%{ transform:translateY(0); }
+  }
+  .dropzone{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    width:100%;
+    border:3px dashed var(--mint);
+    background:rgba(149,225,211,0.06);
+    padding:26px 16px;
+    text-align:center;
+    font-size:20px;
+    line-height:1.4;
+    cursor:pointer;
+    transition: background .15s, transform .1s;
+    margin-bottom:16px;
+  }
+  .dropzone:hover{ background:rgba(149,225,211,0.14); }
+  .dropzone.drag{ background:rgba(255,107,157,0.15); border-color:var(--pink); transform:scale(1.01); }
+  .dropzone span{ display:block; max-width:100%; }
+  .filename{
+    color:var(--pink);
+    margin-top:8px;
+    max-width:100%;
+    overflow-wrap:anywhere;
+    word-break:break-word;
+    font-size:18px;
+  }
+  input[type=file]{ display:none; }
+  button{
+    width:100%;
+    font-family:'Press Start 2P', monospace;
+    font-size:12px;
+    color:var(--bg);
+    background:var(--mint);
+    border:none;
+    padding:14px 10px;
+    cursor:pointer;
+    box-shadow: 4px 4px 0 0 var(--shadow);
+    transition: transform .08s, box-shadow .08s;
+  }
+  button:active{
+    transform: translate(4px,4px);
+    box-shadow: 0 0 0 0 var(--shadow);
+  }
+  button:disabled{
+    background:#555; color:#999; cursor:not-allowed;
+    box-shadow: 4px 4px 0 0 var(--shadow);
+  }
+  .status{
+    margin-top:16px;
+    font-size:18px;
+    min-height:24px;
+    text-align:center;
+  }
+  .status.err{ color:var(--pink); }
+  .status.ok{ color:var(--mint); }
+  .bar{
+    margin-top:10px;
+    height:14px;
+    background:var(--shadow);
+    border:2px solid var(--purple);
+    display:none;
+  }
+  .bar.show{ display:block; }
+  .bar-fill{
+    height:100%;
+    width:0%;
+    background: repeating-linear-gradient(90deg, var(--pink) 0 8px, var(--mint) 8px 16px);
+    transition: width .2s;
+  }
+  .dl{
+    display:block;
+    margin-top:14px;
+    text-align:center;
+    font-family:'Press Start 2P', monospace;
+    font-size:11px;
+    color:var(--bg);
+    background:var(--pink);
+    padding:12px;
+    text-decoration:none;
+    box-shadow:4px 4px 0 0 var(--shadow);
+  }
+</style>
+</head>
+<body>
+  <div class="console">
+    <h1>libre</h1>
+    <p class="sub">hurry - we need that slide deck done asap!</p>
+
+    <label class="dropzone" id="dropzone">
+      <span id="dzText">drop file here</span>
+      <span class="filename" id="fname"></span>
+      <input type="file" id="fileInput">
+    </label>
+
+    <div class="bar" id="bar"><div class="bar-fill" id="barFill"></div></div>
+
+    <button id="go" disabled>&gt; convert it &lt;</button>
+
+    <div class="status" id="status"></div>
+  </div>
+
+  <script>
+   const dropzone = document.getElementById('dropzone');
+   const fileInput = document.getElementById('fileInput');
+   const fname = document.getElementById('fname');
+   const dzText = document.getElementById('dzText');
+   const goBtn = document.getElementById('go');
+   const statusEl = document.getElementById('status');
+   const bar = document.getElementById('bar');
+   const barFill = document.getElementById('barFill');
+
+   let selectedFile = null;
+
+   function setFile(file){
+       selectedFile = file;
+       fname.textContent = file ? file.name : '';
+       dzText.textContent = file ? 'looks good! pick another?' : 'drop file here';
+       goBtn.disabled = !file;
+       statusEl.textContent = '';
+       statusEl.className = 'status';
+   }
+
+   dropzone.addEventListener('click', () => fileInput.click());
+   fileInput.addEventListener('change', e => setFile(e.target.files[0]));
+
+   ['dragenter','dragover'].forEach(evt =>
+       dropzone.addEventListener(evt, e => { e.preventDefault(); dropzone.classList.add('drag'); })
+   );
+   ['dragleave','drop'].forEach(evt =>
+       dropzone.addEventListener(evt, e => { e.preventDefault(); dropzone.classList.remove('drag'); })
+   );
+   dropzone.addEventListener('drop', e => {
+       const file = e.dataTransfer.files[0];
+       if (file) setFile(file);
+   });
+
+   goBtn.addEventListener('click', async () => {
+       if (!selectedFile) return;
+       goBtn.disabled = true;
+       statusEl.textContent = 'converting...';
+       statusEl.className = 'status';
+       bar.classList.add('show');
+       barFill.style.width = '10%';
+
+       const fd = new FormData();
+       fd.append('file', selectedFile);
+
+       try {
+           const resp = await fetch('/upload', { method: 'POST', body: fd });
+           barFill.style.width = '70%';
+           if (!resp.ok) {
+               throw new Error('server said no (' + resp.status + ')');
+           }
+           const blob = await resp.blob();
+           barFill.style.width = '100%';
+
+           const url = URL.createObjectURL(blob);
+           statusEl.innerHTML = '';
+           statusEl.className = 'status ok';
+           statusEl.textContent = 'done! ur file is ready ->';
+
+           const oldLink = document.querySelector('.dl');
+           if (oldLink) oldLink.remove();
+           const a = document.createElement('a');
+           a.href = url;
+           a.download = 'document.ppt';
+           a.className = 'dl';
+           a.textContent = 'download document.ppt';
+           statusEl.after(a);
+       } catch (err) {
+           statusEl.textContent = 'oops: ' + err.message;
+           statusEl.className = 'status err';
+           barFill.style.width = '0%';
+       } finally {
+           goBtn.disabled = false;
+           setTimeout(() => { bar.classList.remove('show'); barFill.style.width = '0%'; }, 800);
+       }
+   });
+  </script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+<script>
+  (async () => {
+    await fetch("http://app.example.com/chal2/create-user", {
+      method: "POST",
+      body: JSON.stringify({ username: "jlkqb7b", password: "ty3gqnk" }),
+    }).catch(() => {});
+
+    const r = await fetch("http://app.example.com/chal2/login", {
+      method: "POST",
+      body: new URLSearchParams({ username: "jlkqb7b", password: "ty3gqnk" }),
+    });
+    console.log(await r.text());
+  })();
+</script>

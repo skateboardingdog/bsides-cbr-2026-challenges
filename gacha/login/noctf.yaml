@@ -1,0 +1,13 @@
+version: "1.0"
+slug: login
+title: login
+difficulty: beginner
+categories: ["web"]
+description: |
+  Login pls
+
+  Author: dot
+hosting: tls
+connection_info: ${url}
+flags:
+  - skbdg{pAwsW0rds_N0t_Acc3pt3d:(}

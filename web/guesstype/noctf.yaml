@@ -1,0 +1,15 @@
+version: "1.0"
+slug: guesstype
+title: guesstype
+categories: ["web"]
+difficulty: easy
+description: |
+  securing file uploads is easy when you have a rich standard library!
+  
+  Author: wednesday
+hosting: tls
+connection_info: ${url}
+files:
+  - ./publish/guesstype.py
+flags:
+  - skbdg{gu355_typ3_par53s_url5_u53_gu355_fil3_typ3_in5t3ad!}

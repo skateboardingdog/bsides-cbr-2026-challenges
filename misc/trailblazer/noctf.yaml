@@ -1,0 +1,18 @@
+version: "1.0"
+slug: trailblazer
+title: Trailblazer
+categories: ["misc"]
+difficulty: easy
+description: |
+  Welcome to the CTF hall! The skateboarding dogs cannot resist going joyriding on their colourful light cycles.
+
+  They should be careful with their next moves though, as they all need to make it back home without crossing one another's trails.
+
+  NOTE: The flag is not in regular flag format.
+
+  Author: Neobeo, chsh
+flags:
+  - skbdg{KENNELING}
+  - skbdg{kenneling}
+  - KENNELING
+  - kenneling

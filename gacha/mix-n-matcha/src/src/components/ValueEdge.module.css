@@ -1,0 +1,41 @@
+.chip {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  font-family: var(--mono);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.3;
+  padding: 3px 9px;
+  background: var(--panel-raised);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-sm);
+  color: var(--text-dim);
+  white-space: nowrap;
+  cursor: default;
+  user-select: none;
+}
+
+.selected .chip {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.decrypted {
+  padding: 4px 10px;
+  border-color: var(--accent);
+}
+
+.ascii {
+  display: block;
+  font-size: 17px;
+  color: var(--accent);
+}
+
+.hex {
+  display: block;
+  margin-top: 1px;
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--text-faint);
+}

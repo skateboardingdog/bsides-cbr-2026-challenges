@@ -1,0 +1,16 @@
+version: "1.0"
+slug: rop-1
+title: ROP 1
+categories: ["pwn"]
+difficulty: beginner
+description: |
+  Baby's first ROP.
+
+  Author: Neobeo
+connection_info: nc ${host} ${port}
+files:
+  - ./publish/rop1
+  - ./publish/rop1.c
+  - ./publish/Dockerfile
+flags:
+  - skbdg{you_dROPped_your_first_shell}

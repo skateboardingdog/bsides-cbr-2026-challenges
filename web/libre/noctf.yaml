@@ -1,0 +1,15 @@
+version: "1.0"
+slug: libre
+title: libre
+categories: ["web", "misc"]
+difficulty: medium
+description: |
+  extend embrace flag (?)
+
+  Author: wednesday
+hosting: tls
+connection_info: ${url}
+files:
+  - ./publish/handout.zip
+flags:
+  - skbdg{un1v3rs4l_c0nt3nt_br0k3rs_br0k3r1ng_fl4gs_w0w}

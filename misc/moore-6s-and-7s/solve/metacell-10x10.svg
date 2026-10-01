@@ -1,0 +1,661 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1320" height="520" viewBox="0 0 1320 520">
+<style>
+.bg{fill:#f8fafc}.panel{fill:#fff;stroke:#d6dee8;stroke-width:2}.grid{stroke:#dbe4ee;stroke-width:1.5}.gadget{fill:none;stroke:#94a3b8;stroke-width:2}
+.title{fill:#0f172a;font:700 28px monospace}.label{fill:#334155;font:700 20px monospace}.sub{fill:#64748b;font:16px monospace}
+.clue{fill:#334155;font:700 16px monospace}.loop{stroke:#dc2626;stroke-width:6;stroke-linecap:round}
+</style>
+<rect class="bg" width="100%" height="100%"/>
+<text class="title" x="36" y="46">10x10 completions</text>
+<text class="sub" x="36" y="74">12x12 view with boundary stubs.</text>
+
+<rect class="panel" x="40" y="96" rx="18" ry="18" width="400" height="388"/>
+<rect class="panel" x="460" y="96" rx="18" ry="18" width="400" height="388"/>
+<rect class="panel" x="880" y="96" rx="18" ry="18" width="400" height="388"/>
+
+<text class="label" x="62" y="128">EW</text>
+<text class="sub" x="122" y="128">east-west completion</text>
+<text class="label" x="482" y="128">SW</text>
+<text class="sub" x="542" y="128">south-west completion</text>
+<text class="label" x="902" y="128">ES</text>
+<text class="sub" x="962" y="128">east-south completion</text>
+
+<g transform="translate(120 154)">
+<line class="grid" x1="0" y1="0" x2="288" y2="0"/>
+<line class="grid" x1="0" y1="24" x2="288" y2="24"/>
+<line class="grid" x1="0" y1="48" x2="288" y2="48"/>
+<line class="grid" x1="0" y1="72" x2="288" y2="72"/>
+<line class="grid" x1="0" y1="96" x2="288" y2="96"/>
+<line class="grid" x1="0" y1="120" x2="288" y2="120"/>
+<line class="grid" x1="0" y1="144" x2="288" y2="144"/>
+<line class="grid" x1="0" y1="168" x2="288" y2="168"/>
+<line class="grid" x1="0" y1="192" x2="288" y2="192"/>
+<line class="grid" x1="0" y1="216" x2="288" y2="216"/>
+<line class="grid" x1="0" y1="240" x2="288" y2="240"/>
+<line class="grid" x1="0" y1="264" x2="288" y2="264"/>
+<line class="grid" x1="0" y1="288" x2="288" y2="288"/>
+<line class="grid" x1="0" y1="0" x2="0" y2="288"/>
+<line class="grid" x1="24" y1="0" x2="24" y2="288"/>
+<line class="grid" x1="48" y1="0" x2="48" y2="288"/>
+<line class="grid" x1="72" y1="0" x2="72" y2="288"/>
+<line class="grid" x1="96" y1="0" x2="96" y2="288"/>
+<line class="grid" x1="120" y1="0" x2="120" y2="288"/>
+<line class="grid" x1="144" y1="0" x2="144" y2="288"/>
+<line class="grid" x1="168" y1="0" x2="168" y2="288"/>
+<line class="grid" x1="192" y1="0" x2="192" y2="288"/>
+<line class="grid" x1="216" y1="0" x2="216" y2="288"/>
+<line class="grid" x1="240" y1="0" x2="240" y2="288"/>
+<line class="grid" x1="264" y1="0" x2="264" y2="288"/>
+<line class="grid" x1="288" y1="0" x2="288" y2="288"/>
+<rect class="gadget" x="24" y="24" width="240" height="240"/>
+<text class="clue" x="56" y="41">7</text>
+<text class="clue" x="80" y="41">7</text>
+<text class="clue" x="104" y="41">7</text>
+<text class="clue" x="176" y="41">7</text>
+<text class="clue" x="200" y="41">7</text>
+<text class="clue" x="224" y="41">7</text>
+<text class="clue" x="32" y="65">7</text>
+<text class="clue" x="80" y="65">6</text>
+<text class="clue" x="152" y="65">6</text>
+<text class="clue" x="200" y="65">6</text>
+<text class="clue" x="248" y="65">7</text>
+<text class="clue" x="32" y="89">7</text>
+<text class="clue" x="56" y="89">6</text>
+<text class="clue" x="80" y="89">7</text>
+<text class="clue" x="104" y="89">6</text>
+<text class="clue" x="128" y="89">7</text>
+<text class="clue" x="152" y="89">7</text>
+<text class="clue" x="176" y="89">6</text>
+<text class="clue" x="200" y="89">7</text>
+<text class="clue" x="224" y="89">6</text>
+<text class="clue" x="248" y="89">7</text>
+<text class="clue" x="32" y="113">7</text>
+<text class="clue" x="80" y="113">7</text>
+<text class="clue" x="128" y="113">6</text>
+<text class="clue" x="176" y="113">6</text>
+<text class="clue" x="200" y="113">6</text>
+<text class="clue" x="248" y="113">7</text>
+<text class="clue" x="56" y="137">6</text>
+<text class="clue" x="128" y="137">7</text>
+<text class="clue" x="152" y="137">6</text>
+<text class="clue" x="176" y="137">6</text>
+<text class="clue" x="200" y="137">6</text>
+<text class="clue" x="80" y="161">7</text>
+<text class="clue" x="104" y="161">6</text>
+<text class="clue" x="128" y="161">6</text>
+<text class="clue" x="152" y="161">6</text>
+<text class="clue" x="176" y="161">6</text>
+<text class="clue" x="224" y="161">6</text>
+<text class="clue" x="32" y="185">7</text>
+<text class="clue" x="80" y="185">6</text>
+<text class="clue" x="104" y="185">6</text>
+<text class="clue" x="128" y="185">6</text>
+<text class="clue" x="152" y="185">6</text>
+<text class="clue" x="176" y="185">7</text>
+<text class="clue" x="200" y="185">6</text>
+<text class="clue" x="224" y="185">6</text>
+<text class="clue" x="248" y="185">7</text>
+<text class="clue" x="32" y="209">7</text>
+<text class="clue" x="56" y="209">6</text>
+<text class="clue" x="80" y="209">7</text>
+<text class="clue" x="104" y="209">6</text>
+<text class="clue" x="152" y="209">6</text>
+<text class="clue" x="176" y="209">6</text>
+<text class="clue" x="200" y="209">6</text>
+<text class="clue" x="224" y="209">6</text>
+<text class="clue" x="248" y="209">7</text>
+<text class="clue" x="32" y="233">7</text>
+<text class="clue" x="80" y="233">6</text>
+<text class="clue" x="152" y="233">6</text>
+<text class="clue" x="200" y="233">6</text>
+<text class="clue" x="248" y="233">7</text>
+<text class="clue" x="56" y="257">7</text>
+<text class="clue" x="80" y="257">7</text>
+<text class="clue" x="104" y="257">7</text>
+<text class="clue" x="176" y="257">7</text>
+<text class="clue" x="200" y="257">7</text>
+<text class="clue" x="224" y="257">7</text>
+<line class="loop" x1="48" y1="24" x2="72" y2="24"/>
+<line class="loop" x1="96" y1="24" x2="120" y2="24"/>
+<line class="loop" x1="168" y1="24" x2="192" y2="24"/>
+<line class="loop" x1="216" y1="24" x2="240" y2="24"/>
+<line class="loop" x1="24" y1="48" x2="48" y2="48"/>
+<line class="loop" x1="72" y1="48" x2="96" y2="48"/>
+<line class="loop" x1="120" y1="48" x2="144" y2="48"/>
+<line class="loop" x1="144" y1="48" x2="168" y2="48"/>
+<line class="loop" x1="192" y1="48" x2="216" y2="48"/>
+<line class="loop" x1="240" y1="48" x2="264" y2="48"/>
+<line class="loop" x1="24" y1="72" x2="48" y2="72"/>
+<line class="loop" x1="72" y1="72" x2="96" y2="72"/>
+<line class="loop" x1="96" y1="72" x2="120" y2="72"/>
+<line class="loop" x1="144" y1="72" x2="168" y2="72"/>
+<line class="loop" x1="192" y1="72" x2="216" y2="72"/>
+<line class="loop" x1="240" y1="72" x2="264" y2="72"/>
+<line class="loop" x1="24" y1="96" x2="48" y2="96"/>
+<line class="loop" x1="72" y1="96" x2="96" y2="96"/>
+<line class="loop" x1="120" y1="96" x2="144" y2="96"/>
+<line class="loop" x1="240" y1="96" x2="264" y2="96"/>
+<line class="loop" x1="24" y1="120" x2="48" y2="120"/>
+<line class="loop" x1="72" y1="120" x2="96" y2="120"/>
+<line class="loop" x1="120" y1="120" x2="144" y2="120"/>
+<line class="loop" x1="216" y1="120" x2="240" y2="120"/>
+<line class="loop" x1="240" y1="120" x2="264" y2="120"/>
+<line class="loop" x1="24" y1="144" x2="48" y2="144"/>
+<line class="loop" x1="72" y1="144" x2="96" y2="144"/>
+<line class="loop" x1="192" y1="144" x2="216" y2="144"/>
+<line class="loop" x1="216" y1="144" x2="240" y2="144"/>
+<line class="loop" x1="240" y1="144" x2="264" y2="144"/>
+<line class="loop" x1="24" y1="168" x2="48" y2="168"/>
+<line class="loop" x1="48" y1="168" x2="72" y2="168"/>
+<line class="loop" x1="72" y1="168" x2="96" y2="168"/>
+<line class="loop" x1="168" y1="168" x2="192" y2="168"/>
+<line class="loop" x1="216" y1="168" x2="240" y2="168"/>
+<line class="loop" x1="240" y1="168" x2="264" y2="168"/>
+<line class="loop" x1="24" y1="192" x2="48" y2="192"/>
+<line class="loop" x1="72" y1="192" x2="96" y2="192"/>
+<line class="loop" x1="96" y1="192" x2="120" y2="192"/>
+<line class="loop" x1="144" y1="192" x2="168" y2="192"/>
+<line class="loop" x1="168" y1="192" x2="192" y2="192"/>
+<line class="loop" x1="240" y1="192" x2="264" y2="192"/>
+<line class="loop" x1="24" y1="216" x2="48" y2="216"/>
+<line class="loop" x1="72" y1="216" x2="96" y2="216"/>
+<line class="loop" x1="96" y1="216" x2="120" y2="216"/>
+<line class="loop" x1="120" y1="216" x2="144" y2="216"/>
+<line class="loop" x1="144" y1="216" x2="168" y2="216"/>
+<line class="loop" x1="168" y1="216" x2="192" y2="216"/>
+<line class="loop" x1="192" y1="216" x2="216" y2="216"/>
+<line class="loop" x1="240" y1="216" x2="264" y2="216"/>
+<line class="loop" x1="24" y1="240" x2="48" y2="240"/>
+<line class="loop" x1="72" y1="240" x2="96" y2="240"/>
+<line class="loop" x1="120" y1="240" x2="144" y2="240"/>
+<line class="loop" x1="144" y1="240" x2="168" y2="240"/>
+<line class="loop" x1="192" y1="240" x2="216" y2="240"/>
+<line class="loop" x1="240" y1="240" x2="264" y2="240"/>
+<line class="loop" x1="48" y1="264" x2="72" y2="264"/>
+<line class="loop" x1="96" y1="264" x2="120" y2="264"/>
+<line class="loop" x1="168" y1="264" x2="192" y2="264"/>
+<line class="loop" x1="216" y1="264" x2="240" y2="264"/>
+<line class="loop" x1="48" y1="24" x2="48" y2="48"/>
+<line class="loop" x1="72" y1="24" x2="72" y2="48"/>
+<line class="loop" x1="96" y1="24" x2="96" y2="48"/>
+<line class="loop" x1="120" y1="24" x2="120" y2="48"/>
+<line class="loop" x1="168" y1="24" x2="168" y2="48"/>
+<line class="loop" x1="192" y1="24" x2="192" y2="48"/>
+<line class="loop" x1="216" y1="24" x2="216" y2="48"/>
+<line class="loop" x1="240" y1="24" x2="240" y2="48"/>
+<line class="loop" x1="24" y1="48" x2="24" y2="72"/>
+<line class="loop" x1="264" y1="48" x2="264" y2="72"/>
+<line class="loop" x1="48" y1="72" x2="48" y2="96"/>
+<line class="loop" x1="72" y1="72" x2="72" y2="96"/>
+<line class="loop" x1="120" y1="72" x2="120" y2="96"/>
+<line class="loop" x1="144" y1="72" x2="144" y2="96"/>
+<line class="loop" x1="168" y1="72" x2="168" y2="96"/>
+<line class="loop" x1="192" y1="72" x2="192" y2="96"/>
+<line class="loop" x1="216" y1="72" x2="216" y2="96"/>
+<line class="loop" x1="240" y1="72" x2="240" y2="96"/>
+<line class="loop" x1="24" y1="96" x2="24" y2="120"/>
+<line class="loop" x1="96" y1="96" x2="96" y2="120"/>
+<line class="loop" x1="168" y1="96" x2="168" y2="120"/>
+<line class="loop" x1="192" y1="96" x2="192" y2="120"/>
+<line class="loop" x1="216" y1="96" x2="216" y2="120"/>
+<line class="loop" x1="264" y1="96" x2="264" y2="120"/>
+<line class="loop" x1="48" y1="120" x2="48" y2="144"/>
+<line class="loop" x1="72" y1="120" x2="72" y2="144"/>
+<line class="loop" x1="120" y1="120" x2="120" y2="144"/>
+<line class="loop" x1="144" y1="120" x2="144" y2="144"/>
+<line class="loop" x1="168" y1="120" x2="168" y2="144"/>
+<line class="loop" x1="192" y1="120" x2="192" y2="144"/>
+<line class="loop" x1="96" y1="144" x2="96" y2="168"/>
+<line class="loop" x1="120" y1="144" x2="120" y2="168"/>
+<line class="loop" x1="144" y1="144" x2="144" y2="168"/>
+<line class="loop" x1="168" y1="144" x2="168" y2="168"/>
+<line class="loop" x1="24" y1="168" x2="24" y2="192"/>
+<line class="loop" x1="120" y1="168" x2="120" y2="192"/>
+<line class="loop" x1="144" y1="168" x2="144" y2="192"/>
+<line class="loop" x1="192" y1="168" x2="192" y2="192"/>
+<line class="loop" x1="216" y1="168" x2="216" y2="192"/>
+<line class="loop" x1="264" y1="168" x2="264" y2="192"/>
+<line class="loop" x1="48" y1="192" x2="48" y2="216"/>
+<line class="loop" x1="72" y1="192" x2="72" y2="216"/>
+<line class="loop" x1="216" y1="192" x2="216" y2="216"/>
+<line class="loop" x1="240" y1="192" x2="240" y2="216"/>
+<line class="loop" x1="24" y1="216" x2="24" y2="240"/>
+<line class="loop" x1="264" y1="216" x2="264" y2="240"/>
+<line class="loop" x1="48" y1="240" x2="48" y2="264"/>
+<line class="loop" x1="72" y1="240" x2="72" y2="264"/>
+<line class="loop" x1="96" y1="240" x2="96" y2="264"/>
+<line class="loop" x1="120" y1="240" x2="120" y2="264"/>
+<line class="loop" x1="168" y1="240" x2="168" y2="264"/>
+<line class="loop" x1="192" y1="240" x2="192" y2="264"/>
+<line class="loop" x1="216" y1="240" x2="216" y2="264"/>
+<line class="loop" x1="240" y1="240" x2="240" y2="264"/>
+<line class="loop" x1="24" y1="144" x2="0" y2="144"/>
+<line class="loop" x1="264" y1="144" x2="288" y2="144"/>
+</g>
+
+<g transform="translate(540 154)">
+<line class="grid" x1="0" y1="0" x2="288" y2="0"/>
+<line class="grid" x1="0" y1="24" x2="288" y2="24"/>
+<line class="grid" x1="0" y1="48" x2="288" y2="48"/>
+<line class="grid" x1="0" y1="72" x2="288" y2="72"/>
+<line class="grid" x1="0" y1="96" x2="288" y2="96"/>
+<line class="grid" x1="0" y1="120" x2="288" y2="120"/>
+<line class="grid" x1="0" y1="144" x2="288" y2="144"/>
+<line class="grid" x1="0" y1="168" x2="288" y2="168"/>
+<line class="grid" x1="0" y1="192" x2="288" y2="192"/>
+<line class="grid" x1="0" y1="216" x2="288" y2="216"/>
+<line class="grid" x1="0" y1="240" x2="288" y2="240"/>
+<line class="grid" x1="0" y1="264" x2="288" y2="264"/>
+<line class="grid" x1="0" y1="288" x2="288" y2="288"/>
+<line class="grid" x1="0" y1="0" x2="0" y2="288"/>
+<line class="grid" x1="24" y1="0" x2="24" y2="288"/>
+<line class="grid" x1="48" y1="0" x2="48" y2="288"/>
+<line class="grid" x1="72" y1="0" x2="72" y2="288"/>
+<line class="grid" x1="96" y1="0" x2="96" y2="288"/>
+<line class="grid" x1="120" y1="0" x2="120" y2="288"/>
+<line class="grid" x1="144" y1="0" x2="144" y2="288"/>
+<line class="grid" x1="168" y1="0" x2="168" y2="288"/>
+<line class="grid" x1="192" y1="0" x2="192" y2="288"/>
+<line class="grid" x1="216" y1="0" x2="216" y2="288"/>
+<line class="grid" x1="240" y1="0" x2="240" y2="288"/>
+<line class="grid" x1="264" y1="0" x2="264" y2="288"/>
+<line class="grid" x1="288" y1="0" x2="288" y2="288"/>
+<rect class="gadget" x="24" y="24" width="240" height="240"/>
+<text class="clue" x="56" y="41">7</text>
+<text class="clue" x="80" y="41">7</text>
+<text class="clue" x="104" y="41">7</text>
+<text class="clue" x="176" y="41">7</text>
+<text class="clue" x="200" y="41">7</text>
+<text class="clue" x="224" y="41">7</text>
+<text class="clue" x="32" y="65">7</text>
+<text class="clue" x="80" y="65">6</text>
+<text class="clue" x="152" y="65">6</text>
+<text class="clue" x="200" y="65">6</text>
+<text class="clue" x="248" y="65">7</text>
+<text class="clue" x="32" y="89">7</text>
+<text class="clue" x="56" y="89">6</text>
+<text class="clue" x="80" y="89">7</text>
+<text class="clue" x="104" y="89">6</text>
+<text class="clue" x="128" y="89">7</text>
+<text class="clue" x="152" y="89">7</text>
+<text class="clue" x="176" y="89">6</text>
+<text class="clue" x="200" y="89">7</text>
+<text class="clue" x="224" y="89">6</text>
+<text class="clue" x="248" y="89">7</text>
+<text class="clue" x="32" y="113">7</text>
+<text class="clue" x="80" y="113">7</text>
+<text class="clue" x="128" y="113">6</text>
+<text class="clue" x="176" y="113">6</text>
+<text class="clue" x="200" y="113">6</text>
+<text class="clue" x="248" y="113">7</text>
+<text class="clue" x="56" y="137">6</text>
+<text class="clue" x="128" y="137">7</text>
+<text class="clue" x="152" y="137">6</text>
+<text class="clue" x="176" y="137">6</text>
+<text class="clue" x="200" y="137">6</text>
+<text class="clue" x="80" y="161">7</text>
+<text class="clue" x="104" y="161">6</text>
+<text class="clue" x="128" y="161">6</text>
+<text class="clue" x="152" y="161">6</text>
+<text class="clue" x="176" y="161">6</text>
+<text class="clue" x="224" y="161">6</text>
+<text class="clue" x="32" y="185">7</text>
+<text class="clue" x="80" y="185">6</text>
+<text class="clue" x="104" y="185">6</text>
+<text class="clue" x="128" y="185">6</text>
+<text class="clue" x="152" y="185">6</text>
+<text class="clue" x="176" y="185">7</text>
+<text class="clue" x="200" y="185">6</text>
+<text class="clue" x="224" y="185">6</text>
+<text class="clue" x="248" y="185">7</text>
+<text class="clue" x="32" y="209">7</text>
+<text class="clue" x="56" y="209">6</text>
+<text class="clue" x="80" y="209">7</text>
+<text class="clue" x="104" y="209">6</text>
+<text class="clue" x="152" y="209">6</text>
+<text class="clue" x="176" y="209">6</text>
+<text class="clue" x="200" y="209">6</text>
+<text class="clue" x="224" y="209">6</text>
+<text class="clue" x="248" y="209">7</text>
+<text class="clue" x="32" y="233">7</text>
+<text class="clue" x="80" y="233">6</text>
+<text class="clue" x="152" y="233">6</text>
+<text class="clue" x="200" y="233">6</text>
+<text class="clue" x="248" y="233">7</text>
+<text class="clue" x="56" y="257">7</text>
+<text class="clue" x="80" y="257">7</text>
+<text class="clue" x="104" y="257">7</text>
+<text class="clue" x="176" y="257">7</text>
+<text class="clue" x="200" y="257">7</text>
+<text class="clue" x="224" y="257">7</text>
+<line class="loop" x1="48" y1="24" x2="72" y2="24"/>
+<line class="loop" x1="96" y1="24" x2="120" y2="24"/>
+<line class="loop" x1="168" y1="24" x2="192" y2="24"/>
+<line class="loop" x1="216" y1="24" x2="240" y2="24"/>
+<line class="loop" x1="24" y1="48" x2="48" y2="48"/>
+<line class="loop" x1="72" y1="48" x2="96" y2="48"/>
+<line class="loop" x1="120" y1="48" x2="144" y2="48"/>
+<line class="loop" x1="144" y1="48" x2="168" y2="48"/>
+<line class="loop" x1="192" y1="48" x2="216" y2="48"/>
+<line class="loop" x1="240" y1="48" x2="264" y2="48"/>
+<line class="loop" x1="24" y1="72" x2="48" y2="72"/>
+<line class="loop" x1="72" y1="72" x2="96" y2="72"/>
+<line class="loop" x1="96" y1="72" x2="120" y2="72"/>
+<line class="loop" x1="144" y1="72" x2="168" y2="72"/>
+<line class="loop" x1="192" y1="72" x2="216" y2="72"/>
+<line class="loop" x1="240" y1="72" x2="264" y2="72"/>
+<line class="loop" x1="24" y1="96" x2="48" y2="96"/>
+<line class="loop" x1="72" y1="96" x2="96" y2="96"/>
+<line class="loop" x1="120" y1="96" x2="144" y2="96"/>
+<line class="loop" x1="240" y1="96" x2="264" y2="96"/>
+<line class="loop" x1="24" y1="120" x2="48" y2="120"/>
+<line class="loop" x1="48" y1="120" x2="72" y2="120"/>
+<line class="loop" x1="72" y1="120" x2="96" y2="120"/>
+<line class="loop" x1="120" y1="120" x2="144" y2="120"/>
+<line class="loop" x1="240" y1="120" x2="264" y2="120"/>
+<line class="loop" x1="24" y1="144" x2="48" y2="144"/>
+<line class="loop" x1="48" y1="144" x2="72" y2="144"/>
+<line class="loop" x1="72" y1="144" x2="96" y2="144"/>
+<line class="loop" x1="216" y1="144" x2="240" y2="144"/>
+<line class="loop" x1="24" y1="168" x2="48" y2="168"/>
+<line class="loop" x1="48" y1="168" x2="72" y2="168"/>
+<line class="loop" x1="72" y1="168" x2="96" y2="168"/>
+<line class="loop" x1="216" y1="168" x2="240" y2="168"/>
+<line class="loop" x1="240" y1="168" x2="264" y2="168"/>
+<line class="loop" x1="24" y1="192" x2="48" y2="192"/>
+<line class="loop" x1="72" y1="192" x2="96" y2="192"/>
+<line class="loop" x1="96" y1="192" x2="120" y2="192"/>
+<line class="loop" x1="168" y1="192" x2="192" y2="192"/>
+<line class="loop" x1="240" y1="192" x2="264" y2="192"/>
+<line class="loop" x1="24" y1="216" x2="48" y2="216"/>
+<line class="loop" x1="72" y1="216" x2="96" y2="216"/>
+<line class="loop" x1="96" y1="216" x2="120" y2="216"/>
+<line class="loop" x1="144" y1="216" x2="168" y2="216"/>
+<line class="loop" x1="168" y1="216" x2="192" y2="216"/>
+<line class="loop" x1="192" y1="216" x2="216" y2="216"/>
+<line class="loop" x1="240" y1="216" x2="264" y2="216"/>
+<line class="loop" x1="24" y1="240" x2="48" y2="240"/>
+<line class="loop" x1="72" y1="240" x2="96" y2="240"/>
+<line class="loop" x1="144" y1="240" x2="168" y2="240"/>
+<line class="loop" x1="192" y1="240" x2="216" y2="240"/>
+<line class="loop" x1="240" y1="240" x2="264" y2="240"/>
+<line class="loop" x1="48" y1="264" x2="72" y2="264"/>
+<line class="loop" x1="96" y1="264" x2="120" y2="264"/>
+<line class="loop" x1="168" y1="264" x2="192" y2="264"/>
+<line class="loop" x1="216" y1="264" x2="240" y2="264"/>
+<line class="loop" x1="48" y1="24" x2="48" y2="48"/>
+<line class="loop" x1="72" y1="24" x2="72" y2="48"/>
+<line class="loop" x1="96" y1="24" x2="96" y2="48"/>
+<line class="loop" x1="120" y1="24" x2="120" y2="48"/>
+<line class="loop" x1="168" y1="24" x2="168" y2="48"/>
+<line class="loop" x1="192" y1="24" x2="192" y2="48"/>
+<line class="loop" x1="216" y1="24" x2="216" y2="48"/>
+<line class="loop" x1="240" y1="24" x2="240" y2="48"/>
+<line class="loop" x1="24" y1="48" x2="24" y2="72"/>
+<line class="loop" x1="264" y1="48" x2="264" y2="72"/>
+<line class="loop" x1="48" y1="72" x2="48" y2="96"/>
+<line class="loop" x1="72" y1="72" x2="72" y2="96"/>
+<line class="loop" x1="120" y1="72" x2="120" y2="96"/>
+<line class="loop" x1="144" y1="72" x2="144" y2="96"/>
+<line class="loop" x1="168" y1="72" x2="168" y2="96"/>
+<line class="loop" x1="192" y1="72" x2="192" y2="96"/>
+<line class="loop" x1="216" y1="72" x2="216" y2="96"/>
+<line class="loop" x1="240" y1="72" x2="240" y2="96"/>
+<line class="loop" x1="24" y1="96" x2="24" y2="120"/>
+<line class="loop" x1="96" y1="96" x2="96" y2="120"/>
+<line class="loop" x1="168" y1="96" x2="168" y2="120"/>
+<line class="loop" x1="192" y1="96" x2="192" y2="120"/>
+<line class="loop" x1="216" y1="96" x2="216" y2="120"/>
+<line class="loop" x1="264" y1="96" x2="264" y2="120"/>
+<line class="loop" x1="120" y1="120" x2="120" y2="144"/>
+<line class="loop" x1="144" y1="120" x2="144" y2="144"/>
+<line class="loop" x1="168" y1="120" x2="168" y2="144"/>
+<line class="loop" x1="192" y1="120" x2="192" y2="144"/>
+<line class="loop" x1="216" y1="120" x2="216" y2="144"/>
+<line class="loop" x1="240" y1="120" x2="240" y2="144"/>
+<line class="loop" x1="96" y1="144" x2="96" y2="168"/>
+<line class="loop" x1="120" y1="144" x2="120" y2="168"/>
+<line class="loop" x1="144" y1="144" x2="144" y2="168"/>
+<line class="loop" x1="168" y1="144" x2="168" y2="168"/>
+<line class="loop" x1="192" y1="144" x2="192" y2="168"/>
+<line class="loop" x1="24" y1="168" x2="24" y2="192"/>
+<line class="loop" x1="120" y1="168" x2="120" y2="192"/>
+<line class="loop" x1="144" y1="168" x2="144" y2="192"/>
+<line class="loop" x1="168" y1="168" x2="168" y2="192"/>
+<line class="loop" x1="192" y1="168" x2="192" y2="192"/>
+<line class="loop" x1="216" y1="168" x2="216" y2="192"/>
+<line class="loop" x1="264" y1="168" x2="264" y2="192"/>
+<line class="loop" x1="48" y1="192" x2="48" y2="216"/>
+<line class="loop" x1="72" y1="192" x2="72" y2="216"/>
+<line class="loop" x1="144" y1="192" x2="144" y2="216"/>
+<line class="loop" x1="216" y1="192" x2="216" y2="216"/>
+<line class="loop" x1="240" y1="192" x2="240" y2="216"/>
+<line class="loop" x1="24" y1="216" x2="24" y2="240"/>
+<line class="loop" x1="120" y1="216" x2="120" y2="240"/>
+<line class="loop" x1="264" y1="216" x2="264" y2="240"/>
+<line class="loop" x1="48" y1="240" x2="48" y2="264"/>
+<line class="loop" x1="72" y1="240" x2="72" y2="264"/>
+<line class="loop" x1="96" y1="240" x2="96" y2="264"/>
+<line class="loop" x1="120" y1="240" x2="120" y2="264"/>
+<line class="loop" x1="144" y1="240" x2="144" y2="264"/>
+<line class="loop" x1="168" y1="240" x2="168" y2="264"/>
+<line class="loop" x1="192" y1="240" x2="192" y2="264"/>
+<line class="loop" x1="216" y1="240" x2="216" y2="264"/>
+<line class="loop" x1="240" y1="240" x2="240" y2="264"/>
+<line class="loop" x1="144" y1="264" x2="144" y2="288"/>
+<line class="loop" x1="24" y1="144" x2="0" y2="144"/>
+</g>
+
+<g transform="translate(960 154)">
+<line class="grid" x1="0" y1="0" x2="288" y2="0"/>
+<line class="grid" x1="0" y1="24" x2="288" y2="24"/>
+<line class="grid" x1="0" y1="48" x2="288" y2="48"/>
+<line class="grid" x1="0" y1="72" x2="288" y2="72"/>
+<line class="grid" x1="0" y1="96" x2="288" y2="96"/>
+<line class="grid" x1="0" y1="120" x2="288" y2="120"/>
+<line class="grid" x1="0" y1="144" x2="288" y2="144"/>
+<line class="grid" x1="0" y1="168" x2="288" y2="168"/>
+<line class="grid" x1="0" y1="192" x2="288" y2="192"/>
+<line class="grid" x1="0" y1="216" x2="288" y2="216"/>
+<line class="grid" x1="0" y1="240" x2="288" y2="240"/>
+<line class="grid" x1="0" y1="264" x2="288" y2="264"/>
+<line class="grid" x1="0" y1="288" x2="288" y2="288"/>
+<line class="grid" x1="0" y1="0" x2="0" y2="288"/>
+<line class="grid" x1="24" y1="0" x2="24" y2="288"/>
+<line class="grid" x1="48" y1="0" x2="48" y2="288"/>
+<line class="grid" x1="72" y1="0" x2="72" y2="288"/>
+<line class="grid" x1="96" y1="0" x2="96" y2="288"/>
+<line class="grid" x1="120" y1="0" x2="120" y2="288"/>
+<line class="grid" x1="144" y1="0" x2="144" y2="288"/>
+<line class="grid" x1="168" y1="0" x2="168" y2="288"/>
+<line class="grid" x1="192" y1="0" x2="192" y2="288"/>
+<line class="grid" x1="216" y1="0" x2="216" y2="288"/>
+<line class="grid" x1="240" y1="0" x2="240" y2="288"/>
+<line class="grid" x1="264" y1="0" x2="264" y2="288"/>
+<line class="grid" x1="288" y1="0" x2="288" y2="288"/>
+<rect class="gadget" x="24" y="24" width="240" height="240"/>
+<text class="clue" x="56" y="41">7</text>
+<text class="clue" x="80" y="41">7</text>
+<text class="clue" x="104" y="41">7</text>
+<text class="clue" x="176" y="41">7</text>
+<text class="clue" x="200" y="41">7</text>
+<text class="clue" x="224" y="41">7</text>
+<text class="clue" x="32" y="65">7</text>
+<text class="clue" x="80" y="65">6</text>
+<text class="clue" x="152" y="65">6</text>
+<text class="clue" x="200" y="65">6</text>
+<text class="clue" x="248" y="65">7</text>
+<text class="clue" x="32" y="89">7</text>
+<text class="clue" x="56" y="89">6</text>
+<text class="clue" x="80" y="89">7</text>
+<text class="clue" x="104" y="89">6</text>
+<text class="clue" x="128" y="89">7</text>
+<text class="clue" x="152" y="89">7</text>
+<text class="clue" x="176" y="89">6</text>
+<text class="clue" x="200" y="89">7</text>
+<text class="clue" x="224" y="89">6</text>
+<text class="clue" x="248" y="89">7</text>
+<text class="clue" x="32" y="113">7</text>
+<text class="clue" x="80" y="113">7</text>
+<text class="clue" x="128" y="113">6</text>
+<text class="clue" x="176" y="113">6</text>
+<text class="clue" x="200" y="113">6</text>
+<text class="clue" x="248" y="113">7</text>
+<text class="clue" x="56" y="137">6</text>
+<text class="clue" x="128" y="137">7</text>
+<text class="clue" x="152" y="137">6</text>
+<text class="clue" x="176" y="137">6</text>
+<text class="clue" x="200" y="137">6</text>
+<text class="clue" x="80" y="161">7</text>
+<text class="clue" x="104" y="161">6</text>
+<text class="clue" x="128" y="161">6</text>
+<text class="clue" x="152" y="161">6</text>
+<text class="clue" x="176" y="161">6</text>
+<text class="clue" x="224" y="161">6</text>
+<text class="clue" x="32" y="185">7</text>
+<text class="clue" x="80" y="185">6</text>
+<text class="clue" x="104" y="185">6</text>
+<text class="clue" x="128" y="185">6</text>
+<text class="clue" x="152" y="185">6</text>
+<text class="clue" x="176" y="185">7</text>
+<text class="clue" x="200" y="185">6</text>
+<text class="clue" x="224" y="185">6</text>
+<text class="clue" x="248" y="185">7</text>
+<text class="clue" x="32" y="209">7</text>
+<text class="clue" x="56" y="209">6</text>
+<text class="clue" x="80" y="209">7</text>
+<text class="clue" x="104" y="209">6</text>
+<text class="clue" x="152" y="209">6</text>
+<text class="clue" x="176" y="209">6</text>
+<text class="clue" x="200" y="209">6</text>
+<text class="clue" x="224" y="209">6</text>
+<text class="clue" x="248" y="209">7</text>
+<text class="clue" x="32" y="233">7</text>
+<text class="clue" x="80" y="233">6</text>
+<text class="clue" x="152" y="233">6</text>
+<text class="clue" x="200" y="233">6</text>
+<text class="clue" x="248" y="233">7</text>
+<text class="clue" x="56" y="257">7</text>
+<text class="clue" x="80" y="257">7</text>
+<text class="clue" x="104" y="257">7</text>
+<text class="clue" x="176" y="257">7</text>
+<text class="clue" x="200" y="257">7</text>
+<text class="clue" x="224" y="257">7</text>
+<line class="loop" x1="48" y1="24" x2="72" y2="24"/>
+<line class="loop" x1="96" y1="24" x2="120" y2="24"/>
+<line class="loop" x1="168" y1="24" x2="192" y2="24"/>
+<line class="loop" x1="216" y1="24" x2="240" y2="24"/>
+<line class="loop" x1="24" y1="48" x2="48" y2="48"/>
+<line class="loop" x1="72" y1="48" x2="96" y2="48"/>
+<line class="loop" x1="120" y1="48" x2="144" y2="48"/>
+<line class="loop" x1="144" y1="48" x2="168" y2="48"/>
+<line class="loop" x1="192" y1="48" x2="216" y2="48"/>
+<line class="loop" x1="240" y1="48" x2="264" y2="48"/>
+<line class="loop" x1="24" y1="72" x2="48" y2="72"/>
+<line class="loop" x1="72" y1="72" x2="96" y2="72"/>
+<line class="loop" x1="96" y1="72" x2="120" y2="72"/>
+<line class="loop" x1="144" y1="72" x2="168" y2="72"/>
+<line class="loop" x1="192" y1="72" x2="216" y2="72"/>
+<line class="loop" x1="240" y1="72" x2="264" y2="72"/>
+<line class="loop" x1="24" y1="96" x2="48" y2="96"/>
+<line class="loop" x1="72" y1="96" x2="96" y2="96"/>
+<line class="loop" x1="120" y1="96" x2="144" y2="96"/>
+<line class="loop" x1="240" y1="96" x2="264" y2="96"/>
+<line class="loop" x1="24" y1="120" x2="48" y2="120"/>
+<line class="loop" x1="72" y1="120" x2="96" y2="120"/>
+<line class="loop" x1="120" y1="120" x2="144" y2="120"/>
+<line class="loop" x1="216" y1="120" x2="240" y2="120"/>
+<line class="loop" x1="240" y1="120" x2="264" y2="120"/>
+<line class="loop" x1="72" y1="144" x2="96" y2="144"/>
+<line class="loop" x1="192" y1="144" x2="216" y2="144"/>
+<line class="loop" x1="216" y1="144" x2="240" y2="144"/>
+<line class="loop" x1="240" y1="144" x2="264" y2="144"/>
+<line class="loop" x1="24" y1="168" x2="48" y2="168"/>
+<line class="loop" x1="72" y1="168" x2="96" y2="168"/>
+<line class="loop" x1="168" y1="168" x2="192" y2="168"/>
+<line class="loop" x1="216" y1="168" x2="240" y2="168"/>
+<line class="loop" x1="240" y1="168" x2="264" y2="168"/>
+<line class="loop" x1="24" y1="192" x2="48" y2="192"/>
+<line class="loop" x1="96" y1="192" x2="120" y2="192"/>
+<line class="loop" x1="144" y1="192" x2="168" y2="192"/>
+<line class="loop" x1="168" y1="192" x2="192" y2="192"/>
+<line class="loop" x1="240" y1="192" x2="264" y2="192"/>
+<line class="loop" x1="24" y1="216" x2="48" y2="216"/>
+<line class="loop" x1="72" y1="216" x2="96" y2="216"/>
+<line class="loop" x1="120" y1="216" x2="144" y2="216"/>
+<line class="loop" x1="144" y1="216" x2="168" y2="216"/>
+<line class="loop" x1="168" y1="216" x2="192" y2="216"/>
+<line class="loop" x1="192" y1="216" x2="216" y2="216"/>
+<line class="loop" x1="240" y1="216" x2="264" y2="216"/>
+<line class="loop" x1="24" y1="240" x2="48" y2="240"/>
+<line class="loop" x1="72" y1="240" x2="96" y2="240"/>
+<line class="loop" x1="144" y1="240" x2="168" y2="240"/>
+<line class="loop" x1="192" y1="240" x2="216" y2="240"/>
+<line class="loop" x1="240" y1="240" x2="264" y2="240"/>
+<line class="loop" x1="48" y1="264" x2="72" y2="264"/>
+<line class="loop" x1="96" y1="264" x2="120" y2="264"/>
+<line class="loop" x1="168" y1="264" x2="192" y2="264"/>
+<line class="loop" x1="216" y1="264" x2="240" y2="264"/>
+<line class="loop" x1="48" y1="24" x2="48" y2="48"/>
+<line class="loop" x1="72" y1="24" x2="72" y2="48"/>
+<line class="loop" x1="96" y1="24" x2="96" y2="48"/>
+<line class="loop" x1="120" y1="24" x2="120" y2="48"/>
+<line class="loop" x1="168" y1="24" x2="168" y2="48"/>
+<line class="loop" x1="192" y1="24" x2="192" y2="48"/>
+<line class="loop" x1="216" y1="24" x2="216" y2="48"/>
+<line class="loop" x1="240" y1="24" x2="240" y2="48"/>
+<line class="loop" x1="24" y1="48" x2="24" y2="72"/>
+<line class="loop" x1="264" y1="48" x2="264" y2="72"/>
+<line class="loop" x1="48" y1="72" x2="48" y2="96"/>
+<line class="loop" x1="72" y1="72" x2="72" y2="96"/>
+<line class="loop" x1="120" y1="72" x2="120" y2="96"/>
+<line class="loop" x1="144" y1="72" x2="144" y2="96"/>
+<line class="loop" x1="168" y1="72" x2="168" y2="96"/>
+<line class="loop" x1="192" y1="72" x2="192" y2="96"/>
+<line class="loop" x1="216" y1="72" x2="216" y2="96"/>
+<line class="loop" x1="240" y1="72" x2="240" y2="96"/>
+<line class="loop" x1="24" y1="96" x2="24" y2="120"/>
+<line class="loop" x1="96" y1="96" x2="96" y2="120"/>
+<line class="loop" x1="168" y1="96" x2="168" y2="120"/>
+<line class="loop" x1="192" y1="96" x2="192" y2="120"/>
+<line class="loop" x1="216" y1="96" x2="216" y2="120"/>
+<line class="loop" x1="264" y1="96" x2="264" y2="120"/>
+<line class="loop" x1="48" y1="120" x2="48" y2="144"/>
+<line class="loop" x1="72" y1="120" x2="72" y2="144"/>
+<line class="loop" x1="120" y1="120" x2="120" y2="144"/>
+<line class="loop" x1="144" y1="120" x2="144" y2="144"/>
+<line class="loop" x1="168" y1="120" x2="168" y2="144"/>
+<line class="loop" x1="192" y1="120" x2="192" y2="144"/>
+<line class="loop" x1="48" y1="144" x2="48" y2="168"/>
+<line class="loop" x1="96" y1="144" x2="96" y2="168"/>
+<line class="loop" x1="120" y1="144" x2="120" y2="168"/>
+<line class="loop" x1="144" y1="144" x2="144" y2="168"/>
+<line class="loop" x1="168" y1="144" x2="168" y2="168"/>
+<line class="loop" x1="24" y1="168" x2="24" y2="192"/>
+<line class="loop" x1="72" y1="168" x2="72" y2="192"/>
+<line class="loop" x1="120" y1="168" x2="120" y2="192"/>
+<line class="loop" x1="144" y1="168" x2="144" y2="192"/>
+<line class="loop" x1="192" y1="168" x2="192" y2="192"/>
+<line class="loop" x1="216" y1="168" x2="216" y2="192"/>
+<line class="loop" x1="264" y1="168" x2="264" y2="192"/>
+<line class="loop" x1="48" y1="192" x2="48" y2="216"/>
+<line class="loop" x1="72" y1="192" x2="72" y2="216"/>
+<line class="loop" x1="96" y1="192" x2="96" y2="216"/>
+<line class="loop" x1="216" y1="192" x2="216" y2="216"/>
+<line class="loop" x1="240" y1="192" x2="240" y2="216"/>
+<line class="loop" x1="24" y1="216" x2="24" y2="240"/>
+<line class="loop" x1="120" y1="216" x2="120" y2="240"/>
+<line class="loop" x1="264" y1="216" x2="264" y2="240"/>
+<line class="loop" x1="48" y1="240" x2="48" y2="264"/>
+<line class="loop" x1="72" y1="240" x2="72" y2="264"/>
+<line class="loop" x1="96" y1="240" x2="96" y2="264"/>
+<line class="loop" x1="120" y1="240" x2="120" y2="264"/>
+<line class="loop" x1="144" y1="240" x2="144" y2="264"/>
+<line class="loop" x1="168" y1="240" x2="168" y2="264"/>
+<line class="loop" x1="192" y1="240" x2="192" y2="264"/>
+<line class="loop" x1="216" y1="240" x2="216" y2="264"/>
+<line class="loop" x1="240" y1="240" x2="240" y2="264"/>
+<line class="loop" x1="264" y1="144" x2="288" y2="144"/>
+<line class="loop" x1="144" y1="264" x2="144" y2="288"/>
+</g>
+
+</svg>

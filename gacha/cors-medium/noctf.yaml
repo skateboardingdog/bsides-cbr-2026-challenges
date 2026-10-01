@@ -1,0 +1,15 @@
+version: "1.0"
+slug: cors-medium
+title: cors-medium
+categories: ["web"]
+difficulty: beginner
+tags:
+  gacha:requires: cors-light
+description: |
+  apply the json!
+
+  Author: wednesday
+hosting: tls
+connection_info: ${url}
+flags:
+  - skbdg{1ts_call3d_th3_3ss3nc3_thats_m1m3typ3_tr1v1a_for_you}

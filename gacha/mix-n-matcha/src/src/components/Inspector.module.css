@@ -1,0 +1,156 @@
+.panel {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 12px;
+  width: 220px;
+  font-size: 13.5px;
+  max-height: min(70vh, 460px);
+  overflow-y: auto;
+  background: var(--panel-raised);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius);
+}
+
+.panel.wide {
+  width: 340px;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.kindHeader {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--border);
+}
+
+.kindName {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.kindType {
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--text-faint);
+  margin-left: auto;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.label {
+  font-size: 12.5px;
+  color: var(--text-dim);
+}
+
+.help {
+  font-size: 12px;
+  color: var(--text-faint);
+}
+
+.checkRow {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.checkRow input {
+  width: auto;
+}
+
+.mono {
+  font-family: var(--mono);
+}
+
+.tableGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(34px, 1fr));
+  gap: 5px;
+}
+
+.tableCell {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.tableIndex {
+  font-family: var(--mono);
+  font-size: 11.5px;
+  color: var(--text-faint);
+}
+
+.tableCell input {
+  width: 100%;
+  text-align: center;
+  font-family: var(--mono);
+  font-size: 16px;
+  padding: 5px 0;
+}
+
+.rowActions {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.values {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.valueRow {
+  display: flex;
+  gap: 8px;
+  align-items: baseline;
+  font-family: var(--mono);
+  font-size: 13px;
+}
+
+.valuePort {
+  color: var(--text-faint);
+  min-width: 34px;
+}
+
+.valueHex {
+  color: var(--accent);
+  word-break: break-all;
+}
+
+.problem {
+  padding: 6px 8px;
+  border-radius: var(--radius-sm);
+  font-size: 13px;
+  background: color-mix(in srgb, var(--danger) 10%, transparent);
+  border-left: 2px solid var(--danger);
+  color: var(--danger);
+}
+
+.problem.warn {
+  background: color-mix(in srgb, var(--warning) 10%, transparent);
+  border-left-color: var(--warning);
+  color: var(--warning);
+}
+
+.placeholder {
+  color: var(--text-faint);
+  font-size: 13.5px;
+}
+
+.sectionTitle {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--text-faint);
+}

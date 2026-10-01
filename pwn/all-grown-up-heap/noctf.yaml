@@ -1,0 +1,14 @@
+version: "1.0"
+slug: all-grown-up-heap
+title: all-grown-up-heap
+categories: ["pwn"]
+difficulty: medium
+description: |
+  You beat babyheap, now prove that you are all grown up!
+
+  Author: john
+connection_info: nc ${host} ${port}
+files:
+  - ./publish/all-grown-up-heap.zip
+flags:
+  - skbdg{cr4dl3_2_gr4v3_pwn3r}

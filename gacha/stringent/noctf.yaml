@@ -1,0 +1,13 @@
+version: "1.0"
+slug: stringent
+title: stringent
+categories: ["rev"]
+difficulty: beginner
+description: |
+  This flag checker program is fairly stringent with what it accepts.
+
+  Author: joseph
+files:
+  - ./publish/stringent
+flags:
+  - skbdg{a5b00d57d774f6197d6aec5976d36f11}

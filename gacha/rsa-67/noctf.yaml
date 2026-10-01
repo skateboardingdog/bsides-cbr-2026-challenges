@@ -1,0 +1,15 @@
+version: "1.0"
+slug: rsa-67
+title: RSA 6/7
+categories: ["crypto"]
+difficulty: beginner
+tags:
+  gacha:requires: rsa-5
+description: |
+  Why is 6 afraid of 7?
+
+  Author: Neobeo
+files:
+  - ./publish/rsa67.py
+flags:
+  - skbdg{quaSI_Xor_turnS_EVEN_good_keys_bad}

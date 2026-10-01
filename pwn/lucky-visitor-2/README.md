@@ -1,0 +1,42 @@
+Lucky Visitor 2
+======================
+
+- **Category**: pwn
+- **Difficulty**: hard
+- **Author**: joseph, grc
+
+Congratulations! You are today's lucky visitor [again](https://github.com/skateboardingdog/bsides-cbr-2025-challenges/tree/main/pwn/lucky-visitor).
+
+In case it's relevant, the flag is 24 bytes long.
+
+NOTE: This is an iOS pwn challenge that runs on Corellium virtual hardware infrastructure.
+
+(HINT): Useful gadgets from the shared cache:
+
+```
+double-call (Heimdal 0x1CB53E7E0):
+    ADD  X29, SP, #0x30
+    MOV  X20, X0
+    LDR  X8, [X0,#0x10]
+    BLR  X8
+    MOV  X19, X0
+    LDR  X8, [X20,#8]
+    BLR  X8
+
+arb-write (MapKit 0x1916B2098):
+    LDR X8, [X0,#0x30]
+    LDR X9, [X0,#0x20]
+    STR X8, [X9,#0x68]
+    RET
+
+ldr-0x48 (libicucore 0x1801FDDE0):
+    LDR X0, [X0,#0x48]
+    RET
+```
+
+---
+
+### Handout files
+
+- [./publish/lucky_visitor_2](./publish/lucky_visitor_2)
+- [./publish/lucky_visitor_2.m](./publish/lucky_visitor_2.m)

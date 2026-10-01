@@ -1,0 +1,13 @@
+version: "1.0"
+slug: replace-oriented-programming
+title: replace oriented programming
+difficulty: beginner
+categories: ["misc"]
+hosting: tls
+connection_info: ${url}
+description: |
+  Turns out all you need is .replace()
+
+  Author: hashkitten
+flags:
+  - skbdg{sort_of_programming}

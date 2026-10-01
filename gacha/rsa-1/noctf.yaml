@@ -1,0 +1,13 @@
+version: "1.0"
+slug: rsa-1
+title: RSA 1
+categories: ["crypto"]
+difficulty: beginner
+description: |
+  Baby's first step into RSA
+
+  Author: Neobeo
+files:
+  - ./publish/rsa1.py
+flags:
+  - skbdg{rsa_solutiON_Established}

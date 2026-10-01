@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>TIS-100: crackme</title>
+<style>
+@font-face {
+  font-family: "PerfectDOS";
+  font-style: normal;
+  font-weight: 400;
+  font-display: block;
+  src: url("data:font/woff2;base64,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") format("woff2");
+}
+</style>
+<style>
+  :root {
+    --bg:        #000000;
+    --fg:        #d6d6d6;
+    --fg-dim:    #8f8f8f;
+    --fg-dimmer: #5c5c5c;
+    --line:      #808080;
+    --fg-hi:     #f0f0f0;
+    --edge:      #ffffff;
+    --red:       #c8281c;
+    --mono: "PerfectDOS", "DejaVu Sans Mono", ui-monospace, Menlo, Consolas, monospace;
+    --gap: 22px;
+    --node-w: 250px;
+    --code-line: 14px;
+    --stats-w: 56px;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; height: 100%; }
+  body {
+    background: var(--bg); color: var(--fg);
+    font-family: var(--mono); font-size: 13px; line-height: 1.3;
+    letter-spacing: .3px;
+    -webkit-font-smoothing: none; text-rendering: geometricPrecision;
+    height: 100vh; overflow: hidden;
+    display: flex; align-items: center; justify-content: center;
+  }
+  #scaler { transform-origin: center center; }
+
+  .uc { text-transform: uppercase; }
+
+  .box { border: 2px solid var(--edge); background: #000; padding: 8px 10px; }
+  .box .rule { border: none; border-top: 1px solid var(--line); margin: 6px 0; }
+
+  .console { display: flex; gap: 22px; align-items: flex-start; }
+
+  .left { width: 288px; flex: 0 0 288px; display: flex; flex-direction: column; gap: 14px; }
+  .title { text-align: center; }
+  .title .brand { display: inline-block; font-weight: 700; font-size: 15px; letter-spacing: 4px;
+    padding: 1px 8px; border: 2px solid var(--edge); border-radius: 9px; color: var(--fg); }
+  .title .brand b { color: var(--fg); }
+  .title .name { margin-top: 8px; letter-spacing: 3px; color: var(--fg); font-size: 13px; }
+  .title .seg { color: var(--fg-dim); font-size: 11px; letter-spacing: 2px; }
+
+  .desc p { margin: 0 0 6px; color: var(--fg-dim); font-size: 12.5px; line-height: 1.5; }
+  .desc p.hi { color: var(--fg); }
+  .desc .obj { color: var(--fg); margin-top: 8px; white-space: normal; }
+  .desc .obj b { color: var(--fg-hi); }
+
+  .pass label { display: block; font-size: 11px; letter-spacing: 2px; color: var(--fg-dim); margin-bottom: 6px; }
+  .passrow { display: flex; gap: 8px; }
+  .pass input { flex: 1 1 auto; min-width: 0; background: #000; border: 2px solid var(--edge);
+    color: var(--fg); font-family: var(--mono); font-size: 14px; letter-spacing: 1px; padding: 7px 8px;
+    outline: none; caret-color: var(--red); }
+  .btn { font-family: var(--mono); font-size: 12px; letter-spacing: 1.5px; color: var(--fg);
+    background: #000; border: 2px solid var(--edge); padding: 6px 12px; cursor: pointer; }
+  .btn:hover { color: #000; background: var(--edge); }
+  .btn:active { color: var(--fg); background: #000; }
+
+  .streams { display: flex; gap: 10px; }
+  .streamcol { flex: 1 1 0; min-width: 0; display: flex; flex-direction: column; align-items: center; }
+  .streamcol .sh { font-size: 11px; letter-spacing: 1px; color: var(--fg); margin-bottom: 4px; white-space: nowrap; }
+  .streamcol .sbody { width: 100%; border: 2px solid var(--edge); background: #000; height: 214px;
+    overflow-y: auto; padding: 2px 0; }
+  .streamcol .v { text-align: center; font-variant-numeric: tabular-nums; font-size: 12.5px; color: var(--fg); padding: 0 4px; }
+  .streamcol .v.done { color: var(--fg-dimmer); }
+  .streamcol .v.next { color: #000; background: var(--fg); }
+  .streamcol .v.ok { color: var(--fg-hi); } .streamcol .v.bad { color: var(--red); }
+  .streamcol .ph { color: var(--fg-dimmer); text-align: center; font-size: 12px; padding: 6px 0; }
+
+  .controls { display: flex; gap: 8px; }
+  .tbtn { flex: 1 1 0; display: flex; flex-direction: column; align-items: center; gap: 5px;
+    background: #000; border: 2px solid var(--edge); padding: 9px 2px 6px; cursor: pointer;
+    font-family: var(--mono); }
+  .tbtn .g { font-size: 15px; line-height: 1; color: var(--fg); }
+  .tbtn .l { font-size: 9px; letter-spacing: 1.5px; color: var(--fg-dim); }
+  .tbtn:hover .g, .tbtn:hover .l { color: #fff; }
+  .tbtn.active { background: var(--edge); }
+  .tbtn.active .g, .tbtn.active .l { color: #000; }
+
+  .verdict { text-align: center; padding: 11px; font-size: 17px; letter-spacing: 4px; font-weight: 700;
+    color: var(--fg-dimmer); border: 2px solid var(--edge); background: #000; }
+  .verdict.correct { background: var(--edge); color: #000; }
+  .verdict.wrong { color: var(--red); border-color: var(--red); }
+  .verdict.hung { color: var(--red); border-color: var(--red); }
+
+  .grid-area { flex: 1 1 auto; min-width: 0; }
+  .grid-wrap { overflow: visible; padding: 2px; }
+  .machine { display: inline-flex; flex-direction: column; gap: 6px; }
+  .lane, .nodes { display: grid; grid-template-columns: repeat(var(--cols), var(--node-w)); column-gap: var(--gap); }
+  .nodes { row-gap: var(--gap); }
+  .marker { text-align: center; font-size: 11px; letter-spacing: 1px; color: var(--fg); height: 16px; white-space: nowrap; }
+  .marker.empty { color: transparent; }
+
+  .node { position: relative; border: 2px solid var(--line); background: #000; display: flex;
+    height: calc(15 * var(--code-line) + 6px); overflow: hidden; }
+  .code { flex: 1 1 auto; min-width: 0; padding: 3px 0; }
+  .code .ln { height: var(--code-line); line-height: var(--code-line); padding: 0 7px; white-space: pre;
+    overflow: hidden; text-overflow: clip; font-size: 12.5px; color: var(--fg); }
+  .code .ln.cmt { color: var(--fg-dim); }
+  .code .ln.active { background: var(--fg); color: #000; }
+
+  .stats { flex: 0 0 var(--stats-w); display: flex; flex-direction: column; border-left: 2px solid var(--line); }
+  .stat { flex: 1 1 0; border-bottom: 2px solid var(--line); padding: 2px; display: flex; flex-direction: column;
+    align-items: center; justify-content: center; text-align: center; gap: 1px; }
+  .stat:last-child { border-bottom: none; }
+  .stat .k { font-size: 11px; letter-spacing: 0; color: var(--fg-dim); line-height: 1.1; }
+  .stat .v { font-size: 11px; color: var(--fg); font-variant-numeric: tabular-nums; line-height: 1.1; }
+  .stat .v.read, .stat .v.wrte, .stat .v.run { color: var(--fg); } .stat .v.idle { color: var(--fg-dim); }
+
+  .node.damaged { border-color: var(--red); align-items: center; justify-content: center; flex-direction: column;
+    gap: 8px; color: var(--red); letter-spacing: 2px; font-size: 12px; text-align: center; }
+  .node.stack .label { flex: 1 1 auto; display: flex; align-items: center; justify-content: center;
+    text-align: center; padding: 6px; color: var(--fg); font-size: 11px; letter-spacing: 1px; line-height: 1.5; }
+  .node.stack .sk { flex: 0 0 var(--stats-w); border-left: 2px solid var(--line); display: flex;
+    flex-direction: column; padding: 2px 0; overflow: hidden; }
+  .node.stack .sk .cell { text-align: center; font-size: 11px; color: var(--fg);
+    font-variant-numeric: tabular-nums; line-height: 1.35; }
+
+  .conn { position: absolute; z-index: 3; background: #000; padding: 0 2px; white-space: nowrap;
+    font-size: 12px; font-variant-numeric: tabular-nums; color: var(--fg-dimmer); }
+  .conn.active { color: var(--fg); }
+  .conn.down  { left: 50%; top: 100%;  transform: translate(-50%, calc(var(--gap)/2 - 50%)); }
+  .conn.right { top: 50%;  left: 100%; transform: translate(calc(var(--gap)/2 - 50%), -50%); }
+
+  @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+</head>
+<body>
+  <div id="scaler">
+  <div class="console">
+    <aside class="left">
+      <div class="box title" style="margin-top: 96px;">
+        TIS<b>-</b>100: crackme
+      </div>
+
+      <div class="box desc">
+        <p>&gt; Check out the <a href="https://www.zachtronics.com/images/TIS-100P%20Reference%20Manual.pdf">TIS-100 Reference Manual</a>.</p>
+        <p>&gt; Find the passphrase that makes OUT.OK report 1.</p>
+        <p>&gt; The passphrase is 16 characters and does not include skbdg{}. Wrap it in skbdg{} to get the flag.</p>
+      </div>
+
+      <div class="box pass">
+        <label for="pass">IN.PASS - passphrase</label>
+        <div class="passrow">
+          <input id="pass" type="text" spellcheck="false" autocomplete="off" maxlength="16" placeholder="..." />
+          <button class="btn" id="check">CHECK</button>
+        </div>
+      </div>
+
+      <div class="streams" id="streams"></div>
+
+      <div class="controls">
+        <button class="tbtn" id="btnStop"><span class="g">■</span><span class="l">STOP</span></button>
+        <button class="tbtn" id="btnStep"><span class="g">▶|</span><span class="l">STEP</span></button>
+        <button class="tbtn" id="btnRun"><span class="g">▶</span><span class="l">PLAY</span></button>
+        <button class="tbtn" id="btnFast"><span class="g">▶▶</span><span class="l">FAST</span></button>
+      </div>
+
+      <div class="verdict" id="verdict">- - -</div>
+    </aside>
+
+    <main class="grid-area">
+      <div class="grid-wrap"><div class="machine" id="machine"></div></div>
+    </main>
+  </div>
+  </div>
+
+  <script>
+(function (root) {
+  "use strict";
+  const DIRS = ["UP", "DOWN", "LEFT", "RIGHT"];
+  const OPP = { UP: "DOWN", DOWN: "UP", LEFT: "RIGHT", RIGHT: "LEFT" };
+  const ANY_ORDER = ["LEFT", "RIGHT", "UP", "DOWN"];
+  const clamp = (v) => (v > 999 ? 999 : v < -999 ? -999 : v);
+  const REGS = new Set(["ACC", "NIL"]);
+  const PORTS = new Set(["UP", "DOWN", "LEFT", "RIGHT", "ANY", "LAST"]);
+  const JUMPS = new Set(["JMP", "JEZ", "JNZ", "JGZ", "JLZ"]);
+  function parseOperand(tok) {
+    const t = tok.toUpperCase();
+    if (REGS.has(t)) return t === "NIL" ? { k: "nil" } : { k: "acc" };
+    if (PORTS.has(t)) return { k: "port", dir: t };
+    if (/^-?\d+$/.test(t)) return { k: "lit", v: clamp(parseInt(t, 10)) };
+    return { k: "err", tok };
+  }
+  function parseProgram(text) {
+    const rawLines = text.split(/\r?\n/);
+    const instrs = [];
+    const labels = {};
+    let title = null;
+    let error = null;
+    rawLines.forEach((raw, lineNo) => {
+      let line = raw;
+      const dbl = line.indexOf("##");
+      if (dbl !== -1 && title === null) title = line.slice(dbl + 2).trim();
+      const hash = line.indexOf("#");
+      if (hash !== -1) line = line.slice(0, hash);
+      let bp = false;
+      line = line.replace(/^\s*!/, () => { bp = true; return ""; });
+      let m;
+      while ((m = line.match(/^\s*([A-Za-z_][A-Za-z0-9_]*)\s*:/))) {
+        labels[m[1].toUpperCase()] = instrs.length;
+        line = line.slice(m[0].length);
+      }
+      const s = line.trim();
+      if (s === "") { if (bp) {  } return; }
+      const parts = s.replace(/,/g, " ").split(/\s+/).filter(Boolean);
+      let op = parts[0].toUpperCase();
+      const args = parts.slice(1);
+      let instr = { op, bp, line: lineNo, text: raw };
+      if (op === "NOP") { instr = { op: "ADD", src: { k: "nil" }, bp, line: lineNo, text: raw, nop: true }; }
+      else if (op === "MOV") {
+        if (args.length !== 2) error = error || `line ${lineNo + 1}: MOV needs 2 args`;
+        instr.src = parseOperand(args[0] || "");
+        instr.dst = parseOperand(args[1] || "");
+      } else if (op === "ADD" || op === "SUB" || op === "JRO") {
+        if (args.length !== 1) error = error || `line ${lineNo + 1}: ${op} needs 1 arg`;
+        instr.src = parseOperand(args[0] || "");
+      } else if (JUMPS.has(op)) {
+        instr.label = (args[0] || "").toUpperCase();
+      } else if (op === "SWP" || op === "SAV" || op === "NEG" || op === "HCF") {
+      } else {
+        error = error || `line ${lineNo + 1}: unknown instruction "${op}"`;
+      }
+      instrs.push(instr);
+    });
+    for (const ins of instrs) {
+      if (ins.label !== undefined) {
+        if (!(ins.label in labels)) error = error || `unknown label "${ins.label}"`;
+        else ins.target = labels[ins.label];
+      }
+    }
+    if (instrs.length > 15) error = error || `program exceeds 15 lines (${instrs.length})`;
+    return { instrs, labels, error, title };
+  }
+  class ComputeNode {
+    constructor(id, program) {
+      this.id = id;
+      this.type = "T21";
+      const p = parseProgram(program || "");
+      this.instrs = p.instrs;
+      this.title = p.title;
+      this.parseError = p.error;
+      this.neigh = { UP: null, DOWN: null, LEFT: null, RIGHT: null };
+      this.reset();
+    }
+    reset() {
+      this.pc = 0;
+      this.acc = 0;
+      this.bak = 0;
+      this.last = null;
+      this.io = null;
+      this.status = "IDLE";
+    }
+    readDirs() {
+      if (this.status !== "READ") return null;
+      return this.io.dirs;
+    }
+    writeInfo() {
+      if (this.status !== "WRITE") return null;
+      return { dirs: this.io.dirs, value: this.io.value };
+    }
+  }
+  class StackNode {
+    constructor(id, capacity) {
+      this.id = id;
+      this.type = "T30";
+      this.capacity = capacity || 15;
+      this.neigh = { UP: null, DOWN: null, LEFT: null, RIGHT: null };
+      this.reset();
+    }
+    reset() { this.data = []; }
+  }
+  class InputNode {
+    constructor(id, values, outDir) {
+      this.id = id;
+      this.type = "IN";
+      this.values = values.slice();
+      this.outDir = outDir || "DOWN";
+      this.neigh = { UP: null, DOWN: null, LEFT: null, RIGHT: null };
+      this.reset();
+    }
+    reset() { this.idx = 0; }
+  }
+  class OutputNode {
+    constructor(id, inDir) {
+      this.id = id;
+      this.type = "OUT";
+      this.inDir = inDir || "UP";
+      this.neigh = { UP: null, DOWN: null, LEFT: null, RIGHT: null };
+      this.reset();
+    }
+    reset() { this.values = []; }
+  }
+  class Machine {
+    constructor(spec) {
+      this.rows = spec.rows;
+      this.cols = spec.cols;
+      this.grid = [];
+      this.nodes = [];
+      this.inputs = [];
+      this.outputs = [];
+      this.cycle = 0;
+      for (let r = 0; r < this.rows; r++) {
+        const row = [];
+        for (let c = 0; c < this.cols; c++) {
+          const row0 = spec.grid && spec.grid[r];
+          const cell = row0 ? row0[c] : { type: "T21", code: "" };
+          let node = null;
+          if (cell && cell.type === "T21") node = new ComputeNode(`n${r}_${c}`, cell.code || "");
+          else if (cell && cell.type === "T30") node = new StackNode(`s${r}_${c}`, cell.capacity);
+          else node = null;
+          row.push(node);
+          if (node) this.nodes.push(node);
+        }
+        this.grid.push(row);
+      }
+      for (let r = 0; r < this.rows; r++)
+        for (let c = 0; c < this.cols; c++) {
+          const n = this.grid[r][c];
+          if (!n) continue;
+          if (r > 0 && this.grid[r - 1][c]) n.neigh.UP = this.grid[r - 1][c];
+          if (r < this.rows - 1 && this.grid[r + 1][c]) n.neigh.DOWN = this.grid[r + 1][c];
+          if (c > 0 && this.grid[r][c - 1]) n.neigh.LEFT = this.grid[r][c - 1];
+          if (c < this.cols - 1 && this.grid[r][c + 1]) n.neigh.RIGHT = this.grid[r][c + 1];
+        }
+      (spec.inputs || []).forEach((inp, i) => {
+        const node = new InputNode(`in${i}`, inp.values, "DOWN");
+        const target = this.grid[0][inp.col];
+        if (target) { node.neigh.DOWN = target; target.neigh.UP = node; }
+        this.inputs.push(node); this.nodes.push(node);
+      });
+      (spec.outputs || []).forEach((out, i) => {
+        const node = new OutputNode(`out${i}`, "UP");
+        const src = this.grid[this.rows - 1][out.col];
+        if (src) { node.neigh.UP = src; src.neigh.DOWN = node; }
+        node.expected = out.expected || null;
+        this.outputs.push(node); this.nodes.push(node);
+      });
+    }
+    reset() {
+      this.cycle = 0;
+      for (const n of this.nodes) n.reset();
+    }
+    beginInstr(node) {
+      if (node.instrs.length === 0) { node.status = "IDLE"; return true; }
+      if (node.pc < 0 || node.pc >= node.instrs.length) node.pc = 0;
+      const ins = node.instrs[node.pc];
+      const srcVal = (op) => this.readValueImmediate(node, op);
+      const advance = () => { node.pc = (node.pc + 1) % node.instrs.length; };
+      switch (ins.op) {
+        case "MOV": {
+          if (ins.src.k === "port") {
+            node.io = { kind: "read", dirs: this.portDirs(node, ins.src.dir), any: ins.src.dir === "ANY" || ins.src.dir === "LAST", cont: { type: "mov", dst: ins.dst } };
+            node.status = "READ";
+            return true;
+          }
+          const v = srcVal(ins.src);
+          return this.deliverToDst(node, v, ins.dst, advance);
+        }
+        case "ADD": case "SUB": {
+          if (ins.src.k === "port") {
+            node.io = { kind: "read", dirs: this.portDirs(node, ins.src.dir), any: ins.src.dir === "ANY" || ins.src.dir === "LAST", cont: { type: ins.op } };
+            node.status = "READ";
+            return true;
+          }
+          const v = srcVal(ins.src);
+          node.acc = clamp(node.acc + (ins.op === "ADD" ? v : -v));
+          advance(); node.status = "IDLE"; return true;
+        }
+        case "JRO": {
+          if (ins.src.k === "port") {
+            node.io = { kind: "read", dirs: this.portDirs(node, ins.src.dir), any: ins.src.dir === "ANY" || ins.src.dir === "LAST", cont: { type: "JRO" } };
+            node.status = "READ";
+            return true;
+          }
+          this.doJro(node, srcVal(ins.src));
+          node.status = "IDLE"; return true;
+        }
+        case "NEG": node.acc = clamp(-node.acc); advance(); node.status = "IDLE"; return true;
+        case "SWP": { const t = node.acc; node.acc = node.bak; node.bak = t; advance(); node.status = "IDLE"; return true; }
+        case "SAV": node.bak = node.acc; advance(); node.status = "IDLE"; return true;
+        case "JMP": node.pc = ins.target; node.status = "IDLE"; return true;
+        case "JEZ": node.pc = node.acc === 0 ? ins.target : (node.pc + 1) % node.instrs.length; node.status = "IDLE"; return true;
+        case "JNZ": node.pc = node.acc !== 0 ? ins.target : (node.pc + 1) % node.instrs.length; node.status = "IDLE"; return true;
+        case "JGZ": node.pc = node.acc > 0 ? ins.target : (node.pc + 1) % node.instrs.length; node.status = "IDLE"; return true;
+        case "JLZ": node.pc = node.acc < 0 ? ins.target : (node.pc + 1) % node.instrs.length; node.status = "IDLE"; return true;
+        case "HCF": node.status = "HALT"; return true;
+        default: advance(); node.status = "IDLE"; return true;
+      }
+    }
+    doJro(node, off) {
+      let t = node.pc + off;
+      if (t < 0) t = 0;
+      if (t >= node.instrs.length) t = node.instrs.length - 1;
+      node.pc = t;
+    }
+    readValueImmediate(node, op) {
+      if (op.k === "lit") return op.v;
+      if (op.k === "acc") return node.acc;
+      if (op.k === "nil") return 0;
+      return 0;
+    }
+
+    deliverToDst(node, v, dst, advance) {
+      if (dst.k === "acc") { node.acc = clamp(v); advance(); node.status = "IDLE"; return true; }
+      if (dst.k === "nil") { advance(); node.status = "IDLE"; return true; }
+      if (dst.k === "port") {
+        node.io = { kind: "write", dirs: this.portDirs(node, dst.dir), any: dst.dir === "ANY" || dst.dir === "LAST", value: clamp(v) };
+        node.status = "WRITE";
+        return true;
+      }
+      advance(); node.status = "IDLE"; return true;
+    }
+    portDirs(node, dir) {
+      if (dir === "ANY") return ANY_ORDER.filter((d) => node.neigh[d]);
+      if (dir === "LAST") return node.last ? [node.last] : [];
+      return [dir];
+    }
+    completeRead(node, v, srcDir) {
+      const cont = node.io.cont;
+      if (node.io.any) node.last = srcDir;
+      const advance = () => { node.pc = (node.pc + 1) % node.instrs.length; };
+      if (cont.type === "mov") {
+        this.deliverToDst(node, v, cont.dst, advance);
+      } else if (cont.type === "ADD") {
+        node.acc = clamp(node.acc + v); advance(); node.status = "IDLE";
+      } else if (cont.type === "SUB") {
+        node.acc = clamp(node.acc - v); advance(); node.status = "IDLE";
+      } else if (cont.type === "JRO") {
+        this.doJro(node, v); node.status = "IDLE";
+      }
+    }
+    completeWrite(node, wroteDir) {
+      if (node.io.any) node.last = wroteDir;
+      node.pc = (node.pc + 1) % node.instrs.length;
+      node.status = "IDLE";
+    }
+    step() {
+      let progress = false;
+      for (const n of this.nodes) {
+        if (n.type !== "T21" || n.instrs.length === 0) continue;
+        if (n.status === "IDLE") { this.beginInstr(n); progress = true; }
+      }
+      const used = new Set();
+      const isWriter = (m) => {
+        if (m.type === "T21") return m.status === "WRITE";
+        if (m.type === "IN") return m.idx < m.values.length;
+        if (m.type === "T30") return m.data.length > 0;
+        return false;
+      };
+      const writerDirsToward = (m, fromNode) => {
+        if (m.type === "T21") return m.io.dirs;
+        if (m.type === "IN") return [m.outDir];
+        if (m.type === "T30") return DIRS.filter((d) => m.neigh[d]);
+        return [];
+      };
+      const takeWriteValue = (m, dir) => {
+        if (m.type === "T21") return m.io.value;
+        if (m.type === "IN") return m.values[m.idx];
+        if (m.type === "T30") return m.data[m.data.length - 1];
+        return 0;
+      };
+      const commitWrite = (m, dir) => {
+        if (m.type === "T21") this.completeWrite(m, dir);
+        else if (m.type === "IN") m.idx++;
+        else if (m.type === "T30") m.data.pop();
+      };
+      const readers = [];
+      for (const n of this.nodes) {
+        if (n.type === "T21" && n.status === "READ") readers.push(n);
+        else if (n.type === "OUT") readers.push(n);
+        else if (n.type === "T30") readers.push(n);
+      }
+      for (const R of readers) {
+        if (R.type !== "T30" && used.has(R)) continue;
+        let srcDirs;
+        if (R.type === "T21") srcDirs = R.io.dirs;
+        else if (R.type === "OUT") srcDirs = [R.inDir];
+        else if (R.type === "T30") srcDirs = R.data.length < R.capacity ? DIRS.filter((d) => R.neigh[d]) : [];
+        for (const sd of srcDirs) {
+          if (R.type !== "T30" && used.has(R)) break;
+          const M = R.neigh[sd];
+          if (!M) continue;
+          if (M.type !== "T30" && used.has(M)) continue;
+          if (!isWriter(M)) continue;
+          const mdirs = writerDirsToward(M, R);
+          if (!mdirs.includes(OPP[sd])) continue;
+          const v = takeWriteValue(M, OPP[sd]);
+          if (R.type === "T21") this.completeRead(R, v, sd);
+          else if (R.type === "OUT") R.values.push(v);
+          else if (R.type === "T30") R.data.push(v);
+          commitWrite(M, OPP[sd]);
+          if (R.type !== "T30") used.add(R);
+          if (M.type !== "T30") used.add(M);
+          progress = true;
+          break;
+        }
+      }
+      this.cycle++;
+      return progress;
+    }
+    outputsComplete() {
+      if (this.outputs.length === 0) return false;
+      return this.outputs.every((o) => o.expected && o.values.length >= o.expected.length);
+    }
+    run({ maxCycles = 100000, until = null } = {}) {
+      let idle = 0;
+      for (let i = 0; i < maxCycles; i++) {
+        if (until && until(this)) return { cycles: this.cycle, done: true, reason: "until" };
+        const prog = this.step();
+        if (!prog) { idle++; if (idle > 1) return { cycles: this.cycle, done: false, reason: "deadlock" }; }
+        else idle = 0;
+      }
+      return { cycles: this.cycle, done: false, reason: "maxCycles" };
+    }
+  }
+  const api = { Machine, parseProgram, ComputeNode, StackNode, clamp, DIRS, OPP };
+  if (typeof module !== "undefined" && module.exports) module.exports = api;
+  else root.TIS = api;
+})(typeof window !== "undefined" ? window : globalThis);
+  </script>
+  <script>
+(function () {
+  window.CHALLENGE = {
+    rows: 4,
+    cols: 3,
+    grid: [
+      [ null,
+        { type: "T21", code: "L: ADD UP\nSUB 256\nJLZ N\nJMP M\nN: ADD 256\nM: MOV ACC, DOWN" },
+        { type: "T21", code: "L: ADD UP\nSUB 256\nJLZ N\nJMP M\nN: ADD 256\nM: MOV ACC, DOWN" } ],
+      [ { type: "T21", code: "L: MOV RIGHT, ACC\nSAV\nMOV RIGHT, DOWN\nSWP\nMOV ACC, DOWN\nJMP L" },
+        { type: "T21", code: "T: MOV 8, ACC\nSAV\nMOV UP, ACC\nL: ADD ACC\nSUB 256\nJLZ Z\nMOV 1, LEFT\nJMP C\nZ: ADD 256\nMOV 0, LEFT\nC: SWP\nSUB 1\nJEZ T\nSWP\nJMP L" },
+        { type: "T21", code: "MOV UP, ACC\nNEG\nADD 255\nMOV ACC, DOWN" } ],
+      [ { type: "T21", code: "L: MOV UP, ACC\nSWP\nJNZ P1\nSWP\nMOV ACC, DOWN\nSWP\nJMP L\nP1: SWP\nNEG\nADD 1\nMOV ACC, DOWN\nNEG\nADD 1\nSAV\nJMP L" },
+        { type: "T30" },
+        { type: "T21", code: "L: ADD UP\nSUB 256\nJLZ N\nJMP M\nN: ADD 256\nM: MOV ACC, DOWN" } ],
+      [ { type: "T21", code: "T: MOV 8, ACC\nSAV\nMOV 0, ACC\nL: ADD ACC\nADD UP\nSWP\nSUB 1\nJEZ D\nSWP\nJMP L\nD: SWP\nMOV ACC, RIGHT\nJMP T" },
+        { type: "T21", code: "T: MOV 15, ACC\nP: MOV LEFT, UP\nSUB 1\nJNZ P\nMOV LEFT, RIGHT\nMOV 15, ACC\nQ: MOV UP, RIGHT\nSUB 1\nJNZ Q\nMOV -999, RIGHT" },
+        { type: "T21", code: "L: ADD LEFT\nSUB 256\nJLZ N\nJMP M\nN: ADD 256\nM: SAV\nSUB UP\nJEZ K\nADD 600\nJLZ OK\nMOV 0, DOWN\nJRO 0\nK: SWP\nJMP L\nOK: MOV 1, DOWN" } ],
+    ],
+    refStream: [20, 221, 174, 83, 164, 215, 72, 206, 197, 120, 240, 106, 29, 64, 47, 93],
+    terminator: 242,
+    flagCol: 1,
+    refCol: 2,
+    outCol: 2,
+    maxLen: 16,
+    labels: { flag: "IN.PASS", ref: "IN.KEY", out: "OUT.OK" },
+  };
+})();
+  </script>
+  <script>
+(function () {
+  "use strict";
+  const CH = window.CHALLENGE;
+  const $ = (s) => document.querySelector(s);
+  const el = (tag, cls, txt) => { const e = document.createElement(tag); if (cls) e.className = cls; if (txt != null) e.textContent = txt; return e; };
+  const RUN_MS = 70, CAP = 20000;
+  const AR = { UP: "↑", DOWN: "↓", LEFT: "←", RIGHT: "→" };
+
+  let machine = null, ui = null, timer = null, dirty = true, idleStreak = 0;
+
+  function buildMachine(passStr) {
+    const flag = [...passStr].slice(0, CH.maxLen)
+      .map((c) => (CH.raw ? (/[0-9]/.test(c) ? +c : -1) : c.charCodeAt(0)));
+    const inputs = [{ col: CH.flagCol, values: flag }];
+    if (CH.refStream) {
+      const ref = CH.terminator != null ? CH.refStream.concat([CH.terminator]) : CH.refStream.slice();
+      inputs.push({ col: CH.refCol, values: ref });
+    }
+    machine = new TIS.Machine({
+      rows: CH.rows, cols: CH.cols, grid: CH.grid,
+      inputs,
+      outputs: [{ col: CH.outCol, expected: [1] }],
+    });
+    machine._blocked = {};
+    idleStreak = 0;
+    buildDOM();
+    update();
+    setVerdict(null);
+  }
+
+  function buildDOM() {
+    ui = { nodes: {}, conns: [], streams: {} };
+    const streams = $("#streams"); streams.innerHTML = "";
+    streams.appendChild(streamCol("flag", CH.labels.flag, machine.inputs[0]));
+    if (CH.refStream) streams.appendChild(streamCol("ref", CH.labels.ref, machine.inputs[1]));
+    streams.appendChild(streamCol("out", CH.labels.out, machine.outputs[0]));
+
+    const root = $("#machine"); root.innerHTML = "";
+    root.style.setProperty("--cols", CH.cols);
+
+    const topLane = el("div", "lane");
+    for (let c = 0; c < CH.cols; c++) {
+      let label = "";
+      if (c === CH.flagCol) label = CH.labels.flag + " ↓";
+      else if (c === CH.refCol) label = CH.labels.ref + " ↓";
+      topLane.appendChild(el("div", "marker" + (label ? "" : " empty"), label || "."));
+    }
+    root.appendChild(topLane);
+
+    const grid = el("div", "nodes");
+    for (let r = 0; r < CH.rows; r++)
+      for (let c = 0; c < CH.cols; c++) grid.appendChild(nodeCell(r, c));
+    root.appendChild(grid);
+
+    const botLane = el("div", "lane");
+    for (let c = 0; c < CH.cols; c++) {
+      const label = c === CH.outCol ? "↓ " + CH.labels.out : "";
+      botLane.appendChild(el("div", "marker" + (label ? "" : " empty"), label || "."));
+    }
+    root.appendChild(botLane);
+  }
+
+  function streamCol(kind, label, node) {
+    const col = el("div", "streamcol");
+    col.appendChild(el("div", "sh", label));
+    const body = el("div", "sbody"); col.appendChild(body);
+    ui.streams[kind] = { body, node, kind };
+    return col;
+  }
+
+  function nodeCell(r, c) {
+    const node = machine.grid[r][c];
+    const spec = (CH.grid[r] && CH.grid[r][c]) || null;
+    if (!node) return el("div", "node damaged", "COMMUNICATION\nFAILURE");
+    if (node.type === "T30") {
+      const s = el("div", "node stack");
+      s.appendChild(el("div", "label", "STACK MEMORY NODE"));
+      const sk = el("div", "sk"); s.appendChild(sk);
+      ui.nodes[node.id] = { stack: sk };
+      addConns(s, r, c);
+      return s;
+    }
+    const box = el("div", "node");
+    const code = el("div", "code");
+    const rawLines = (spec.code || "").split("\n");
+    const lineEls = rawLines.map((raw) => {
+      const cls = "ln" + (raw.trim().startsWith("#") ? " cmt" : "");
+      const d = el("div", cls, raw === "" ? " " : raw); code.appendChild(d); return d;
+    });
+    for (let i = rawLines.length; i < 15; i++) code.appendChild(el("div", "ln", " "));
+    box.appendChild(code);
+
+    const stats = el("div", "stats");
+    const mk = (k) => { const s = el("div", "stat"); s.appendChild(el("div", "k", k)); const v = el("div", "v", "0"); s.appendChild(v); stats.appendChild(s); return v; };
+    const stat = { acc: mk("ACC"), bak: mk("BAK"), last: mk("LAST"), mode: mk("MODE") };
+    box.appendChild(stats);
+
+    ui.nodes[node.id] = { node, lineEls, stat };
+    addConns(box, r, c);
+    return box;
+  }
+
+  function addConns(box, r, c) {
+    const here = machine.grid[r][c];
+    const down = r + 1 < CH.rows ? machine.grid[r + 1][c] : null;
+    const right = c + 1 < CH.cols ? machine.grid[r][c + 1] : null;
+    if (down) { const e = el("span", "conn down", "↕"); box.appendChild(e); ui.conns.push({ el: e, axis: "v", a: here, b: down }); }
+    if (right) { const e = el("span", "conn right", "↔"); box.appendChild(e); ui.conns.push({ el: e, axis: "h", a: here, b: right }); }
+  }
+
+  function modeOf(n) {
+    if (!n.instrs || !n.instrs.length) return ["IDLE", "idle"];
+    if (n.status === "READ") return ["READ", "read"];
+    if (n.status === "WRITE") return ["WRTE", "wrte"];
+    return ["RUN", "run"];
+  }
+  const writesDir = (n, D) => n.type === "T21" && n.status === "WRITE" && n.io && n.io.dirs.includes(D);
+
+  function update() {
+    if (!machine) return;
+    for (const id in ui.nodes) {
+      const u = ui.nodes[id]; if (!u.node) continue;
+      const n = u.node;
+      u.lineEls.forEach((e) => e.classList.remove("active"));
+      if (n.instrs.length) { const li = n.instrs[n.pc] ? n.instrs[n.pc].line : -1; if (li >= 0 && u.lineEls[li]) u.lineEls[li].classList.add("active"); }
+      u.stat.acc.textContent = n.acc;
+      u.stat.bak.textContent = "(" + n.bak + ")";
+      u.stat.last.textContent = n.last || "N/A";
+      const [mt, mc] = modeOf(n);
+      u.stat.mode.textContent = mt; u.stat.mode.className = "v " + mc;
+    }
+    for (const id in ui.nodes) {
+      const u = ui.nodes[id]; if (!u.stack) continue;
+      const node = machine.nodes.find((x) => x.id === id);
+      u.stack.innerHTML = "";
+      (node.data || []).slice().reverse().forEach((v) => u.stack.appendChild(el("div", "cell", v)));
+    }
+    for (const cn of ui.conns) {
+      let txt = cn.axis === "v" ? "↕" : "↔", active = false;
+      if (cn.axis === "v") {
+        if (writesDir(cn.a, "DOWN")) { txt = AR.DOWN + cn.a.io.value; active = true; }
+        else if (writesDir(cn.b, "UP")) { txt = AR.UP + cn.b.io.value; active = true; }
+      } else {
+        if (writesDir(cn.a, "RIGHT")) { txt = AR.RIGHT + cn.a.io.value; active = true; }
+        else if (writesDir(cn.b, "LEFT")) { txt = AR.LEFT + cn.b.io.value; active = true; }
+      }
+      cn.el.textContent = txt; cn.el.classList.toggle("active", active);
+    }
+    renderStream(ui.streams.flag);
+    if (ui.streams.ref) renderStream(ui.streams.ref);
+    renderStream(ui.streams.out);
+  }
+
+  function renderStream(s) {
+    const b = s.body; b.innerHTML = "";
+    if (s.kind === "out") {
+      const vals = s.node.values;
+      if (!vals.length) { b.appendChild(el("div", "ph", "-")); return; }
+      vals.forEach((v) => b.appendChild(el("div", "v " + (v === 1 ? "ok" : v === 0 ? "bad" : ""), v)));
+      return;
+    }
+    const vals = s.node.values, idx = s.node.idx;
+    vals.forEach((v, i) => {
+      let cls = "v"; if (i < idx) cls += " done"; else if (i === idx) cls += " next";
+      b.appendChild(el("div", cls, v));
+    });
+  }
+
+  function stepMachine() {
+    const prog = machine.step();
+    for (const n of machine.nodes) if (n.type === "T21" && (n.status === "READ" || n.status === "WRITE")) machine._blocked[n.id] = (machine._blocked[n.id] || 0) + 1;
+    idleStreak = prog ? 0 : idleStreak + 1;
+    return prog;
+  }
+  const finished = () => machine && machine.outputs[0].values.length >= 1;
+  const deadlocked = () => idleStreak > 1;
+
+  function settle() { stopTimer(); if (finished()) setVerdict(machine.outputs[0].values[0]); else setVerdict("hung"); }
+
+  function setVerdict(v) {
+    const e = $("#verdict");
+    if (v === null) { e.textContent = "- - -"; e.className = "verdict"; }
+    else if (v === 1) { e.textContent = "CORRECT"; e.className = "verdict correct"; }
+    else if (v === 0) { e.textContent = "WRONG"; e.className = "verdict wrong"; }
+    else { e.textContent = "HUNG"; e.className = "verdict hung"; }
+  }
+
+  function ensure() { if (!machine || dirty) { buildMachine($("#pass").value); dirty = false; } }
+  function stopTimer() { if (timer) { clearInterval(timer); timer = null; } $("#btnRun").classList.remove("active"); }
+
+  function doStep() { ensure(); if (finished()) return; stepMachine(); update(); if (finished() || deadlocked()) settle(); }
+  function doFast() { ensure(); stopTimer(); let g = CAP; while (!finished() && !deadlocked() && g-- > 0) stepMachine(); update(); settle(); }
+  function doPlay() {
+    if (timer) { stopTimer(); return; }
+    ensure(); if (finished()) return;
+    $("#btnRun").classList.add("active");
+    timer = setInterval(() => {
+      if (finished() || deadlocked() || machine.cycle > CAP) { update(); settle(); return; }
+      stepMachine(); update();
+    }, RUN_MS);
+  }
+  function doStop() { stopTimer(); buildMachine($("#pass").value); dirty = false; }
+  function doCheck() { stopTimer(); buildMachine($("#pass").value); dirty = false; doFast(); }
+
+  function fit() {
+    const s = document.getElementById("scaler");
+    if (!s) return;
+    s.style.zoom = "1";
+    const natW = s.offsetWidth, natH = s.offsetHeight;
+    if (!natW || !natH) return;
+    const scale = Math.min((window.innerWidth - 16) / natW, (window.innerHeight - 16) / natH);
+    s.style.zoom = scale;
+  }
+
+  window.addEventListener("resize", fit);
+  window.addEventListener("DOMContentLoaded", () => {
+    $("#btnStop").addEventListener("click", doStop);
+    $("#btnStep").addEventListener("click", doStep);
+    $("#btnRun").addEventListener("click", doPlay);
+    $("#btnFast").addEventListener("click", doFast);
+    $("#check").addEventListener("click", doCheck);
+    $("#pass").addEventListener("input", () => { dirty = true; });
+    $("#pass").addEventListener("keydown", (e) => { if (e.key === "Enter") doCheck(); });
+    buildMachine("");
+    fit();
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(fit);
+  });
+})();
+  </script>
+</body>
+</html>

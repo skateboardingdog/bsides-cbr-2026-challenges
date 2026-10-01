@@ -1,0 +1,14 @@
+inexorable
+======================
+
+- **Category**: rev
+- **Difficulty**: beginner
+- **Author**: joseph
+
+[A certain number has inexorably mangled the flag...](https://tio.run/##nVPtbsIwDPyfp/CY@LUOtaJ8iFfZEHIat3RLk84Jo2jas7O0ZbDBJiEayarPd8nVcdE5qqTePRZZtt/fAxlPDDu7YShNvfEhgl/TIZG2AUnabu@EGJWBqlduZzw2YGzNlJdNwBV6FB1/JTf5AkauxowgmR3AvPIt6Lk0BQyGydQNxI7cDyyzzJT5CHKNBZQO3KtUxcfQfT6bgTB2ASfulq0pWliMPDVejAptJWqosDSiDQsB4XEbCezqCOaiyzUhsCojeOKyhgc4Wlueyu68HD6nLzeWgbCJ2tABGWoNLkOT/729scu@UNl34Fb5trWsoPb8zxGBiNIBZ4E7nZ2vo4tur0D6pVEBi5sZTuJ4nFM@T2eJGqveaFUfNKrXvBiCOrTSX@0vvM8vPcbNLR7TaTpNKJbxJMZJmqRXeTxvbhie0N2OsLj99jr94fouGKjU9/i0KZPf7/tfoh9RY5CVgzUxfQE)
+
+---
+
+### Handout files
+
+(none)

@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %> - Skateboarding Dog Gallery</title>
+    <!-- Premium Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #08080a;
+            --surface-color: #111115;
+            --surface-accent: #17171f;
+            --text-primary: #f8f8fa;
+            --text-secondary: #a1a1aa;
+            --text-muted: #71717a;
+            --gold-primary: #c5a059;
+            --gold-light: #e5c17b;
+            --gold-dark: #8c6d32;
+            --font-serif: 'Cinzel', Georgia, serif;
+            --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+            --spotlight: radial-gradient(circle at 50% 35%, rgba(197, 160, 89, 0.08) 0%, rgba(8, 8, 10, 0) 70%);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            background-image: var(--spotlight);
+            color: var(--text-primary);
+            font-family: var(--font-sans);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Ambient Museum Spotlight Glow */
+        body::before {
+            content: '';
+            position: absolute;
+            top: -15%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90%;
+            height: 60%;
+            background: radial-gradient(ellipse at center, rgba(197, 160, 89, 0.05) 0%, rgba(0,0,0,0) 80%);
+            pointer-events: none;
+            z-index: 0;
+            animation: pulseSpotlight 8s ease-in-out infinite alternate;
+        }
+
+        @keyframes pulseSpotlight {
+            0% { opacity: 0.8; }
+            100% { opacity: 1.2; }
+        }
+
+        header {
+            padding: 2rem;
+            text-align: center;
+            border-bottom: 1px solid rgba(197, 160, 89, 0.12);
+            background: linear-gradient(to bottom, rgba(8, 8, 10, 0.95), rgba(8, 8, 10, 0.4));
+            backdrop-filter: blur(12px);
+            z-index: 10;
+        }
+
+        header h1 {
+            font-family: var(--font-serif);
+            font-size: 1.6rem;
+            font-weight: 700;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--text-primary);
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
+            background: linear-gradient(135deg, #ffffff 40%, var(--gold-light) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+        }
+
+        header p {
+            font-size: 0.75rem;
+            color: var(--gold-primary);
+            text-transform: uppercase;
+            letter-spacing: 0.35em;
+            margin-top: 0.5rem;
+            font-weight: 500;
+        }
+
+        main {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 4rem 2rem;
+            z-index: 1;
+        }
+
+        .museum-gallery-layout {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 5rem;
+            max-width: 1300px;
+            width: 100%;
+            align-items: center;
+        }
+
+        /* Exhibit Framing Column */
+        .artwork-column {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        /* The Premium Museum Frame */
+        .artwork-frame-outer {
+            position: relative;
+            background: #110d0a; /* Dark wood base */
+            padding: 16px; 
+            border-radius: 4px;
+            box-shadow: 
+                0 0 0 1px rgba(255, 255, 255, 0.05),
+                0 10px 30px rgba(0, 0, 0, 0.7),
+                0 30px 70px rgba(0, 0, 0, 0.9);
+            transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.8s ease;
+        }
+
+        /* Gilded Bevel inner frame border */
+        .artwork-frame-outer::before {
+            content: '';
+            position: absolute;
+            top: 6px;
+            left: 6px;
+            right: 6px;
+            bottom: 6px;
+            border: 2px solid var(--gold-dark);
+            border-radius: 2px;
+            pointer-events: none;
+            opacity: 0.6;
+        }
+
+        /* Linen Passepartout (Mat) Board */
+        .artwork-mat {
+            background-color: #eae5db; /* Fine linen cream mat board */
+            padding: 36px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 
+                inset 0 0 15px rgba(0,0,0,0.25),
+                inset 0 0 2px rgba(0,0,0,0.4);
+            border: 1px solid rgba(0, 0, 0, 0.15);
+        }
+
+        .artwork-wrapper {
+            position: relative;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
+            background-color: #000;
+        }
+
+        .artwork-image {
+            max-width: 100%;
+            max-height: 55vh;
+            display: block;
+            object-fit: contain;
+            transition: filter 0.5s ease;
+        }
+
+        /* Glass / Light glare reflection effect */
+        .artwork-glare {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0) 45%, rgba(0,0,0,0.15) 100%);
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        .artwork-frame-outer:hover {
+            transform: scale(1.015) translateY(-4px);
+            box-shadow: 
+                0 0 0 1px rgba(197, 160, 89, 0.15),
+                0 15px 40px rgba(197, 160, 89, 0.08),
+                0 35px 80px rgba(0, 0, 0, 0.95);
+        }
+
+        /* Plaque / Description Column */
+        .plaque-column {
+            display: flex;
+            flex-direction: column;
+            gap: 2.5rem;
+        }
+
+        /* Glassmorphic brass/black museum plaque */
+        .museum-plaque {
+            background: linear-gradient(145deg, rgba(23, 23, 31, 0.9) 0%, rgba(13, 13, 17, 0.95) 100%);
+            border: 1px solid rgba(197, 160, 89, 0.2);
+            border-left: 4px solid var(--gold-primary);
+            padding: 3rem 2.5rem;
+            box-shadow: 
+                0 20px 45px rgba(0, 0, 0, 0.55),
+                inset 0 1px 0 rgba(255, 255, 255, 0.03);
+            border-radius: 4px;
+            position: relative;
+        }
+
+        .plaque-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .plaque-catalog-no {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.25em;
+            color: var(--gold-primary);
+            font-weight: 700;
+        }
+
+        .plaque-status {
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--text-muted);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 0.2rem 0.6rem;
+            border-radius: 20px;
+        }
+
+        .plaque-title {
+            font-family: var(--font-serif);
+            font-size: 2.2rem;
+            font-weight: 600;
+            line-height: 1.25;
+            color: var(--text-primary);
+            margin-bottom: 1.5rem;
+            letter-spacing: 0.02em;
+        }
+
+        .plaque-divider {
+            height: 1px;
+            background: linear-gradient(to right, rgba(197, 160, 89, 0.35), rgba(197, 160, 89, 0));
+            margin-bottom: 1.8rem;
+        }
+
+        .curator-heading {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: var(--gold-light);
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+        }
+
+        .plaque-description {
+            font-size: 0.95rem;
+            line-height: 1.75;
+            color: var(--text-secondary);
+            margin-bottom: 2.2rem;
+            font-weight: 300;
+            text-align: justify;
+        }
+
+        /* Plaque Meta Grid */
+        .plaque-meta {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.25rem 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding-top: 1.8rem;
+        }
+
+        .meta-item {
+            display: flex;
+            flex-direction: column;
+            gap: 0.3rem;
+        }
+
+        .meta-label {
+            color: var(--text-muted);
+            text-transform: uppercase;
+            font-size: 0.65rem;
+            letter-spacing: 0.12em;
+            font-weight: 600;
+        }
+
+        .meta-value {
+            color: var(--text-primary);
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        /* Exhibition Navigation Controls */
+        .navigation-controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 1rem;
+            padding: 0 0.5rem;
+        }
+
+        .nav-btn {
+            display: none; /* Injected dynamically */
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.18em;
+            padding: 0.8rem 1.6rem;
+            border: 1px solid rgba(197, 160, 89, 0.25);
+            border-radius: 4px;
+            background: transparent;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            cursor: pointer;
+        }
+
+        .nav-btn:hover {
+            color: var(--gold-light);
+            border-color: var(--gold-primary);
+            background-color: rgba(197, 160, 89, 0.05);
+            box-shadow: 0 4px 15px rgba(197, 160, 89, 0.12);
+        }
+
+        .nav-btn svg {
+            width: 14px;
+            height: 14px;
+            fill: currentColor;
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .nav-btn.prev:hover svg {
+            transform: translateX(-4px);
+        }
+
+        .nav-btn.next:hover svg {
+            transform: translateX(4px);
+        }
+
+        .gallery-home-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gold-primary);
+            text-decoration: none;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.18em;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .gallery-home-btn:hover {
+            color: var(--gold-light);
+            text-shadow: 0 0 10px rgba(197, 160, 89, 0.4);
+        }
+
+        /* Footer */
+        footer {
+            padding: 3rem 2rem;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.03);
+            background-color: #050507;
+            margin-top: auto;
+            z-index: 10;
+        }
+
+        footer p {
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            line-height: 1.5;
+        }
+
+        /* Responsive Breakpoints */
+        @media (max-width: 1024px) {
+            .museum-gallery-layout {
+                grid-template-columns: 1fr;
+                gap: 4rem;
+                max-width: 700px;
+            }
+
+            main {
+                padding: 3rem 2rem;
+            }
+
+            .artwork-mat {
+                padding: 24px;
+            }
+
+            .artwork-image {
+                max-height: 48vh;
+            }
+        }
+
+        @media (max-width: 600px) {
+            header {
+                padding: 1.5rem 1rem;
+            }
+
+            header h1 {
+                font-size: 1.3rem;
+            }
+
+            main {
+                padding: 2rem 1rem;
+            }
+
+            .museum-plaque {
+                padding: 2rem 1.5rem;
+            }
+
+            .plaque-title {
+                font-size: 1.8rem;
+            }
+
+            .plaque-meta {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .nav-btn {
+                padding: 0.7rem 1.2rem;
+                font-size: 0.7rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 id="gallery-title">Skateboarding Dog Museum</h1>
+        <p>The Canine Velocity Collection</p>
+    </header>
+    
+    <main>
+        <div class="museum-gallery-layout">
+            <!-- Artwork Presentation Grid Column -->
+            <section class="artwork-column" id="artwork-display-column">
+                <div class="artwork-frame-outer" id="artwork-frame-container">
+                    <div class="artwork-mat">
+                        <div class="artwork-wrapper">
+                            <img class="artwork-image" id="artwork-display" src="data:<%= mimetype %>;base64,<%= data %>" alt="Exhibit: <%= title %>">
+                            <div class="artwork-glare"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Museum Plaque Grid Column -->
+            <section class="plaque-column" id="museum-plaque-container">
+                <div class="museum-plaque">
+                    <div class="plaque-header">
+                        <span class="plaque-catalog-no" id="accession-tag">EXHIBIT NO. SD-2026-000</span>
+                        <span class="plaque-status">On Display</span>
+                    </div>
+
+                    <h2 class="plaque-title"><%= title %></h2>
+                    <div class="plaque-divider"></div>
+                    
+                    <h3 class="curator-heading">Curator's Commentary</h3>
+                    <p class="plaque-description"><%= description %></p>
+                    
+                    <div class="plaque-meta">
+                        <div class="meta-item">
+                            <span class="meta-label">Artist</span>
+                            <span class="meta-value"><%= artist %></span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Medium</span>
+                            <span class="meta-value"><%= medium %></span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Exhibition Period</span>
+                            <span class="meta-value"><%= exhibition_period %></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Navigation controls dynamically updated by client JS -->
+                <div class="navigation-controls">
+                    <a id="prev-exhibit" class="nav-btn prev" href="#">
+                        <svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+                        Previous Exhibit
+                    </a>
+                    <a id="view-collection-link" class="gallery-home-btn" href="/1">
+                        First Exhibit
+                    </a>
+                    <a id="next-exhibit" class="nav-btn next" href="#">
+                        Next Exhibit
+                        <svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+                    </a>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Skateboarding Dog Museum</p>
+        <p style="margin-top: 0.5rem; text-transform: lowercase; font-size: 0.65rem; color: #51515a;">presented for cultural and artistic appreciation</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Get current piece ID from pathname
+            const pathParts = window.location.pathname.split('/');
+            const currentId = parseInt(pathParts[pathParts.length - 1]);
+            
+            if (!isNaN(currentId)) {
+                // Update accession label dynamically
+                const formattedId = String(currentId).padStart(3, '0');
+                document.getElementById('accession-tag').textContent = `EXHIBIT NO. SD-2026-${formattedId}`;
+                
+                // Show dynamic navigation links if within range
+                const prevBtn = document.getElementById('prev-exhibit');
+                const nextBtn = document.getElementById('next-exhibit');
+                
+                // Check if current ID has adjacent pieces (1 through 7)
+                if (currentId > 1) {
+                    prevBtn.href = '/' + (currentId - 1);
+                    prevBtn.style.display = 'inline-flex';
+                }
+                if (currentId < 7) {
+                    nextBtn.href = '/' + (currentId + 1);
+                    nextBtn.style.display = 'inline-flex';
+                }
+
+                // If on the first exhibit, adjust home link text
+                const homeLink = document.getElementById('view-collection-link');
+                if (currentId === 1) {
+                    homeLink.textContent = "Start Tour";
+                } else {
+                    homeLink.textContent = "Restart Tour";
+                }
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,13 @@
+version: "1.0"
+slug: python-sokoban
+title: python sokoban
+categories: ["misc"]
+difficulty: hard
+hosting: tls
+connection_info: ${url}
+description: |
+  Push boxes to help skateboarding dog home!
+
+  Author: hashkitten
+flags:
+  - skbdg{pysokobanugotit}

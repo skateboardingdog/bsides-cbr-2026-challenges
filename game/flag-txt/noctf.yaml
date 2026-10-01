@@ -1,0 +1,12 @@
+version: "1.0"
+slug: flag-txt
+title: flag.txt
+categories: ["game"]
+difficulty: easy
+description: |
+  There is a flag in an aptly named file on the computer.
+
+  Author: joseph
+connection_info: ${url}
+flags:
+  - skbdg{time_to_get_sucked_into_the_computer}

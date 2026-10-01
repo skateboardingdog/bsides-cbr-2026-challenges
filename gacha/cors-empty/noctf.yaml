@@ -1,0 +1,13 @@
+version: "1.0"
+slug: cors-empty
+title: cors-empty
+categories: ["web"]
+difficulty: beginner
+description: |
+  head empty, cors empty, no flag :<
+
+  Author: wednesday
+hosting: tls
+connection_info: ${url}
+flags:
+  - skbdg{4c40_st4nds_f0r_4ll_c4ts_4re_0utg0ing<3}

@@ -1,0 +1,14 @@
+version: "1.0"
+slug: skatequest
+title: skatequest
+categories: ["pwn"]
+difficulty: hard
+description: |
+  Are you enough of a gamer to skate your way to victory?
+
+  Author: john
+connection_info: nc ${host} ${port}
+files:
+  - ./publish/skatequest.zip
+flags:
+  - skbdg{sk4t3_7h3_5p1r3!}

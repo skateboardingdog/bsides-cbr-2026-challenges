@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Neobeo Re-fried Chicken</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.23.0/sweetalert2.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.8/css/bootstrap.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.23.0/sweetalert2.min.js"></script>
+    <style>
+    body { overscroll-behavior: contain; }
+    body.swal2-shown { overflow-y: auto !important; }
+    #svg-container { text-align: center; }
+    path { stroke: black; stroke-width: 2px; margin: auto; display: block; top: 0; left: 0; }
+    .piece { width: 114px; height: 107px; }
+    .piece.a { fill: url('#red_a'); }
+    .piece.b { fill: url('#red_b'); }
+    .piece.c { fill: url('#red_c'); }
+    .piece.d { fill: url('#red_d'); }
+    .piece.e { fill: url('#red_e'); }
+    .piece.f { fill: url('#red_f'); }
+    .piece.g { fill: url('#red_g'); }
+    .piece.x { fill: none; }
+    .sub { width: 130px; height: 107px; }
+    .sub.s1 { fill: url('#red_1'); }
+    .sub.s2 { fill: url('#red_2'); }
+    .sub.s3 { fill: url('#red_3'); }
+    .ip { fill: red; }
+    #dragimage { pointer-events: none; opacity: 0.8 }
+    #draghighlight { pointer-events: none; opacity: 0; }
+    </style>
+</head>
+<body class="container" style="max-width:800px;">
+<div class="position-relative">
+    <div class="position-absolute top-0 end-0 p-2">
+        <button class='btn btn-info' onclick="info(helphtml)">?</button>
+    </div>
+</div>
+
+<h1>Neobeo Re-fried Chicken</h1>
+
+<div id="svg-container">
+    <svg id="redteam" width="768" height="920">
+        <defs>
+            <pattern id="red_a" x="-1.16666666666666666667" y="-0.00000000000000000000" width="4.21929824561403508772" height="3.05607476635514018692"><image width="481" height="327" xlink:href="blocks.png" />
+            <pattern id="red_b" x="-2.19298245614035087719" y="-0.00000000000000000000" width="4.21929824561403508772" height="3.05607476635514018692"><image width="481" height="327" xlink:href="blocks.png" />
+            <pattern id="red_c" x="-2.19298245614035087719" y="-1.02803738317757009346" width="4.21929824561403508772" height="3.05607476635514018692"><image width="481" height="327" xlink:href="blocks.png" />
+            <pattern id="red_d" x="-1.16666666666666666667" y="-1.02803738317757009346" width="4.21929824561403508772" height="3.05607476635514018692"><image width="481" height="327" xlink:href="blocks.png" />
+            <pattern id="red_e" x="-3.21929824561403508772" y="-0.00000000000000000000" width="4.21929824561403508772" height="3.05607476635514018692"><image width="481" height="327" xlink:href="blocks.png" />
+            <pattern id="red_f" x="-1.16666666666666666667" y="-2.05607476635514018692" width="4.21929824561403508772" height="3.05607476635514018692"><image width="481" height="327" xlink:href="blocks.png" />
+            <pattern id="red_g" x="-2.19298245614035087719" y="-2.05607476635514018692" width="4.21929824561403508772" height="3.05607476635514018692"><image width="481" height="327" xlink:href="blocks.png" />
+            <pattern id="red_1" x="0" y="-0.00000000000000000000" width="3.7" height="3.05607476635514018692"><image width="481" height="327" xlink:href="blocks.png" />
+            <pattern id="red_2" x="0" y="-1.02803738317757009346" width="3.7" height="3.05607476635514018692"><image width="481" height="327" xlink:href="blocks.png" />
+            <pattern id="red_3" x="0" y="-2.05607476635514018692" width="3.7" height="3.05607476635514018692"><image width="481" height="327" xlink:href="blocks.png" />
+        </defs>
+        <filter id="myfilter">
+            <feColorMatrix values="0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 .5 0" />
+        </filter>
+        <rect width="100%" height="100%" fill="#fffff0" />
+        <path d="M10,10h748 M10,78h748 M10,146h748 M10,214h748 M10,282h748 M10,350h748 M10,418h748 M10,486h748   M10,10v476 M78,10v476 M146,10v476 M214,10v476 M282,10v476 M350,10v476 M418,10v476 M486,10v476 M554,10v476 M622,10v476 M690,10v476 M758,10v476" stroke-linecap="square" />
+        
+        <g id="exec" transform="translate(0 0)" >
+        <rect x="001" y="598" class="sub s1" />
+        <rect x="123" y="598" class="piece x" />
+        <rect x="229" y="598" class="piece x" />
+        <rect x="335" y="598" class="piece x" />
+        <rect x="441" y="598" class="piece x" />
+        <rect x="547" y="598" class="piece x" />
+        <rect x="653" y="598" class="piece x" />
+        
+        <rect x="001" y="705" class="sub s2" />
+        <rect x="123" y="705" class="piece x" />
+        <rect x="229" y="705" class="piece x" />
+        <rect x="335" y="705" class="piece x" />
+        <rect x="441" y="705" class="piece x" />
+        <rect x="547" y="705" class="piece x" />
+        <rect x="653" y="705" class="piece x" />
+        
+        <rect x="001" y="812" class="sub s3" />
+        <rect x="123" y="812" class="piece x" />
+        <rect x="229" y="812" class="piece x" />
+        <rect x="335" y="812" class="piece x" />
+        <rect x="441" y="812" class="piece x" />
+        <rect x="547" y="812" class="piece x" />
+        <rect x="653" y="812" class="piece x" />
+        </g>
+        
+        <rect style="fill:lightgrey" x="150" y="497" width="608" height="90"/>
+        
+        <g id="toolbox" transform="scale(0.65) translate(222 -20)">
+        <rect x="030" y="800" class="piece a" />
+        <rect x="160" y="800" class="piece b" />
+        <rect x="290" y="800" class="piece c" />
+        <rect x="420" y="800" class="piece d" />
+        <rect x="550" y="800" class="piece e" />
+        <rect x="680" y="800" class="piece f" />
+        <rect x="810" y="800" class="piece g" />
+        </g>
+        
+
+        <image class="nfc" id="f21" x="148" y="80" width="64" xlink:href="nfc1.png" />
+        <image class="nfc" id="f31" x="216" y="80" width="64" xlink:href="nfc1.png" />
+        <image class="nfc" id="f41" x="284" y="80" width="64" xlink:href="nfc1.png" />
+        <image class="nfc" id="f22" x="148" y="148" width="64" xlink:href="nfc1.png" />
+        <image class="nfc" id="f23" x="148" y="216" width="64" xlink:href="nfc1.png" />
+        <image class="nfc" id="f33" x="216" y="216" width="64" xlink:href="nfc1.png" />
+        <image class="nfc" id="f43" x="284" y="216" width="64" xlink:href="nfc1.png" />
+        <image class="nfc" id="f24" x="148" y="284" width="64" xlink:href="nfc1.png" />
+        <image class="nfc" id="f44" x="284" y="284" width="64" xlink:href="nfc1.png" />
+        <image class="nfc" id="f25" x="148" y="352" width="64" xlink:href="nfc1.png" />
+        <image class="nfc" id="f35" x="216" y="352" width="64" xlink:href="nfc1.png" />
+        <image class="nfc" id="f45" x="284" y="352" width="64" xlink:href="nfc1.png" />
+
+        <image class="nfc" id="f61" x="420" y="80" width="64" xlink:href="nfc2.png" />
+        <image class="nfc" id="f71" x="488" y="80" width="64" xlink:href="nfc2.png" />
+        <image class="nfc" id="f81" x="556" y="80" width="64" xlink:href="nfc2.png" />
+        <image class="nfc" id="f82" x="556" y="148" width="64" xlink:href="nfc2.png" />
+        <image class="nfc" id="f73" x="488" y="216" width="64" xlink:href="nfc2.png" />
+        <image class="nfc" id="f64" x="420" y="284" width="64" xlink:href="nfc2.png" />
+        <image class="nfc" id="f65" x="420" y="352" width="64" xlink:href="nfc2.png" />
+        
+        <image id="player" width="64" xlink:href="man.png" />
+
+        
+        <circle class="ip" cx="110" cy="610" r="6" />
+        <circle class="ip" cx="110" cy="717" r="6" />
+        <circle class="ip" cx="110" cy="824" r="6" />
+        
+        <g filter="url('#myfilter')">
+        <rect id="draghighlight" x="123" y="598" width="106" height="107" class="piece a"/>
+        </g>
+        <rect id="dragimage" x="0" y="0" class="piece x" />
+        
+        <foreignObject x="10" y="497" width="130" height="90">
+            <div xmlns="http://www.w3.org/1999/xhtml" style="height:100%">
+                <button id="thebutton" class="btn btn-primary" style="width:100%;height:100%;font-size:36px" onclick='dostuff()'>Start</button>
+            </div>
+        </foreignObject>
+        
+    </svg>
+</div>
+
+<script>
+const copyflag = () => {
+    flag.select();
+    document.execCommand("copy");
+    copybtn.innerHTML = 'Copied';
+};
+
+const correct = flag => {
+    Swal.fire({
+        scrollbarPadding: false,
+        allowOutsideClick: false,
+        icon: 'success',
+        title: 'Congratulations!',
+        html: `<div class="input-group mb-3" style="padding:5px;">
+            <input id="flag" class="form-control" type="text" name="answer" value="${flag}" readonly="" size="22">
+            <button id="copybtn" class="btn btn-primary float-end" type="submit" onclick="copyflag()">Copy</button>
+        </div>`,
+        confirmButtonText: 'Close'
+    })
+};
+
+const errorAlert = helphtml => Swal.fire({
+    scrollbarPadding: false,
+    icon: 'error',
+    title: 'Error!',
+    html: helphtml
+});
+
+const info = helphtml => Swal.fire({
+    scrollbarPadding: false,
+    icon: 'info',
+    title: 'Instructions',
+    html: helphtml
+});
+
+const getflag = async data => {
+    const resp = fetch('/getflag', {
+        method: 'POST',
+        body: JSON.stringify({data}),
+        headers: { 'Content-Type': 'application/json' }
+    })
+    .then(x => x.json())
+    .then(res => res.ok ? correct(res.flag) : errorAlert(res.message));
+};
+
+const helphtml = `<ul style="text-align: left;">
+    <li>Drag the code pieces from the toolbox to the instruction grid below.
+    <li>Each function can only take up to six pieces.
+    <li>Press <b>Start</b> to start and <b>Stop</b> to stop. You can only modify the code when it is in a stopped state.
+    <li>You may not go out of bounds.
+    <li>Recursion is not supported.
+    <li>Eat all the chicken and capture the flag! 🚩
+    </ul>`;
+
+const player = d3.select('#player');
+const movePlayer = (x,y,t) => player.attr('transform', `translate(${x*68+12} ${y*68+22}) rotate(${-90*t} 32 22)`);
+
+const d3nfcs = d3.selectAll('.nfc');
+const d3ips = d3.selectAll('.ip');
+
+const first = {x:4, y:3, t:1}
+const reset = () => {
+    movePlayer(first.x, first.y, first.t);
+    d3.selectAll('.nfc').style('opacity', 1);
+    d3ips.data([-1, -1, -1]).attr('cx', d => 216 + 106 * d);
+}
+
+reset();
+
+const dostuff = () => {
+
+const currText = $(thebutton).text();
+if (currText == 'Stop') {
+    if (latestRequest) cancelAnimationFrame(latestRequest);
+    reset();
+    $(thebutton).text('Start');
+    return;
+}
+
+const z = [...document.querySelectorAll('#exec .piece')].map(x => x.classList[1]).join('');
+const code = [z.substring(0,6),z.substring(6,12),z.substring(12,18)].map(x => x.replace(/x.*/, '')).join();
+
+let tmp = code.split(',');
+if (tmp[1].includes('f') || tmp[2].includes('g') || (tmp[1].includes('g') && tmp[2].includes('f'))) {
+    errorAlert('Recursion not allowed!');
+    return;
+}
+
+if (tmp[2].includes('f'))
+    tmp = tmp[0].replaceAll('g', tmp[2]).replaceAll('f', tmp[1]);
+else
+    tmp = tmp[0].replaceAll('f', tmp[1]).replaceAll('g', tmp[2]);
+
+
+blahIP = [];
+const magic1 = (base, index) => {
+    const s = code.split(',')[index];
+    for (let i = 0; i < s.length; i++) {
+        const c = s.charAt(i);
+        base = [...base];
+        base[index] = i;
+        switch (c) {
+            case 'a':
+            case 'b':
+            case 'c':
+            case 'd':
+            case 'e':
+            case 'x':
+                blahIP.push(base);
+                break;
+            case 'f':
+                magic1(base, 1);
+                break;
+            case 'g':
+                magic1(base, 2);
+                break;
+        }
+    }
+};
+magic1([-1,-1,-1], 0);
+
+last = first;
+
+dx = [1,0,-1,0];
+dy = [0,-1,0,1];
+blah = [last]
+
+const nfcids = [...($('.nfc').map((i,x) => x.id))];
+lastf = nfcids.map(x => 1);
+blahf = [lastf];
+
+let endgame = null;
+(() => {
+    for (const i of tmp) {
+        switch (i) {
+            case 'x': break;
+            case 'a': last = {x:last.x+dx[last.t&3], y:last.y+dy[last.t&3], t:last.t}; break;
+            case 'b': last = {x:last.x-dx[last.t&3], y:last.y-dy[last.t&3], t:last.t}; break;
+            case 'c': last = {x:last.x, y:last.y, t:last.t+1}; break;
+            case 'd': last = {x:last.x, y:last.y, t:last.t-1}; break;
+            case 'e':
+                ex = last.x;
+                ey = last.y;
+                ei = nfcids.indexOf('f'+ex+ey);
+                if (ei >= 0 && lastf[ei] == 1) {
+                    lastf = [...lastf]
+                    lastf[ei] = 0;
+                }
+        }
+        
+        if (last.x < 0 || last.x > 10 || last.y < 0 || last.y > 6) {
+            endgame = 'Out of bounds';
+            return;
+        }
+        
+        blah.push(last);
+        blahf.push(lastf);
+        
+        if (lastf.every(x => x == 0)) {
+            endgame = 'WIN';
+            return;
+        }
+    }
+})();
+
+blahIP = blahIP.slice(0,blah.length);
+$(thebutton).text('Stop');
+
+let startingTime;
+const test = currentTime => {
+    if (!startingTime) startingTime = currentTime;
+    const elapsed = currentTime - startingTime;
+    
+    const frame = elapsed / 500;
+    
+    if (frame >= blah.length - 1) {
+        const r = blah.at(-1);
+        movePlayer(r.x, r.y, r.t);
+        
+        d3nfcs.data(blahf.at(-1)).style('opacity', d => d);
+        
+        d3ips.data(blahIP.at(-1)).attr('cx', d => 216 + 106 * d);
+        //$(thebutton).text('Reset');
+        
+        if (endgame == 'WIN')
+            getflag(z);
+        else if (endgame)
+            latestRequest = requestAnimationFrame(() => errorAlert(endgame));
+        
+    } else {
+        const r0 = blah[~~frame];
+        const r1 = blah[-~frame];
+        const u = frame % 1;
+        movePlayer(r0.x + u * (r1.x - r0.x), r0.y + u * (r1.y - r0.y), r0.t + u * (r1.t - r0.t));
+        
+        const f0 = blahf[~~frame];
+        const f1 = blahf[-~frame];
+        nfcMatrix = f0.map((x, i) => x + Math.sqrt(u,2) * (f1[i] - x));
+        d3nfcs.data(nfcMatrix).style('opacity', d => d);
+        
+        // now to do IP
+        d3ips.data(blahIP[~~frame]).attr('cx', d => 216 + 106 * d);
+        
+        latestRequest = requestAnimationFrame(test);
+    }
+    
+}
+
+latestRequest = requestAnimationFrame(test);
+};
+
+/////////////////////////////////////////////////////////////////////////////////
+// now DRAG STUFF
+
+const drag = (curr => {
+
+    let piece;
+
+    const xy = event => {
+        //console.log(event.sourceEvent);
+        //console.log('start');
+        const coordinates = event.sourceEvent.type.includes('touch')
+            ? d3.pointer(event.sourceEvent.changedTouches[0], redteam)
+            : d3.pointer(event, redteam);
+        //console.log(coordinates);
+        const x = Math.floor((coordinates[0] - 123) / 106);
+        const y = Math.floor((coordinates[1] - 598) / 107);
+        return [x, y, coordinates[0], coordinates[1]];
+    };
+
+    function start(event) {
+        curr = event.sourceEvent.srcElement;
+        piece = $(curr).attr('class').charAt(6);
+        
+        if (curr.parentNode == exec) {
+            $(curr).attr('class', 'piece x');
+        }
+
+        drag(event);
+    };
+    function drag(event) {
+        //console.log($(event.sourceEvent.srcElement).attr('class').charAt(6));
+        const [mx, my, x, y] = xy(event);
+        d3.select('#dragimage')
+            .attr('x', x - 53.5)
+            .attr('y', y - 53.5)
+            .attr('class', 'piece ' + piece);
+        if (mx < 0 || mx > 5 || my < 0 || my > 2) {
+            d3.select('#draghighlight').style('opacity', 0);
+        } else {
+            d3.select('#draghighlight').attr('x', 123 + 106 * mx).attr('y', 598 + 107 * my).style('opacity', 1);
+        }
+        //console.log(`${x},{y}`);
+    };
+    function end(event) {
+        curr = null;
+        d3.select('#dragimage').attr('class', 'piece x');
+        d3.select('#draghighlight').style('opacity', 0);
+        const [x, y, _x, _y] = xy(event);
+        if (x < 0 || x > 5 || y < 0 || y > 2) return;
+        $($('#exec .piece')[x+y*6]).attr('class', 'piece ' + piece);
+    };
+    return d3.drag().filter(_ => !curr && $(thebutton).text() == 'Start').on('start', start).on('drag', drag).on('end', end);
+})();
+    
+d3.selectAll('#toolbox .piece').call(drag);
+d3.selectAll('#exec .piece').call(drag);
+        
+</script>
+
+</body>
+</html>

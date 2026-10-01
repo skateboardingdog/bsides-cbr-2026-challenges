@@ -1,0 +1,33 @@
+.split {
+  display: flex;
+  flex: 1 1 auto;
+  min-width: 0;
+  min-height: 0;
+}
+
+.side {
+  min-width: 0;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.divider {
+  flex: 0 0 auto;
+  width: 5px;
+  cursor: col-resize;
+  background: var(--border);
+  position: relative;
+  touch-action: none;
+}
+
+.divider::after {
+  content: '';
+  position: absolute;
+  inset: 0 -3px;
+}
+
+.divider:hover,
+.divider.dragging {
+  background: var(--accent-dim);
+}

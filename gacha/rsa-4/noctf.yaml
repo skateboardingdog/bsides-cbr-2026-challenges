@@ -1,0 +1,15 @@
+version: "1.0"
+slug: rsa-4
+title: RSA 4
+categories: ["crypto"]
+difficulty: beginner
+tags:
+  gacha:requires: rsa-3
+description: |
+  For better or 4 worse
+
+  Author: Neobeo
+files:
+  - ./publish/rsa4.py
+flags:
+  - skbdg{prooF_OUR_encryption_is_weak}

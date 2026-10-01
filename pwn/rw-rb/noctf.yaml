@@ -1,0 +1,15 @@
+version: "1.0"
+slug: rw-rb
+title: rw.rb
+categories: ["pwn"]
+difficulty: medium
+description: |
+  [rw.py](https://github.com/DownUnderCTF/Challenges_2025_Public/tree/main/pwn/rw.py) got a shiny makeover!
+
+  Author: joseph
+connection_info: nc ${host} ${port}
+files:
+  - ./publish/Dockerfile
+  - ./publish/rw.rb
+flags:
+  - skbdg{if_you_fiddle_with_memory_enough_eventually_you_get_code_execution}

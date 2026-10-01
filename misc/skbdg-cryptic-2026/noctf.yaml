@@ -1,0 +1,14 @@
+version: "1.0"
+slug: skbdg-cryptic-2026
+title: Skateboarding Dog Cryptic 2026
+categories: ["misc"]
+difficulty: easy
+description: |
+  CTFs hide this in camouflage! (4)
+
+  NOTE: Physical printouts available at the CTF admin desk, while supplies last!
+
+  Author: Neobeo
+connection_info: ${url}
+flags:
+  - skbdg{CTFTSMISTLTSRLTRATOSCACOPLTTTEAASLEGSKZDEVSYY}

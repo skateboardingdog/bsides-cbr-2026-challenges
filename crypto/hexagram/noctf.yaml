@@ -1,0 +1,15 @@
+version: "1.0"
+slug: hexagram
+title: hexagram
+categories: ["crypto"]
+difficulty: medium
+description: |
+  are you in harmony with the 64 hexagrams?
+
+  Author: wednesday
+connection_info: nc ${host} ${port}
+files:
+  - ./publish/server.py
+  - ./publish/Dockerfile
+flags:
+  - skbdg{b4s3_s1xty_four_decod1ng_c4n_be_surpr1s1ng}

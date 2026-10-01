@@ -1,0 +1,15 @@
+version: "1.0"
+slug: rsa-2
+title: RSA 2
+categories: ["crypto"]
+difficulty: beginner
+tags:
+  gacha:requires: rsa-1
+description: |
+  Two keys, what could go wrong?
+
+  Author: Neobeo
+files:
+  - ./publish/rsa2.py
+flags:
+  - skbdg{greaT_WOrk_once_again}

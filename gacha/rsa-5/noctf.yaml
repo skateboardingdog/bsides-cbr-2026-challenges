@@ -1,0 +1,15 @@
+version: "1.0"
+slug: rsa-5
+title: RSA 5
+categories: ["crypto"]
+difficulty: beginner
+tags:
+  gacha:requires: rsa-4
+description: |
+  5 in the air, let's do it together!
+
+  Author: Neobeo
+files:
+  - ./publish/rsa5.py
+flags:
+  - skbdg{a_sciFI_VEhicle_takes_you_to_the_future}

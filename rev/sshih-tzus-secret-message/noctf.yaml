@@ -1,0 +1,15 @@
+version: "1.0"
+slug: sshih-tzus-secret-message
+title: SSHih Tzu's secret message
+categories: ["rev"]
+difficulty: medium
+description: |
+  We've gotten the key and we've found the door. But we can't find a way in. Can you help us find the secret message?
+
+  Author: equus
+connection_info: ssh -i sshkey -p${port} ctf@${host}
+files:
+  - ./publish/sshkey
+  - ./publish/ssh-server
+flags:
+  - skbdg{super_secret_handsshake}

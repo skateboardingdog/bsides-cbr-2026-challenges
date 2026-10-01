@@ -1,0 +1,151 @@
+.TH tinysshd 8
+.SH NAME
+tinysshd \- Tiny SSH daemon
+.SH SYNOPSIS
+.B tinysshd
+[ options ]
+.I keydir
+.SH DESCRIPTION
+.B tinysshd
+is a minimalistic SSH server which implements only a subset of SSHv2 features.
+.sp
+.B tinysshd
+supports only secure cryptography (minimum 128\-bit security, protected against cache\-timing attacks)
+.sp
+.B tinysshd
+doesn't implement older crypto (such as RSA, DSA, HMAC\-MD5, HMAC\-SHA1, 3DES, RC4, ...)
+.sp
+.B tinysshd
+doesn't implement unsafe features (such as password or hostbased authentication)
+.sp
+.B tinysshd
+doesn't have features such: SSH1 protocol, compression, port forwarding, agent forwarding, X11 forwarding ...
+.sp
+.B tinysshd
+doesn't use dynamic memory allocation (no allocation failures, etc.)
+.SH OPTIONS
+.TP
+.B \-q
+no error messages
+.TP
+.B \-Q
+print error messages (default)
+.TP
+.B \-v
+print extra information
+.TP
+.B \-s
+enable state\-of\-the\-art crypto (default)
+.sp
+signing \- ssh\-ed25519
+.sp
+key-exchange \- curve25519\-sha256
+.sp
+symmetric \- chacha20\-poly1305@openssh.com
+.TP
+.B \-S
+disable state\-of\-the\-art crypto
+.TP
+.B \-p
+enable post\-quantum crypto (default)
+.sp
+signing \- TODO (not implemented yet)
+.sp
+key-exchange \- sntrup761x25519\-sha512@openssh.com
+.sp
+symmetric \-  chacha20\-poly1305@openssh.com
+.TP
+.B \-P
+disable post\-quantum crypto
+.TP
+.B \-l
+use syslog instead of standard error output (useful for running from inetd)
+.TP
+.B \-L
+don't use syslog, use standard error output (default)
+.TP
+.B \-x \fIname=command
+add subsystem command (e.g.: sftp=/usr/libexec/openssh/sftp\-server)
+.TP
+.B \-e \fIcommand
+execute the given command instead of spawning the shell (disables \fIexec\fR/\fIsubsystem\fR channel requests)
+.TP
+.I keydir
+directory containing TinySSH keys, typically /etc/tinyssh/sshkeydir
+.SH AUTHORIZATION
+.B tinysshd
+supports only public-key authorization via
+.B AuthorizedKeysFile
+~/.ssh/authorized_keys. Each line of the file contains one key in format "keytype base64-encoded-key comment".
+.B tinyssh
+supports only "ssh-ed25519" keytype.
+.sp
+~/.ssh/authorized_keys example:
+.nf
+.RS 2
+ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILV5AGhGQ1QVXjBWhTKJP3vrqE3isL4ivisBailQ14gS comment
+.RE
+.SH RUNNING
+.TP
+.B TCPSERVER
+tcpserver \-HRDl0 0.0.0.0 22 /usr/sbin/tinysshd \-v /etc/tinyssh/sshkeydir &
+.TP
+.B BUSYBOX
+busybox tcpsvd 0 22 tinysshd \-v /etc/tinyssh/sshkeydir &
+.TP
+.B INETD
+.RS 4
+/etc/inetd.conf:
+.RS 4
+ssh stream tcp nowait root /usr/sbin/tinysshd tinysshd \-l \-v /etc/tinyssh/sshkeydir
+.RE
+.RE
+.TP
+.B SYSTEMD
+.RS 4
+tinysshd.socket:
+.RS 4
+.nf
+[Unit]
+Description=TinySSH server socket
+ConditionPathExists=!/etc/tinyssh/disable_tinysshd
+
+[Socket]
+ListenStream=22
+Accept=yes
+
+[Install]
+WantedBy=sockets.target
+.fi
+.RE
+.RE
+.sp
+.RS 4
+tinysshd@.service:
+.RS 4
+.nf
+[Unit]
+Description=Tiny SSH server
+After=network.target auditd.service
+
+[Service]
+ExecStartPre=\-/usr/sbin/tinysshd\-makekey \-q /etc/tinyssh/sshkeydir
+EnvironmentFile=\-/etc/default/tinysshd
+ExecStart=/usr/sbin/tinysshd $TINYSSHDOPTS \-\- /etc/tinyssh/sshkeydir
+KillMode=process
+SuccessExitStatus=111
+StandardInput=socket
+StandardError=journal
+
+[Install]
+WantedBy=multi\-user.target
+.fi
+.RE
+.RE
+.SH SEE ALSO
+.BR tinysshd\-makekey (8),
+.BR tinysshd\-printkey (8)
+.sp
+.nf
+https://tinyssh.org/
+.fi

@@ -1,0 +1,12 @@
+version: "1.0"
+slug: tis-101
+title: TIS-101
+categories: ["rev"]
+difficulty: beginner
+description: |
+  ThIS should be quite basic.
+
+  Author: joseph
+connection_info: ${url}
+flags:
+  - skbdg{w0w_you_cr4ck3d_t1s_pin}

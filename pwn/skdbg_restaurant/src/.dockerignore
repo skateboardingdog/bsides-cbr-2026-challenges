@@ -1,0 +1,7 @@
+vmlinux
+System.map
+chall.c
+chall.h
+drop.c
+.vm_root
+initramfs.cpio.gz

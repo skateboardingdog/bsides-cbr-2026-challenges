@@ -1,0 +1,77 @@
+services:
+  frontend:
+    build:
+      context: .
+      dockerfile: frontend/Dockerfile
+    environment:
+      - SECRET_KEY=${FRONTEND_SECRET_KEY}
+      - INTERNAL_SECRET=${INTERNAL_SECRET}
+      - PROXY_INTERNAL_URL=http://proxy
+      - PROXY_HOST=proxy
+      - FRONTEND_HOST=frontend
+      - XSSBOT_URL=http://xssbot:8000
+    ports:
+      - "1337:80"
+    volumes:
+      - frontend_data:/data
+    networks:
+      internal:
+        aliases:
+          - usercontent.example.com
+          - usercontent.example.net
+    depends_on:
+      - xssbot
+      - proxy
+    restart: unless-stopped
+
+  victim:
+    build: ./victim
+    environment:
+      - SECRET_KEY=${VICTIM_SECRET_KEY}
+      - INTERNAL_SECRET=${INTERNAL_SECRET}
+      - FLAG1=${FLAG1}
+      - FLAG2=${FLAG2}
+      - FLAG3=${FLAG3}
+      - FLAG4=${FLAG4}
+    volumes:
+      - victim_data:/data
+    networks:
+      - internal
+    restart: unless-stopped
+
+  proxy:
+    build: ./proxy
+    environment:
+      - INTERNAL_SECRET=${INTERNAL_SECRET}
+      - VICTIM_INTERNAL_URL=http://victim
+    volumes:
+      - proxy_data:/data
+    networks:
+      internal:
+        aliases:
+          - app.example.com
+    depends_on:
+      - victim
+    restart: unless-stopped
+
+  xssbot:
+    image: ghcr.io/downunderctf/docker-vendor/xssbot@sha256:2e456ba68cda5159dd070ce68cd034a562de4d8790b667a4cfcf2ecb060ff2ca
+    environment:
+      - OUTBOUND_AUTH_METHOD=http-get
+      - OUTBOUND_AUTH_HTTP_GET_URL=http://app.example.com/chal1/internal-login?token=${INTERNAL_SECRET}
+      - INBOUND_SSRF_PROT=1
+      - INBOUND_BEARER=${INTERNAL_SECRET}
+      - TIMEOUT_TOTAL=12000
+      - TIMEOUT_NETWORK_IDLE=7000
+    networks:
+      - internal
+    restart: unless-stopped
+
+networks:
+  internal:
+    driver: bridge
+
+volumes:
+  frontend_data:
+  victim_data:
+  proxy_data:

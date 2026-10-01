@@ -1,0 +1,21 @@
+version: "1.0"
+slug: skdbg-restaurant
+title: skdbg_restaurant
+categories: ["pwn"]
+difficulty: hard
+description: |
+  Welcome to the restaurant!  The kitchen at /dev/skdbg_restaurant takes orders,
+  adds dishes to them, calls them up when they are ready, and serves them to 
+  customers - but only ever from the first order on the rail.
+
+  You are a customer with `CAP_NET_RAW`.  The flag is in /flag, and only the
+  head chef (root) can read it. The kernel is the current mainline kernel
+  (linux-7.2).
+
+  Author: Faith
+# url for instancer page
+connection_info: ${url}
+files:
+  - ./publish/challenge.zip
+flags:
+  - skbdg{h4v3_7h3_c4k3_4nd_3a7_17_4ll}

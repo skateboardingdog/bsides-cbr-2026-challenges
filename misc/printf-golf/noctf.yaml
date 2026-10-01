@@ -1,0 +1,21 @@
+version: "1.0"
+slug: printf-golf
+title: printf golf
+categories: ["misc", "koth"]
+difficulty: medium
+description: |
+  printf is very cool
+
+  Author: joseph
+connection_info: ${url}
+solve:
+  source: none
+  input_type: none
+  weight_update_key: XXX
+files:
+  - ./publish/printf-golf.zip
+scoring:
+  strategy: "core:bounded_weight"
+  params:
+    lower: 0
+    upper: 500

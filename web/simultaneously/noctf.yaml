@@ -1,0 +1,25 @@
+version: "1.0"
+slug: simultaneously
+title: simultaneously
+categories: ["web", "koth"]
+difficulty: hard
+hosting: tls
+connection_info: |
+  Challenge: [${url_main}](${url_main})
+
+  Flag submission: [${url_submission}](${url_submission})
+description: |
+  How many SQL challenges can you solve simultaneously?
+
+  Author: hashkitten
+solve:
+  source: none
+  input_type: none
+  weight_update_key: XXX
+files:
+  - ./publish/simultaneously.zip
+scoring:
+  strategy: "core:bounded_weight"
+  params:
+    lower: 0
+    upper: 500

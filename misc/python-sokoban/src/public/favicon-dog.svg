@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="2 1 32 32">
+  <title>python sokoban</title>
+  <g stroke-linecap="round" stroke-linejoin="round" transform="rotate(1.2 18 18)">
+    <path d="M11 26Q18 29 26 26L25 29Q18 31 11 29Z" fill="#5879b9" stroke="#36568c" stroke-width=".7"/>
+    <path d="M18 29L20 30L18 32L16.5 30Z" fill="#faf4df" stroke="#6d593c" stroke-width=".65"/>
+    <path d="M6 14L5 4Q5 2 7 4L13 10Q18 8 23 10L29 3Q31 2 31 5L30 15Q33 20 28 25Q18 29 8 25Q3 21 6 14Z" fill="#ceaa70" stroke="#6d593c" stroke-width="1.35"/>
+    <path d="M7 6L8 14L12 11Z M28 6L24.5 11L29 14Z" fill="#a6804a"/>
+    <path d="M18 10Q15 10 15.5 15L14 19Q10 16 7 19Q6 23 11 25Q18 28 26 25Q31 22 28 19Q25 17 22 19L20 15Q21 11 18 10Z" fill="#faf4df"/>
+    <path d="M12 16v2M24 16v2" stroke="#453d2f" stroke-width="2.6"/>
+    <path d="M15.5 20.5Q18 19 20.5 20.5Q20 23 18 23Q16 23 15.5 20.5Z" fill="#6d593c"/>
+    <path d="M18 22.5V24M18 24Q15 26 12 23.5M18 24Q21 26 24 23.5" stroke="#6d593c" stroke-width="1" fill="none"/>
+    <path d="M17.5 24.5Q19 25.2 20.5 24.2L20.3 26.5Q18.6 28 17.5 26.5Z" fill="#d58c91" stroke="#9a6865" stroke-width=".55"/>
+  </g>
+</svg>

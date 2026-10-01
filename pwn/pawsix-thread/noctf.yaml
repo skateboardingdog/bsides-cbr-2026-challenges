@@ -1,0 +1,16 @@
+version: "1.0"
+slug: pawsix-thread
+title: pawsix thread
+categories: ["pwn"]
+difficulty: easy
+description: |
+  In case you didn't know, the p in pthread stands for pawsix!
+
+  Author: joseph
+connection_info: nc ${host} ${port}
+files:
+  - ./publish/pawsix_thread
+  - ./publish/pawsix_thread.c
+  - ./publish/Dockerfile
+flags:
+  - skbdg{pthread_exit_2_wIn!!}

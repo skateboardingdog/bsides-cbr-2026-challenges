@@ -1,0 +1,13 @@
+version: "1.0"
+slug: x67
+title: x67
+categories: ["rev"]
+difficulty: medium
+description: |
+  wake up babe new architecture just dropped
+
+  Author: Neobeo
+files:
+  - ./publish/x67
+flags:
+  - skbdg{6_oF_7_byT3s_iN_e4Ch_in5TruCt10n_i5_Mad3_uP_of_0nLy_6s_or_7s}

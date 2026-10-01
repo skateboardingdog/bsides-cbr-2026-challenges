@@ -1,0 +1,18 @@
+{
+  "name": "python-sokoban",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "A hand-drawn Sokoban game where pushing expressions rewrites your coordinates.",
+  "scripts": {
+    "build": "vite build",
+    "start": "node --env-file=.env.production server/production.js"
+  },
+  "devDependencies": {
+    "vite": "^8.2.2"
+  },
+  "dependencies": {
+    "@fontsource/dm-mono": "^5.3.0",
+    "@fontsource/kalam": "^5.3.0"
+  }
+}

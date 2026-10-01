@@ -1,0 +1,15 @@
+version: "1.0"
+slug: rsa-3
+title: RSA 3
+categories: ["crypto"]
+difficulty: beginner
+tags:
+  gacha:requires: rsa-2
+description: |
+  They say third time's the charm
+
+  Author: Neobeo
+files:
+  - ./publish/rsa3.py
+flags:
+  - skbdg{maTH_REEvaluated_by_fermat}

@@ -1,0 +1,12 @@
+{
+  "name": "grid-admin bot",
+  "version": "1.0",
+  "manifest_version": 3,
+  "description": "Grid Admin message processor",
+  "permissions": ["nativeMessaging", "alarms"],
+  "host_permissions": ["http://127.0.0.1:8000/*"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAvQ9T6Sv5p+RaSMPIgXB3+R+GfPRTmqpafTKeEFBq0Rj5E6u448Fv0CJoWCmKwfDsfxa+Joei/tM/vkFaEebRzGujK7UyYbdfTCR+GJldKhov0MwqhgCcmmjVCrGjiO9O2P8xEoobH/tO1nHjERC/4Fo0Pyx2lK5HiaDqrGGgmkeYAtAlc7rwhWpU9fOUQAzyoXRSYGobltEjCErJqPcgl1SWbBYqUWsX9iuyMl1YBnsy3Ieg4aso8DsskVqTLmE5WD/ZTNvQ5uWjOcnkDYWMvAurKeV5U3opJKYuqrn7cpqqErWzvu2ir4WiJvRfAnOOee/bFThLZi31HlW2toMLKwIDAQAB"
+}

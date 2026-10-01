@@ -1,0 +1,15 @@
+version: "1.0"
+slug: neobeo-refried-chicken
+title: Neobeo Re-fried Chicken
+categories: ["misc"]
+difficulty: medium
+description: |
+  We have Neobeo Fried Chicken at home.
+  
+  Neobeo Fried Chicken at home:
+
+  Author: Neobeo
+hosting: tls
+connection_info: ${url}
+flags:
+  - skbdg{refried_rehashed_and_reslopped}

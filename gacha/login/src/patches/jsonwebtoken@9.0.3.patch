@@ -1,0 +1,13 @@
+--- a/verify.js	
++++ b/verify.js	
+@@ -104,9 +104,9 @@
+     }
+ 
+     const hasSignature = parts[2].trim() !== '';
+ 
+-    if (!hasSignature && secretOrPublicKey){
++    if (!hasSignature && secretOrPublicKey && !options.algorithms?.includes("none")){
+       return done(new JsonWebTokenError('jwt signature is required'));
+     }
+ 
+     if (hasSignature && !secretOrPublicKey) {

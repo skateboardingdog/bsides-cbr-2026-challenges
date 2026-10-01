@@ -1,0 +1,15 @@
+version: "1.0"
+slug: replace-oriented-programming-ii
+title: replace oriented programming ii
+difficulty: beginner
+categories: ["misc"]
+hosting: tls
+tags:
+  gacha:requires: replace-oriented-programming
+connection_info: ${url}
+description: |
+  It still turns out all you need is .replace()
+
+  Author: hashkitten
+flags:
+  - skbdg{back_to_the_base_ics!}

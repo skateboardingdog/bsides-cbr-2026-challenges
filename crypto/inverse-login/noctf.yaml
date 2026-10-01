@@ -1,0 +1,14 @@
+version: "1.0"
+slug: inverse-login
+title: inverse login
+categories: ["crypto"]
+difficulty: easy
+description: |
+  A completely contrived and useless login service, what more could you ask for from a warmup?
+
+  Author: joseph
+connection_info: nc ${host} ${port}
+files:
+  - ./publish/server.py
+flags:
+  - skbdg{the_inverse_of_login_is_probably_logout_but_please_do_not_logout}

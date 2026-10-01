@@ -1,0 +1,236 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="780" viewBox="0 0 1200 780">
+<style>
+.bg{fill:#f8fafc}
+.panel{fill:#fff;stroke:#d6dee8;stroke-width:2}
+.grid{stroke:#e2e8f0;stroke-width:2}
+.title{fill:#0f172a;font:700 34px monospace}
+.label{fill:#334155;font:600 24px monospace}
+.sub{fill:#64748b;font:16px monospace}
+.note{fill:#475569;font:18px monospace}
+.tiny{fill:#475569;font:700 14px monospace}
+.scaf{stroke:#94a3b8;stroke-width:8;stroke-linecap:round}
+.sol{stroke:#dc2626;stroke-width:10;stroke-linecap:round;stroke-linejoin:round}
+.demo{stroke:#dc2626;stroke-width:14;stroke-linecap:round}
+.dot-demo{fill:#dc2626}
+</style>
+<rect class="bg" width="100%" height="100%"/>
+<text class="title" x="60" y="72">T-metacell completions</text>
+<text class="title" x="660" y="72">6x6 loop</text>
+
+<rect class="panel" x="40" y="90" rx="24" ry="24" width="400" height="610"/>
+<rect class="panel" x="538" y="98" rx="24" ry="24" width="614" height="614"/>
+
+<rect class="panel" x="64" y="128" rx="18" ry="18" width="352" height="144"/>
+<text class="label" x="88" y="168">completion 1: EW</text>
+<text class="sub" x="88" y="198">straight across the cap of the T</text>
+<line class="scaf" x1="320" y1="208" x2="378" y2="208"/>
+<line class="scaf" x1="320" y1="208" x2="320" y2="266"/>
+<line class="scaf" x1="320" y1="208" x2="262" y2="208"/>
+<line class="demo" x1="320" y1="208" x2="262" y2="208"/>
+<line class="demo" x1="320" y1="208" x2="378" y2="208"/>
+<circle class="dot-demo" cx="320" cy="208" r="7"/>
+
+<rect class="panel" x="64" y="322" rx="18" ry="18" width="352" height="144"/>
+<text class="label" x="88" y="362">completion 2: SW</text>
+<text class="sub" x="88" y="392">turn from the stem to the left arm</text>
+<line class="scaf" x1="320" y1="402" x2="378" y2="402"/>
+<line class="scaf" x1="320" y1="402" x2="320" y2="460"/>
+<line class="scaf" x1="320" y1="402" x2="262" y2="402"/>
+<line class="demo" x1="320" y1="402" x2="262" y2="402"/>
+<line class="demo" x1="320" y1="402" x2="320" y2="460"/>
+<circle class="dot-demo" cx="320" cy="402" r="7"/>
+
+<rect class="panel" x="64" y="516" rx="18" ry="18" width="352" height="144"/>
+<text class="label" x="88" y="556">completion 3: ES</text>
+<text class="sub" x="88" y="586">turn from the stem to the right arm</text>
+<line class="scaf" x1="320" y1="596" x2="378" y2="596"/>
+<line class="scaf" x1="320" y1="596" x2="320" y2="654"/>
+<line class="scaf" x1="320" y1="596" x2="262" y2="596"/>
+<line class="demo" x1="320" y1="596" x2="378" y2="596"/>
+<line class="demo" x1="320" y1="596" x2="320" y2="654"/>
+<circle class="dot-demo" cx="320" cy="596" r="7"/>
+
+<!-- 6x6 macro grid -->
+<g>
+  <line class="grid" x1="560" y1="120" x2="1112" y2="120"/>
+  <line class="grid" x1="560" y1="212" x2="1112" y2="212"/>
+  <line class="grid" x1="560" y1="304" x2="1112" y2="304"/>
+  <line class="grid" x1="560" y1="396" x2="1112" y2="396"/>
+  <line class="grid" x1="560" y1="488" x2="1112" y2="488"/>
+  <line class="grid" x1="560" y1="580" x2="1112" y2="580"/>
+  <line class="grid" x1="560" y1="672" x2="1112" y2="672"/>
+
+  <line class="grid" x1="560" y1="120" x2="560" y2="672"/>
+  <line class="grid" x1="652" y1="120" x2="652" y2="672"/>
+  <line class="grid" x1="744" y1="120" x2="744" y2="672"/>
+  <line class="grid" x1="836" y1="120" x2="836" y2="672"/>
+  <line class="grid" x1="928" y1="120" x2="928" y2="672"/>
+  <line class="grid" x1="1020" y1="120" x2="1020" y2="672"/>
+  <line class="grid" x1="1112" y1="120" x2="1112" y2="672"/>
+</g>
+
+<!-- all three available T-arms per cell (red overlay marks the used two) -->
+<g>
+  <line class="scaf" x1="606" y1="166" x2="652" y2="166"/>
+  <line class="scaf" x1="606" y1="166" x2="606" y2="212"/>
+  <line class="scaf" x1="606" y1="166" x2="560" y2="166"/>
+  <line class="scaf" x1="698" y1="166" x2="744" y2="166"/>
+  <line class="scaf" x1="698" y1="166" x2="698" y2="212"/>
+  <line class="scaf" x1="698" y1="166" x2="652" y2="166"/>
+  <line class="scaf" x1="790" y1="166" x2="836" y2="166"/>
+  <line class="scaf" x1="790" y1="166" x2="790" y2="212"/>
+  <line class="scaf" x1="790" y1="166" x2="744" y2="166"/>
+  <line class="scaf" x1="882" y1="166" x2="928" y2="166"/>
+  <line class="scaf" x1="882" y1="166" x2="882" y2="212"/>
+  <line class="scaf" x1="882" y1="166" x2="836" y2="166"/>
+  <line class="scaf" x1="974" y1="166" x2="1020" y2="166"/>
+  <line class="scaf" x1="974" y1="166" x2="974" y2="212"/>
+  <line class="scaf" x1="974" y1="166" x2="928" y2="166"/>
+  <line class="scaf" x1="1066" y1="166" x2="1066" y2="120"/>
+  <line class="scaf" x1="1066" y1="166" x2="1066" y2="212"/>
+  <line class="scaf" x1="1066" y1="166" x2="1020" y2="166"/>
+  <line class="scaf" x1="606" y1="258" x2="606" y2="212"/>
+  <line class="scaf" x1="606" y1="258" x2="652" y2="258"/>
+  <line class="scaf" x1="606" y1="258" x2="606" y2="304"/>
+  <line class="scaf" x1="698" y1="258" x2="744" y2="258"/>
+  <line class="scaf" x1="698" y1="258" x2="698" y2="304"/>
+  <line class="scaf" x1="698" y1="258" x2="652" y2="258"/>
+  <line class="scaf" x1="790" y1="258" x2="790" y2="212"/>
+  <line class="scaf" x1="790" y1="258" x2="836" y2="258"/>
+  <line class="scaf" x1="790" y1="258" x2="744" y2="258"/>
+  <line class="scaf" x1="882" y1="258" x2="882" y2="212"/>
+  <line class="scaf" x1="882" y1="258" x2="928" y2="258"/>
+  <line class="scaf" x1="882" y1="258" x2="836" y2="258"/>
+  <line class="scaf" x1="974" y1="258" x2="1020" y2="258"/>
+  <line class="scaf" x1="974" y1="258" x2="974" y2="304"/>
+  <line class="scaf" x1="974" y1="258" x2="928" y2="258"/>
+  <line class="scaf" x1="1066" y1="258" x2="1066" y2="212"/>
+  <line class="scaf" x1="1066" y1="258" x2="1066" y2="304"/>
+  <line class="scaf" x1="1066" y1="258" x2="1020" y2="258"/>
+  <line class="scaf" x1="606" y1="350" x2="606" y2="304"/>
+  <line class="scaf" x1="606" y1="350" x2="652" y2="350"/>
+  <line class="scaf" x1="606" y1="350" x2="606" y2="396"/>
+  <line class="scaf" x1="698" y1="350" x2="698" y2="304"/>
+  <line class="scaf" x1="698" y1="350" x2="744" y2="350"/>
+  <line class="scaf" x1="698" y1="350" x2="652" y2="350"/>
+  <line class="scaf" x1="790" y1="350" x2="790" y2="304"/>
+  <line class="scaf" x1="790" y1="350" x2="836" y2="350"/>
+  <line class="scaf" x1="790" y1="350" x2="790" y2="396"/>
+  <line class="scaf" x1="882" y1="350" x2="928" y2="350"/>
+  <line class="scaf" x1="882" y1="350" x2="882" y2="396"/>
+  <line class="scaf" x1="882" y1="350" x2="836" y2="350"/>
+  <line class="scaf" x1="974" y1="350" x2="974" y2="304"/>
+  <line class="scaf" x1="974" y1="350" x2="1020" y2="350"/>
+  <line class="scaf" x1="974" y1="350" x2="928" y2="350"/>
+  <line class="scaf" x1="1066" y1="350" x2="1066" y2="304"/>
+  <line class="scaf" x1="1066" y1="350" x2="1066" y2="396"/>
+  <line class="scaf" x1="1066" y1="350" x2="1020" y2="350"/>
+  <line class="scaf" x1="606" y1="442" x2="606" y2="396"/>
+  <line class="scaf" x1="606" y1="442" x2="652" y2="442"/>
+  <line class="scaf" x1="606" y1="442" x2="606" y2="488"/>
+  <line class="scaf" x1="698" y1="442" x2="698" y2="396"/>
+  <line class="scaf" x1="698" y1="442" x2="698" y2="488"/>
+  <line class="scaf" x1="698" y1="442" x2="652" y2="442"/>
+  <line class="scaf" x1="790" y1="442" x2="790" y2="396"/>
+  <line class="scaf" x1="790" y1="442" x2="790" y2="488"/>
+  <line class="scaf" x1="790" y1="442" x2="744" y2="442"/>
+  <line class="scaf" x1="882" y1="442" x2="882" y2="396"/>
+  <line class="scaf" x1="882" y1="442" x2="928" y2="442"/>
+  <line class="scaf" x1="882" y1="442" x2="882" y2="488"/>
+  <line class="scaf" x1="974" y1="442" x2="1020" y2="442"/>
+  <line class="scaf" x1="974" y1="442" x2="974" y2="488"/>
+  <line class="scaf" x1="974" y1="442" x2="928" y2="442"/>
+  <line class="scaf" x1="1066" y1="442" x2="1066" y2="396"/>
+  <line class="scaf" x1="1066" y1="442" x2="1066" y2="488"/>
+  <line class="scaf" x1="1066" y1="442" x2="1020" y2="442"/>
+  <line class="scaf" x1="606" y1="534" x2="606" y2="488"/>
+  <line class="scaf" x1="606" y1="534" x2="652" y2="534"/>
+  <line class="scaf" x1="606" y1="534" x2="606" y2="580"/>
+  <line class="scaf" x1="698" y1="534" x2="698" y2="488"/>
+  <line class="scaf" x1="698" y1="534" x2="698" y2="580"/>
+  <line class="scaf" x1="698" y1="534" x2="652" y2="534"/>
+  <line class="scaf" x1="790" y1="534" x2="790" y2="488"/>
+  <line class="scaf" x1="790" y1="534" x2="836" y2="534"/>
+  <line class="scaf" x1="790" y1="534" x2="790" y2="580"/>
+  <line class="scaf" x1="882" y1="534" x2="882" y2="488"/>
+  <line class="scaf" x1="882" y1="534" x2="928" y2="534"/>
+  <line class="scaf" x1="882" y1="534" x2="882" y2="580"/>
+  <line class="scaf" x1="974" y1="534" x2="974" y2="488"/>
+  <line class="scaf" x1="974" y1="534" x2="974" y2="580"/>
+  <line class="scaf" x1="974" y1="534" x2="928" y2="534"/>
+  <line class="scaf" x1="1066" y1="534" x2="1066" y2="488"/>
+  <line class="scaf" x1="1066" y1="534" x2="1066" y2="580"/>
+  <line class="scaf" x1="1066" y1="534" x2="1020" y2="534"/>
+  <line class="scaf" x1="606" y1="626" x2="606" y2="580"/>
+  <line class="scaf" x1="606" y1="626" x2="652" y2="626"/>
+  <line class="scaf" x1="606" y1="626" x2="606" y2="672"/>
+  <line class="scaf" x1="698" y1="626" x2="698" y2="580"/>
+  <line class="scaf" x1="698" y1="626" x2="744" y2="626"/>
+  <line class="scaf" x1="698" y1="626" x2="652" y2="626"/>
+  <line class="scaf" x1="790" y1="626" x2="790" y2="580"/>
+  <line class="scaf" x1="790" y1="626" x2="836" y2="626"/>
+  <line class="scaf" x1="790" y1="626" x2="744" y2="626"/>
+  <line class="scaf" x1="882" y1="626" x2="882" y2="580"/>
+  <line class="scaf" x1="882" y1="626" x2="928" y2="626"/>
+  <line class="scaf" x1="882" y1="626" x2="836" y2="626"/>
+  <line class="scaf" x1="974" y1="626" x2="974" y2="580"/>
+  <line class="scaf" x1="974" y1="626" x2="1020" y2="626"/>
+  <line class="scaf" x1="974" y1="626" x2="928" y2="626"/>
+  <line class="scaf" x1="1066" y1="626" x2="1066" y2="580"/>
+  <line class="scaf" x1="1066" y1="626" x2="1112" y2="626"/>
+  <line class="scaf" x1="1066" y1="626" x2="1020" y2="626"/>
+</g>
+
+<!-- A/B/C/D labels moved to top-left of each metacell -->
+<g>
+  <text class="tiny" x="570" y="140">A</text><text class="tiny" x="662" y="140">A</text><text class="tiny" x="754" y="140">A</text><text class="tiny" x="846" y="140">A</text><text class="tiny" x="938" y="140">A</text><text class="tiny" x="1030" y="140">B</text>
+  <text class="tiny" x="570" y="232">C</text><text class="tiny" x="662" y="232">A</text><text class="tiny" x="754" y="232">D</text><text class="tiny" x="846" y="232">D</text><text class="tiny" x="938" y="232">A</text><text class="tiny" x="1030" y="232">B</text>
+  <text class="tiny" x="570" y="324">C</text><text class="tiny" x="662" y="324">D</text><text class="tiny" x="754" y="324">C</text><text class="tiny" x="846" y="324">A</text><text class="tiny" x="938" y="324">D</text><text class="tiny" x="1030" y="324">B</text>
+  <text class="tiny" x="570" y="416">C</text><text class="tiny" x="662" y="416">B</text><text class="tiny" x="754" y="416">B</text><text class="tiny" x="846" y="416">C</text><text class="tiny" x="938" y="416">A</text><text class="tiny" x="1030" y="416">B</text>
+  <text class="tiny" x="570" y="508">C</text><text class="tiny" x="662" y="508">B</text><text class="tiny" x="754" y="508">C</text><text class="tiny" x="846" y="508">C</text><text class="tiny" x="938" y="508">B</text><text class="tiny" x="1030" y="508">B</text>
+  <text class="tiny" x="570" y="600">C</text><text class="tiny" x="662" y="600">D</text><text class="tiny" x="754" y="600">D</text><text class="tiny" x="846" y="600">D</text><text class="tiny" x="938" y="600">D</text><text class="tiny" x="1030" y="600">D</text>
+</g>
+
+<!-- connected macro-loop (red) -->
+<g>
+  <line class="sol" x1="606" y1="166" x2="698" y2="166"/>
+  <line class="sol" x1="606" y1="166" x2="606" y2="258"/>
+  <line class="sol" x1="698" y1="166" x2="790" y2="166"/>
+  <line class="sol" x1="790" y1="166" x2="790" y2="258"/>
+  <line class="sol" x1="882" y1="166" x2="974" y2="166"/>
+  <line class="sol" x1="882" y1="166" x2="882" y2="258"/>
+  <line class="sol" x1="974" y1="166" x2="1066" y2="166"/>
+  <line class="sol" x1="1066" y1="166" x2="1066" y2="258"/>
+  <line class="sol" x1="606" y1="258" x2="698" y2="258"/>
+  <line class="sol" x1="698" y1="258" x2="698" y2="350"/>
+  <line class="sol" x1="790" y1="258" x2="882" y2="258"/>
+  <line class="sol" x1="974" y1="258" x2="1066" y2="258"/>
+  <line class="sol" x1="974" y1="258" x2="974" y2="350"/>
+  <line class="sol" x1="606" y1="350" x2="698" y2="350"/>
+  <line class="sol" x1="606" y1="350" x2="606" y2="442"/>
+  <line class="sol" x1="790" y1="350" x2="882" y2="350"/>
+  <line class="sol" x1="790" y1="350" x2="790" y2="442"/>
+  <line class="sol" x1="882" y1="350" x2="882" y2="442"/>
+  <line class="sol" x1="974" y1="350" x2="1066" y2="350"/>
+  <line class="sol" x1="1066" y1="350" x2="1066" y2="442"/>
+  <line class="sol" x1="606" y1="442" x2="698" y2="442"/>
+  <line class="sol" x1="698" y1="442" x2="698" y2="534"/>
+  <line class="sol" x1="790" y1="442" x2="790" y2="534"/>
+  <line class="sol" x1="882" y1="442" x2="974" y2="442"/>
+  <line class="sol" x1="974" y1="442" x2="974" y2="534"/>
+  <line class="sol" x1="1066" y1="442" x2="1066" y2="534"/>
+  <line class="sol" x1="606" y1="534" x2="698" y2="534"/>
+  <line class="sol" x1="606" y1="534" x2="606" y2="626"/>
+  <line class="sol" x1="790" y1="534" x2="790" y2="626"/>
+  <line class="sol" x1="882" y1="534" x2="974" y2="534"/>
+  <line class="sol" x1="882" y1="534" x2="882" y2="626"/>
+  <line class="sol" x1="1066" y1="534" x2="1066" y2="626"/>
+  <line class="sol" x1="606" y1="626" x2="698" y2="626"/>
+  <line class="sol" x1="698" y1="626" x2="790" y2="626"/>
+  <line class="sol" x1="882" y1="626" x2="974" y2="626"/>
+  <line class="sol" x1="974" y1="626" x2="1066" y2="626"/>
+</g>
+
+<text class="note" x="560" y="734">A/B/C/D are quarter-turns of one T-metacell gadget.</text>
+<text class="note" x="560" y="760">Red is the connected macro-loop.</text>
+</svg>

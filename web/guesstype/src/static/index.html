@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>guesstype</title>
+  <style>
+   body {
+       font-family: sans-serif;
+       background: #0d1117;
+       color: #c9d1d9;
+       max-width: 600px;
+       margin: 80px auto;
+       padding: 0 20px;
+       font-size: 20px;
+   }
+   h1 { color: #58a6ff; }
+   form {
+       border: 1px solid #30363d;
+       padding: 20px;
+       border-radius: 6px;
+       margin-top: 20px;
+   }
+   input[type="file"] {
+       margin-bottom: 15px;
+   }
+   button {
+       background: #238636;
+       color: #fff;
+       border: none;
+       padding: 8px 16px;
+       border-radius: 6px;
+       cursor: pointer;
+   }
+   button:hover { background: #2ea043; }
+   pre {
+       background: #161b22;
+       padding: 10px;
+       border-radius: 6px;
+       white-space: pre-wrap;
+       word-break: break-all;
+   }
+   #result.error {
+       color: #f85149;
+       border: 1px solid #f85149;
+       padding: 10px;
+       border-radius: 6px;
+   }
+   #result.success {
+       color: #3fb950;
+       border: 1px solid #3fb950;
+       padding: 10px;
+       border-radius: 6px;
+   }
+  </style>
+</head>
+<body>
+  <h1>Guess Type</h1>
+  <p>Upload a file and I'll sniff out the type! </p>
+  <p>I only like 🐶🛹 files though.. </p>
+
+  <form id="uploadForm">
+    <input type="file" name="file" id="fileInput" required>
+    <br>
+    <button type="submit">Upload</button>
+  </form>
+
+  <pre id="result"></pre>
+
+  <script>
+   document.getElementById("uploadForm").addEventListener("submit", async (e) => {
+       e.preventDefault();
+       const formData = new FormData();
+       formData.append("file", document.getElementById("fileInput").files[0]);
+
+       const res = await fetch("/upload", { method: "POST", body: formData });
+       const data = await res.json();
+       resultEl = document.getElementById("result");
+       if (data.error) {
+           resultEl.className = "error";
+           resultEl.textContent = data.error;
+       } else {
+           resultEl.className = "success";
+           resultEl.innerHTML = `${data.message}<br><strong>${data.flag}</strong>`;
+       }
+   });
+  </script>
+</body>
+</html>

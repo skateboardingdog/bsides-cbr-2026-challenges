@@ -1,0 +1,12 @@
+version: "1.0"
+slug: light-cycle-battle
+title: Light Cycle Battle
+categories: ["game"]
+difficulty: easy
+description: |
+  _Grid is live. Initiate light cycle battle._
+
+  Author: joseph
+connection_info: ${url}
+flags:
+  - skbdg{you_are_the_strongest_lightcycling_dog!}

@@ -1,0 +1,13 @@
+version: "1.0"
+slug: tis-100-crackme
+title: "TIS-100: crackme"
+categories: ["rev"]
+difficulty: medium
+description: |
+  Just a regular crackme, but in TIS-100 :)
+
+  Author: joseph
+connection_info: ${url}
+flags:
+  - skbdg{TIS_:100:_yayyyy}
+  - TIS_:100:_yayyyy

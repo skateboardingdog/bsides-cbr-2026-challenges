@@ -1,0 +1,15 @@
+version: "1.0"
+slug: cors-light
+title: cors-light
+categories: ["web"]
+difficulty: beginner
+tags:
+  gacha:requires: cors-empty
+description: |
+  can you evade the pref*light* check? 
+
+  Author: wednesday
+hosting: tls
+connection_info: ${url}
+flags:
+  - skbdg{simpl3_and_compl3x_r3qu3sts_what_wond3rfully_d3scriptiv3_nam3s}

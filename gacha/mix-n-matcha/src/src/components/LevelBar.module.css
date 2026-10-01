@@ -1,0 +1,32 @@
+.bar {
+  flex: 0 0 auto;
+  border-bottom: 1px solid var(--border);
+  padding: 12px 16px;
+}
+
+.tabs {
+  display: flex;
+  gap: 20px;
+  flex: 0 0 auto;
+}
+
+.tab {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  background: none;
+  border: none;
+  font-size: 18px;
+  color: var(--text-dim);
+}
+
+.tab:hover {
+  background: none;
+  text-decoration: underline;
+}
+
+.tab.active {
+  color: var(--accent);
+  text-decoration: underline;
+}

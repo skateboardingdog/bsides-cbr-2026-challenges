@@ -1,0 +1,18 @@
+version: "1.0"
+slug: rop-3
+title: ROP 3
+categories: ["pwn"]
+difficulty: beginner
+tags:
+  gacha:requires: rop-2
+description: |
+  You're an expert now. Let's chain all the things!
+
+  Author: Neobeo
+connection_info: nc ${host} ${port}
+files:
+  - ./publish/rop3
+  - ./publish/rop3.c
+  - ./publish/Dockerfile
+flags:
+  - skbdg{congratulations_you_deserve_a_tROPhy}

@@ -1,0 +1,42 @@
+.pane {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  height: 100%;
+  background: var(--bg-canvas);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 5px 10px;
+  border-bottom: 1px solid var(--border);
+  font-size: 13px;
+  color: var(--text-faint);
+  flex: 0 0 auto;
+}
+
+.header.active {
+  border-left: 3px solid var(--accent);
+}
+
+.title {
+  font-weight: 600;
+  font-size: 13.5px;
+  color: var(--text-dim);
+}
+
+.canvas {
+  position: relative;
+  flex: 1 1 auto;
+  min-height: 0;
+}
+
+.dropping::after {
+  content: '';
+  position: absolute;
+  inset: 4px;
+  border: 1px dashed var(--accent-dim);
+  pointer-events: none;
+}

@@ -1,0 +1,8 @@
+# emacs temp files (uggo)
+*~
+\#*\#
+.\#*
+.DS_Store
+/infra/.work/
+/infra/tmp
+.jj/

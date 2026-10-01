@@ -1,0 +1,14 @@
+version: "1.0"
+slug: babyheap
+title: babyheap
+categories: ["pwn"]
+difficulty: beginner
+description: |
+  This challenge is a binary exploitation tutorial that will walk you through your first heap pwn step by step.
+
+  Author: john
+connection_info: nc ${host} ${port}
+files:
+  - ./publish/babyheap.zip
+flags:
+  - skbdg{4ll_gr0wn_uP!1!}

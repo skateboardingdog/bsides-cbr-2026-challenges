@@ -1,0 +1,68 @@
+.palette {
+  display: flex;
+  flex-direction: column;
+  width: 210px;
+  flex: 0 0 auto;
+  border-right: 1px solid var(--border);
+  min-height: 0;
+}
+
+.list {
+  flex: 1 1 auto;
+  overflow-y: auto;
+  padding: 6px 8px 16px;
+}
+
+.group {
+  margin-bottom: 12px;
+}
+
+.groupTitle {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--text-faint);
+  padding: 4px 2px;
+}
+
+.chip {
+  --cat: var(--border-strong);
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  width: 100%;
+  text-align: left;
+  padding: 4px 6px;
+  margin-bottom: 2px;
+  background: none;
+  border: none;
+  border-left: 3px solid var(--cat);
+  cursor: grab;
+  font-size: 14px;
+}
+
+.chip:hover:not(:disabled) {
+  background: none;
+  text-decoration: underline;
+}
+
+.chip:active {
+  cursor: grabbing;
+}
+
+.chip:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.chipLabel {
+  flex: 1 1 auto;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.lossy {
+  color: var(--warning);
+  font-size: 12px;
+  line-height: 1;
+}

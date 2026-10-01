@@ -1,0 +1,23 @@
+#!/bin/sh
+# /upload - receive a base64-encoded file over the console.
+#
+# Usage: /upload [path]
+#
+# Paste the output of `base64 your_file` (any line width is fine, even a
+# single `base64 -w0` line), then type END on its own line and press
+# Enter.  The decoded file is saved to [path] (default: ./uploaded) and
+# made executable.
+
+out="${1:-./uploaded}"
+echo "paste the output of \`base64 exploit\` (wrapped lines are fine),"
+echo "then type END on its own line and press Enter:"
+
+/upload_recv | base64 -d > "$out" 2>/dev/null
+
+if [ -s "$out" ]; then
+    chmod +x "$out" 2>/dev/null
+    echo "saved $out ($(wc -c < "$out") bytes)"
+else
+    echo "decode failed - try again"
+    rm -f "$out"
+fi

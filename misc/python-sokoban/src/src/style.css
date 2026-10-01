@@ -1,0 +1,101 @@
+:root {
+  font-family: "DM Mono", monospace;
+  color: #53564d;
+  background: #faf9f4;
+  font-synthesis: none;
+  --key-size: 48px;
+}
+* { box-sizing: border-box; }
+html, body, #app { margin: 0; width: 100%; height: 100%; overflow: hidden; }
+button { font: inherit; color: inherit; border: 0; background: none; cursor: pointer; touch-action: manipulation; -webkit-tap-highlight-color: transparent; }
+button:disabled { opacity: .3; cursor: default; }
+button:hover:not(:disabled) { background: #eae9e0; }
+button:focus-visible { outline: 2px solid #7b92ba; outline-offset: -2px; }
+[hidden] { display: none !important; }
+.game { width: 100%; height: 100dvh; display: grid; grid-template-rows: minmax(0, 1fr); padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left); }
+.game { -webkit-user-select: none; user-select: none; }
+/* Dull the scene after death while keeping the controls above the wash. */
+.game::after { content: ""; position: fixed; inset: 0; z-index: 1; background: #484b422e; opacity: 0; pointer-events: none; transition: opacity 160ms ease-out; }
+.game.is-dead::after { opacity: 1; }
+.stage { display: flex; min-width: 0; min-height: 0; align-items: center; justify-content: center; padding: 4px 38px; }
+.puzzle { display: grid; grid-template-columns: minmax(0, 1fr); grid-template-rows: minmax(0, 1fr) auto; justify-items: center; align-items: center; width: 100%; height: 100%; min-width: 0; }
+#board { width: min(100vw, var(--stage-size, calc(100dvh - 8px - env(safe-area-inset-top) - env(safe-area-inset-bottom)))); max-width: 100%; aspect-ratio: 1; flex-shrink: 0; touch-action: none; outline: none; }
+#board svg { display: block; width: 100%; height: 100%; }
+.coordinate { font-size: 9px; font-family: "DM Mono", monospace; fill: #97998c; }
+.current-coordinate { fill: #476ba9; }
+.block-letter { font-family: "Kalam", "Chalkboard SE", cursive; fill: #464a3d; }
+.flag-letter { font-family: "Kalam", "Chalkboard SE", cursive; font-size: 90px; fill: #faf7e9; pointer-events: none; }
+.variable-letter { fill: #5374ad; }
+/* Inset annotation, faint and beneath the lettering to keep symbols readable. */
+.invalid-mark { fill: none; stroke: #a46f60; stroke-width: 1.4; stroke-linecap: round; stroke-linejoin: round; opacity: .4; pointer-events: none; }
+.wobble-frame { animation: wobble 1.7s steps(1, end) infinite; }
+.frame-1 { animation-name: wobble-other; visibility: hidden; }
+@keyframes wobble { 0%, 49.99% { visibility: visible; } 50%, 100% { visibility: hidden; } }
+@keyframes wobble-other { 0%, 49.99% { visibility: hidden; } 50%, 100% { visibility: visible; } }
+/* Entirely presentational: a new input replaces the SVG immediately. */
+.player-motion { animation: resolve-move 100ms steps(1, end) both; }
+@keyframes resolve-move {
+  0%, 29% { transform: translate(var(--step-x), var(--step-y)); }
+  30%, 100% { transform: translate(0, 0); }
+}
+.rules-applying .rule-block > path:first-child { animation: rule-pulse 210ms ease-out 30ms both; }
+@keyframes rule-pulse {
+  0%, 100% { fill: #f2e8ca; stroke: #4e4e44; }
+  30% { fill: #eedca9; stroke: #ad9053; }
+}
+.controls { position: fixed; left: var(--guide-center-x, 80px); top: 50%; transform: translate(-50%, -50%); z-index: 3; display: flex; flex-direction: column; align-items: center; gap: 24px; padding: 12px; border-radius: 6px; background: #faf9f4ed; pointer-events: none; }
+.actions { display: flex; align-items: center; gap: 10px; }
+.controls .actions { display: grid; grid-template-columns: repeat(3, auto); gap: 18px 16px; }
+.key-hint { display: flex; flex-direction: column; align-items: center; gap: 6px; }
+.movement { display: grid; grid-template-columns: repeat(3, var(--key-size)); gap: 4px; }
+.movement .key-up { grid-column: 2; }
+.movement .key-left { grid-column: 1; }
+.controls kbd { display: flex; align-items: center; justify-content: center; width: var(--key-size); height: var(--key-size); font: 22px "DM Mono", monospace; border: 1.2px solid #9a9a8a; border-radius: 4px 5px 4px 3px; background: #faf9f4; box-shadow: 0 2px 0 #ceccbd; }
+.actions span { font-size: 12px; line-height: 16px; }
+.controls.guide-below { --key-size: 40px; left: max(12px, env(safe-area-inset-left)); top: auto; bottom: max(46px, calc(env(safe-area-inset-bottom) + 38px)); transform: none; flex-direction: row; gap: 16px; }
+#info-button { position: fixed; left: max(8px, env(safe-area-inset-left)); bottom: max(7px, env(safe-area-inset-bottom)); z-index: 4; display: flex; align-items: center; justify-content: center; width: 30px; height: 30px; padding: 0; border-radius: 4px; color: #868777; font-size: 21px; }
+#info-button[aria-expanded="true"] { color: #53564d; }
+.utilities { position: fixed; right: max(8px, env(safe-area-inset-right)); bottom: max(7px, env(safe-area-inset-bottom)); z-index: 3; display: flex; gap: 3px; }
+.utilities button { display: flex; align-items: center; justify-content: center; width: 30px; height: 30px; padding: 0; border-radius: 4px; font-size: 18px; color: #868777; }
+.utilities button:hover, .utilities button:focus-visible { color: #53564d; }
+.levels { position: fixed; right: max(3px, env(safe-area-inset-right)); top: 50%; transform: translateY(-50%); z-index: 2; display: flex; flex-direction: column; align-items: center; gap: 2px; width: 32px; max-height: calc(100dvh - 24px - env(safe-area-inset-top) - env(safe-area-inset-bottom)); padding-block: 5px; overflow-y: auto; overflow-x: hidden; scrollbar-width: none; }
+.levels::-webkit-scrollbar { display: none; }
+.levels button { display: flex; align-items: center; justify-content: center; width: 32px; height: 30px; padding: 0; flex-shrink: 0; border-radius: 5px; }
+.level-dot { width: 10px; height: 10px; border: 1px solid #a19585; background: #b9ad9d; border-radius: 46% 53% 48% 51%; }
+.levels button:nth-child(even) .level-dot { border-radius: 53% 47% 52% 46%; }
+.levels .completed .level-dot { background: #79916a; border-color: #68845c; }
+.levels [aria-current="step"] .level-dot { outline: 1.5px solid #626953; outline-offset: 4px; }
+.levels button:hover { background: none; }
+.levels button:hover .level-dot { box-shadow: 0 0 0 3px #a1958526; }
+.level-flag { display: flex; width: 24px; height: 24px; border-radius: 46% 53% 48% 51%; }
+.levels [aria-current="step"] .level-flag { outline: 1.5px solid #626953; outline-offset: 1px; }
+.levels button:hover .level-flag { background: #a1958526; }
+.level-lock { width: 15px; height: 15px; fill: none; stroke: #8b8375; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+.levels button:disabled { opacity: .65; cursor: default; }
+.flag-access { position: fixed; left: 50%; top: 50%; transform: translate(-50%, -50%); z-index: 2; width: 105px; color: #faf7e9; font-size: 12px; text-align: center; }
+.flag-access button { display: block; margin: 8px auto 0; font-size: 22px; color: inherit; }
+#music-button svg { fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+#music-button .music-slash { display: none; }
+#music-button[data-muted="true"] .music-slash,
+#music-button[data-status="unavailable"] .music-slash { display: initial; }
+#music-button[data-muted="true"] .music-waves,
+#music-button[data-status="unavailable"] .music-waves { display: none; }
+.win-transition { position: fixed; inset: 0; z-index: 20; overflow: hidden; pointer-events: none; }
+.win-bone { position: absolute; top: 0; left: 0; overflow: visible; transform-origin: center; will-change: transform; }
+.win-sparkles { position: absolute; inset: 0; }
+.win-sparkle { position: absolute; aspect-ratio: 1; overflow: visible; opacity: 0; fill: #faf9e6; stroke: #68845c; stroke-width: 1.2; stroke-linejoin: round; }
+.win-transition.reduced { background: #dce6cf; }
+.win-transition.reduced .win-bone { display: none; }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+@media (max-width: 680px) {
+  .stage { padding-left: 8px; }
+}
+@media (max-width: 360px) {
+  .actions { gap: 8px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; }
+  .game::after { transition: none; }
+  .frame-0 { visibility: visible !important; }
+  .frame-1 { visibility: hidden !important; }
+}

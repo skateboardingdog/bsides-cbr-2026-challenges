@@ -1,0 +1,23 @@
+version: "1.0"
+slug: tron-koth
+title: King of the Grid
+categories: ["game", "koth"]
+difficulty: medium
+description: |
+  This is a King-of-the-Hill programming challenge. Instead of submitting a flag, you submit your bot script at the scoreboard website below. Scoring is tick based, and you will get the maximum possible score by submitting your best solutions as soon as you develop them.
+
+  Games will begin to run 1 hour after the CTF starts until 5PM, and then kick back off 9AM until the end of the CTF.
+
+  Author: joseph
+connection_info: ${url}
+files:
+  - ./publish/tron-koth.zip
+solve:
+  source: none
+  input_type: none
+  weight_update_key: XXX
+scoring:
+  strategy: "core:bounded_weight"
+  params:
+    lower: 0
+    upper: 500

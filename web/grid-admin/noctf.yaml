@@ -1,0 +1,15 @@
+version: "1.0"
+slug: grid-admin
+title: Grid Admin
+categories: ["web"]
+difficulty: medium
+description: |
+ The admin is not the chatty type, unless you speak Native
+
+  Author: ttyA
+hosting: tls
+connection_info: ${url}
+files:
+  - ./publish/grid-admin.zip
+flags:
+  - skbdg{m3ss4g3_t0_th3_n4t1v3}

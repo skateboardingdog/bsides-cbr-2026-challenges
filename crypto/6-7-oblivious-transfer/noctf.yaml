@@ -1,0 +1,14 @@
+version: "1.0"
+slug: six-seven-oblivious-transfer
+title: 6/7 Oblivious Transfer
+categories: ["crypto"]
+difficulty: hard
+description: |
+  Welcome to the 6-out-of-7 Oblivious Transfer service!
+
+  Author: Neobeo
+connection_info: nc ${host} ${port}
+files:
+  - ./publish/67ot.py
+flags:
+  - skbdg{67_sick_savant_Sikhs_event_C._X._Evan_seeks_heaven_six_seven}

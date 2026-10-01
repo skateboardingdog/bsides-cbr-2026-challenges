@@ -1,0 +1,13 @@
+version: "1.0"
+slug: i-made-an-app
+title: I made an app
+categories: ["misc"]
+difficulty: easy
+description: |
+  I made a todo list app, isn't it cool? I had to clean up my dev environment after reviewing a few proposed changes, but at least it works!
+  
+  Author: tom nook
+files:
+  - ./publish/my-first-app.tar.gz
+flags:
+  - skbdg{o0ps_t0o_m1ny_c0mitted_s3cret7_oe6aeg4e}

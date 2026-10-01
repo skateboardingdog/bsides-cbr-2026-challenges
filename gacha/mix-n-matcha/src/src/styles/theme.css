@@ -1,0 +1,135 @@
+:root {
+  --bg: color-mix(in srgb, #e7ecef 86%, #878b91);
+  --bg-canvas: #e7ecef;
+  --panel: color-mix(in srgb, #e7ecef 93%, #878b91);
+  --panel-raised: #e7ecef;
+  --border: color-mix(in srgb, #878b91 38%, #e7ecef);
+  --border-strong: #878b91;
+
+  --text: #272932;
+  --text-dim: #806769;
+  --text-faint: #878b91;
+
+  --accent: #0f7173;
+  --accent-dim: color-mix(in srgb, #0f7173 32%, #e7ecef);
+  --danger: #f05d5e;
+  --warning: #d8a47f;
+  --ok: #7bafb1;
+
+  --cat-io: color-mix(in srgb, #7bafb1 55%, #e7ecef);
+  --cat-key: color-mix(in srgb, #d8a47f 55%, #e7ecef);
+  --cat-wiring: color-mix(in srgb, #806769 45%, #e7ecef);
+  --cat-logic: color-mix(in srgb, #0f7173 40%, #e7ecef);
+  --cat-arith: color-mix(in srgb, #f05d5e 40%, #e7ecef);
+  --cat-transform: color-mix(in srgb, #806759 50%, #e7ecef);
+
+  --radius: 0;
+  --radius-sm: 0;
+  --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+  --sans: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+
+  color-scheme: light;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--sans);
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  background: var(--panel-raised);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 5px 11px;
+  cursor: pointer;
+}
+
+button:hover:not(:disabled) {
+  background: color-mix(in srgb, var(--accent) 8%, var(--panel-raised));
+  border-color: var(--accent-dim);
+}
+
+button:disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+
+input,
+textarea,
+select {
+  font: inherit;
+  color: var(--text);
+  background: var(--panel-raised);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 4px 8px;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+.react-flow__background {
+  background: var(--bg-canvas);
+}
+
+.react-flow__edge-path {
+  stroke: var(--border-strong);
+  stroke-width: 1.6;
+}
+
+.react-flow__edge.selected .react-flow__edge-path,
+.react-flow__edge:hover .react-flow__edge-path {
+  stroke: var(--accent);
+}
+
+.react-flow__connection-path {
+  stroke: var(--accent);
+  stroke-width: 1.6;
+}
+
+.react-flow__selection {
+  background: color-mix(in srgb, var(--accent) 8%, transparent);
+  border: 1px solid var(--accent-dim);
+}
+
+.react-flow__controls-button {
+  background: var(--panel-raised);
+  border-bottom: 1px solid var(--border);
+  fill: var(--text-dim);
+}
+
+.react-flow__controls-button:hover {
+  background: var(--bg);
+}
+
+.react-flow__minimap {
+  background: var(--panel);
+  border-radius: var(--radius-sm);
+}
+
+.react-flow__attribution {
+  background: transparent;
+  color: var(--text-faint);
+  font-size: 9px;
+}

